@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Invoice Aging Report</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .aging-current { background-color: #d4edda !important; }
+        .aging-30 { background-color: #fff3cd !important; }
+        .aging-60 { background-color: #f8d7da !important; }
+        .aging-90 { background-color: #d1ecf1 !important; }
+        .summary-card {
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .aging-legend {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 15px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4">Hospital Invoice Aging Report - Unpaid Invoices</h2>
+                
+                <!-- Summary Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card summary-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-muted">Total Outstanding</h5>
+                                <h3 class="text-primary">ETB 9,625</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card summary-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-muted">Current (0-30 days)</h5>
+                                <h4 class="text-success">ETB 4,275</h4>
+                                <small class="text-muted">1 invoice</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card summary-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-muted">31-60 days</h5>
+                                <h4 class="text-warning">ETB 0</h4>
+                                <small class="text-muted">0 invoices</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card summary-card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-muted">60+ days</h5>
+                                <h4 class="text-danger">ETB 5,350</h4>
+                                <small class="text-muted">2 invoices</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aging Legend -->
+                <div class="aging-legend">
+                    <div class="legend-item">
+                        <div class="legend-color aging-current"></div>
+                        <span>Current (0-30 days)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color aging-30"></div>
+                        <span>31-60 days overdue</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color aging-60"></div>
+                        <span>61-90 days overdue</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color aging-90"></div>
+                        <span>90+ days overdue</span>
+                    </div>
+                </div>
+
+                <!-- Aging Report Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Unpaid Invoices by Aging Period</h5>
+                        <small class="text-muted">As of May 30, 2025 (Based on Due Date)</small>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-container">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-dark sticky-top">
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Employee</th>
+                                        <th>Organization</th>
+                                        <th>Services</th>
+                                        <th>Served By</th>
+                                        <th>Issue Date</th>
+                                        <th>Due Date</th>
+                                        <th class="text-end">Amount (ETB)</th>
+                                        <th class="text-end">Paid (ETB)</th>
+                                        <th class="text-end">Balance (ETB)</th>
+                                        <th>Days Overdue</th>
+                                        <th>Aging Category</th>
+                                        <th>Priority</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Current (0-30 days) -->
+                                    <tr class="aging-current">
+                                        <td><strong>INV-003</strong></td>
+                                        <td>F. Adebayo</td>
+                                        <td>Acme Corp</td>
+                                        <td>1</td>
+                                        <td>Nurse Joy</td>
+                                        <td>May 20, 2023</td>
+                                        <td>May 31, 2023</td>
+                                        <td class="text-end">4,275</td>
+                                        <td class="text-end">0</td>
+                                        <td class="text-end"><strong>4,275</strong></td>
+                                        <td><span class="badge bg-success">0 days</span></td>
+                                        <td><span class="badge bg-success">Current</span></td>
+                                        <td><span class="badge bg-secondary">Standard</span></td>
+                                    </tr>
+
+                                    <!-- 60+ days overdue -->
+                                    <tr class="aging-60">
+                                        <td><strong>INV-002</strong></td>
+                                        <td>C. Okoro</td>
+                                        <td>Beta Industries</td>
+                                        <td>2</td>
+                                        <td>Dr. Lee</td>
+                                        <td>May 10, 2023</td>
+                                        <td>May 31, 2023</td>
+                                        <td class="text-end">2,850</td>
+                                        <td class="text-end">0</td>
+                                        <td class="text-end"><strong>2,850</strong></td>
+                                        <td><span class="badge bg-danger">730+ days</span></td>
+                                        <td><span class="badge bg-danger">90+ Days</span></td>
+                                        <td><span class="badge bg-danger">Critical</span></td>
+                                    </tr>
+
+                                    <!-- Partial payment - 60+ days overdue -->
+                                    <tr class="aging-60">
+                                        <td><strong>INV-004</strong></td>
+                                        <td>E. Nwachukwu</td>
+                                        <td>Gamma Solutions</td>
+                                        <td>5</td>
+                                        <td>Dr. Patel</td>
+                                        <td>May 05, 2023</td>
+                                        <td>May 31, 2023</td>
+                                        <td class="text-end">6,500</td>
+                                        <td class="text-end">4,000</td>
+                                        <td class="text-end"><strong>2,500</strong></td>
+                                        <td><span class="badge bg-danger">730+ days</span></td>
+                                        <td><span class="badge bg-danger">90+ Days</span></td>
+                                        <td><span class="badge bg-warning">High</span></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="table-light">
+                                    <tr>
+                                        <th colspan="9" class="text-end">Total Outstanding Balance:</th>
+                                        <th class="text-end">ETB 9,625</th>
+                                        <th colspan="3"></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Items -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-warning text-dark">
+                                <h6 class="mb-0">Immediate Action Required</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li>🔴 <strong>INV-002 (Beta Industries):</strong> 730+ days overdue - ETB 2,850</li>
+                                    <li>🟡 <strong>INV-004 (Gamma Solutions):</strong> 730+ days overdue - ETB 2,500 remaining</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h6 class="mb-0">Collection Strategy</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li>📞 Contact Beta Industries immediately</li>
+                                    <li>📧 Send final notice to Gamma Solutions</li>
+                                    <li>✅ Monitor Acme Corp current invoice</li>
+                                    <li>⚖️ Consider legal action for 90+ day accounts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,2198 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+   <title>CBHI | Community-Based Health Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Keep your finances and membership up to date" name="description" />
+    <meta content="Kelvin Njuguna Ndungu" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                    <img src="assets/images/the-logo.png" alt="" height="50">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-text-white.png" alt="" height="55">
+                                </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt="" class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="bx bx-fullscreen"></i>
+                            </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-bell bx-tada"></i>
+                                <span class="badge bg-danger rounded-pill">3</span>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="bx bx-cart"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="bx bx-badge-check"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="header-lang-img" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="us">
+                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
+                                <img src="assets/images/flags/Ethiopia.png" alt="user-image" class="me-1" height="12"> <span class="align-middle">Amharic</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    
+
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+         <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title d-none" key="t-pages">Community-Based Health Insurance</li>
+
+
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home-circle"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="hospitals-add.html" class="waves-effect">
+                                <i class="mdi mdi-medical-bag"></i><span>Add Hospital</span>
+                            </a>
+                        </li>
+
+
+
+
+                        <li>
+                            <a href="hospitals.html" class="waves-effect" title="View or manage registered hospitals">
+                                <i class="mdi mdi-hospital-building"></i><span>Hospitals</span>
+                            </a>
+                        </li>
+
+
+                        <hr>
+
+                        <li class="menu-title" key="t-pages">Member Management</li>
+
+                        <li>
+                            <a href="members-add.html" class="waves-effect" title="Register a new member">
+                                <i class="bx bx-user-plus"></i><span>Add Member</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="members-all.html" class="waves-effect" title="View all registered members">
+                                <i class="bx bx-group"></i><span>All Members</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect has-arrow"
+                                title="Manage insurance premium payments">
+                                <i class="mdi mdi-cash-multiple"></i>
+                                <span>Premium Management</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="premium-receive.html" title="Record or confirm a premium payment">
+                                        <i class="mdi mdi-cash-plus me-1"></i> Receive Premiums
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="premium-records.html" title="Track all recorded premium entries">
+                                        <i class="mdi mdi-file-document-outline me-1"></i> Premium Records
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="premium-reconciliation.html" title="Match payments against invoices">
+                                        <i class="mdi mdi-scale-balance me-1"></i> Reconciliation
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="premium-collections-report.html"
+                                        title="View and track Daily premium collections">
+                                        <i class="mdi mdi-chart-bar me-1"></i>
+                                        Daily Collections
+                                    </a>
+
+                                </li>
+
+                                <li>
+                                    <a href="premium-schedules.html" title="View and manage scheduled premium payments">
+                                        <i class="mdi mdi-calendar-clock me-1"></i> Premium Schedules
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="members-flagged.html" class="waves-effect"
+                                title="Deposits with no matching records for reconciliation">
+                                <i class="bx bx-error-circle"></i><span>Flagged Deposits</span>
+                                <span class="badge rounded-pill bg-danger float-end">10</span>
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="menu-title" key="t-pages">Extension workers MNGT</li>
+                        <li>
+                            <a href="extension-log-service.html" class="waves-effect"
+                                title="Record health services delivered">
+                                <i class="bx bx-notepad"></i><span>Log Service</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="extension-register.html" class="waves-effect"
+                                title="Manage extension workers (CHWs)">
+                                <i class="bx bx-user-plus"></i><span>Extension Workers</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Track CHW activities">
+                                <i class="mdi mdi-account-clock"></i><span>Health Worker Tracking</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="extension-member-registrations.html"
+                                        title="View registered members">CBHI Registrations</a>
+                                </li>
+                                <li>
+                                    <a href="extension-premium-collections.html"
+                                        title="Track collected premiums">Premiums Collections</a>
+                                </li>
+                                <li>
+                                    <a href="extension-services-delivered.html"
+                                        title="View services delivered">Services Delivered</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                        <hr>
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow"
+                                title="Manage Covered Services">
+                                <i class="mdi mdi-clipboard-check-outline"></i>
+                                <span>Covered Services</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="covered-lab-tests.html" title="Manage Covered Lab Tests"><i
+                                            class="mdi mdi-flask-outline"></i> Lab Tests</a></li>
+                                <li><a href="covered-radiology.html" title="Manage Covered Radiology Tests"><i
+                                            class="mdi mdi-radiology-box"></i>Radiology Tests</a></li>
+                                <li><a href="covered-drugs.html" title="Manage Covered Drugs"><i
+                                            class="mdi mdi-pill"></i> Drugs</a></li>
+                                <li><a href="covered-procedures.html" title="Manage Covered Procedures"><i
+                                            class="mdi mdi-stethoscope"></i> Procedures</a></li>
+                                <li><a href="coverage-policies.html" title="Manage Coverage Policies and Rules"><i
+                                            class="mdi mdi-file-document-outline"></i> Coverage Policies</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow"
+                                title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html" title="Manage Designations">Designations</a></li>
+                                <li><a href="org-departments.html" title="Manage Departments">Departments</a></li>
+                                <li><a href="org-employment-types.html" title="Manage Employment Types">Employment
+                                        Types</a></li>
+                                <li><a href="org-affiliated-institution.html"
+                                        title="Manage Affiliated Institutions">Affiliated Institution</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html" title="Add New User">Add User</a></li>
+                                <li><a href="user-userlist.html" title="Add New User">Manage Users</a></li>
+                                <li><a href="users-deactivated.html" title="View Deactivated Users">Deactivated
+                                        Users</a></li>
+                                <li><a href="use-logs.html" title="View System Logs">System Logs</a></li>
+                                <li><a href="users-roles.html" title="Manage User Roles">System Roles</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">New Member Registration Form</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">New Member Form</a></li>
+                                       
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                                    <!-- Member Statistics Dashboard -->
+                        <div class="row">
+                        <!-- Total Members -->
+                        <div class="col-lg-2 col-md-4">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Members</p>
+                                            <h5 class="mb-0">1,238</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
+                                                <i class="bx bx-user-circle"></i> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Members -->
+                        <div class="col-lg-2 col-md-4">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Active Members</p>
+                                            <h5 class="mb-0">987</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-success rounded-circle text-white font-size-20">
+                                                <i class="bx bx-check-circle"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inactive Members -->
+                        <div class="col-lg-2 col-md-4">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Inactive Members</p>
+                                            <h5 class="mb-0">185</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                                <i class="bx bx-x-circle"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Average Family Size -->
+                        <div class="col-lg-2 col-md-4">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Avg. Family Size</p>
+                                            <h5 class="mb-0">4.2</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-info rounded-circle text-white font-size-20">
+                                                <i class="bx bx-group"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Payments Collected -->
+                        <div class="col-lg-2 col-md-4">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Payments</p>
+                                            <h5 class="mb-0">247,850 <small>ETB</small></h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-purple rounded-circle text-white font-size-20">
+                                                <i class="bx bx-money"></i> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Members with Outstanding Payments -->
+                        <div class="col-lg-2 col-md-4">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Outstanding Payments</p>
+                                            <h5 class="mb-0">125</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
+                                                <i class="bx bx-calendar-exclamation"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                       
+                      <div class="col-12">
+                            <div class="card">
+                                <div class="card-header bg-white d-flex justify-content-between align-items-center w-100 border-bottom-1 pb-3 border-bottom-1 border-bottom">
+                                    <!-- filters -->
+                                    <div class="me-3 text-nowrap filter-tool-bar-btns">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light waves-effect me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bx bxs-hide font-size-16 me-1 align-middle"></i> Hide fields
+                                            </button>
+                                            
+                                            <div class="dropdown-menu p-4" style="width: 300px;">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5 class="text-capitalize mb-0">Column Visibility</h5>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <hr>
+                                                    </div>
+                                                
+                                                    <div class="col-12 mb-3">
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-order-id" data-column="0" checked>
+                                                            <label class="form-check-label" for="column-order-id">Member ID</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-customer-name" data-column="1" checked>
+                                                            <label class="form-check-label" for="column-customer-name">Name</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-region" data-column="2" checked>
+                                                            <label class="form-check-label" for="column-region">Region</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-worede" data-column="3" checked>
+                                                            <label class="form-check-label" for="column-worede">Worede</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-address" data-column="4" checked>
+                                                            <label class="form-check-label" for="column-address">Address</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-family-size" data-column="5" checked>
+                                                            <label class="form-check-label" for="column-family-size">Family Size</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-registration-date" data-column="6" checked>
+                                                            <label class="form-check-label" for="column-registration-date">Registration Date</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-last-payment" data-column="7" checked>
+                                                            <label class="form-check-label" for="column-last-payment">Last Payment</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-status" data-column="8" checked>
+                                                            <label class="form-check-label" for="column-status">Status</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-registered-by" data-column="9" checked>
+                                                            <label class="form-check-label" for="column-registered-by">Registered By</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-next-payment" data-column="10" checked>
+                                                            <label class="form-check-label" for="column-next-payment">Next Payment</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column" type="checkbox" id="column-annual-payment" data-column="11" checked>
+                                                            <label class="form-check-label" for="column-annual-payment">Annual Payment</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="button" id="showAllColumns" class="btn btn-sm btn-outline-primary me-2">Show All</button>
+                                                        <button type="button" id="hideAllColumns" class="btn btn-sm btn-outline-danger">Hide All</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light waves-effect" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bx bx-sort font-size-16 me-1 align-middle"></i> Sort
+                                            </button>
+                                            
+                                            <div class="dropdown-menu p-4" style="width: 300px;">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5 class="text-capitalize mb-0">Sort by field</h5>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <label for="sort-field-select" class="form-label">Field</label>
+                                                            <select class="form-select" id="sort-field-select">
+                                                                <option value="" selected disabled>Select field</option>
+                                                                <option value="0">Member ID</option>
+                                                                <option value="1">Name</option>
+                                                                <option value="2">Region</option>
+                                                                <option value="3">Worede</option>
+                                                                <option value="4">Address</option>
+                                                                <option value="5">Family Size</option>
+                                                                <option value="6">Registration Date</option>
+                                                                <option value="7">Last Payment</option>
+                                                                <option value="8">Status</option>
+                                                                <option value="9">Registered By</option>
+                                                                <option value="10">Next Payment</option>
+                                                                <option value="11">Annual Payment</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                <input type="radio" class="btn-check" name="sortDirection" id="btnradio4" value="asc" autocomplete="off" checked>
+                                                                <label class="btn btn-outline-secondary" for="btnradio4"><i class="bx bx-sort-up"></i> Ascending</label>
+                                                                
+                                                                <input type="radio" class="btn-check" name="sortDirection" id="btnradio6" value="desc" autocomplete="off">
+                                                                <label class="btn btn-outline-secondary" for="btnradio6"><i class="bx bx-sort-down"></i> Descending</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-4">
+                                                        <button type="button" id="applySort" class="btn btn-primary w-100">Apply Sort</button>
+                                                    </div>
+                                                    <div class="col-12 mt-2">
+                                                        <button type="button" id="clearSort" class="btn btn-outline-danger w-100"><i class="bx bx-trash me-1"></i> Clear Sort</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-light waves-effect mx-2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bx bx-calendar font-size-16 me-1 align-middle"></i> Date Range
+                                        </button>
+                                    
+                                        <div class="dropdown-menu p-4" style="width: 300px;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h5 class="text-capitalize mb-0">Filter by date</h5>
+                                                </div>
+                                                <div class="col-12 mb-2">
+                                                    <hr>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="mb-3">
+                                                        <label for="start-date-input" class="form-label">Filter By Option</label>
+                                                        <select class="form-select" id="sort-field-select">
+                                                                <option value="" selected="" disabled="">Select field</option>
+                                                                <option value="0">Registrtation Date</option>
+                                                                <option value="1">Last Payment date</option>
+                                                                
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-12 mb-2">
+                                                    <hr>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="mb-3">
+                                                        <label for="start-date-input" class="form-label">Start Date</label>
+                                                        <input type="date" class="form-control" id="start-date-input">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-12">
+                                                    <div class="d-flex align-items-center justify-content-center w-100">
+                                                        <i class="bx bx-transfer-alt rotate-90 h2 text-info"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="mb-3">
+                                                        <label for="end-date-input" class="form-label">End Date</label>
+                                                        <input type="date" class="form-control" id="end-date-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 mt-4">
+                                                    <button type="button" id="applyDateFilter" class="btn btn-primary w-100">Apply Filter</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                       <button type="button" data-toggle="modal" data-target="#filtering-modal" class="btn btn-light waves-effect active"><i class="bx bx-filter font-size-16 me-1 align-middle"></i> 2 Filters</button>
+                                    </div>
+
+                                    <div class="btn-toolbar d-flex justify-content-between align-items-center w-100" role="toolbar">
+                                        <div class="flex-grow-1">
+                                            <div class="search-box mb-0 me-3">
+                                                <div class="position-relative">
+                                                    <input type="text" id="searchInput" class="form-control bg-light border-light rounded" placeholder="Search..." spellcheck="false">
+                                                    <i class="bx bx-search-alt search-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-primary dropdown-toggle option-selector text-capitalize">
+                                                <i class="bx bxs-download"></i> <span class="pl-1 d-md-inline">Download Report</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table align-middle table-hover contacts-table border table-striped text-nowrap" id="membersTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Worede</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Family Size</th>
+                                    <th scope="col">Registration Date</th>
+                                    <th scope="col">Last Payment</th>
+                                    <th scope="col">Status</th>
+                                    <th>Registered By</th>
+                                    <th>Next Payment</th>
+                                    <th class="text-right">Annual Payment</th>
+                                    <th class="text-right">Actions</th>                                                    
+                                </tr>
+                            </thead>
+                            <tbody class="border">
+                                <tr>
+                                    <td class="fw-bold">AM1234</td>
+                                    <td>
+                                        <strong>Abebe Kebede</strong>
+                                        <p class="mb-0 pb-0">abebe.kebede@email.com, 0704 549 859</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>Piazza District</td>
+                                    <td>4</td>
+                                    <td>11 Jan 2025 11:29:34 AM</td>
+                                    <td>
+                                        <strong>11 Jan 2025 11:29:34 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Alex Wanjala</a></td>
+                                    <td>11 Jan 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1235</td>
+                                    <td>
+                                        <strong>Tigist Mengistu</strong>
+                                        <p class="mb-0 pb-0">tigist.mengistu@email.com, 0712 345 678</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Bahir Dar</td>
+                                    <td>Lake Tana View</td>
+                                    <td>5</td>
+                                    <td>15 Jan 2025 10:15:22 AM</td>
+                                    <td>
+                                        <strong>15 Jan 2025 10:15:22 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 600</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Feven Haile</a></td>
+                                    <td>15 Jan 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 600</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1236</td>
+                                    <td>
+                                        <strong>Yohannes Tesfaye</strong>
+                                        <p class="mb-0 pb-0">yohannes.tesfaye@email.com, 0723 456 789</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Dessie</td>
+                                    <td>Central Market Area</td>
+                                    <td>3</td>
+                                    <td>18 Jan 2025 09:45:11 AM</td>
+                                    <td>
+                                        <strong>18 Jan 2025 09:45:11 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Samuel Negash</a></td>
+                                    <td>18 Jan 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1237</td>
+                                    <td>
+                                        <strong>Meron Alemu</strong>
+                                        <p class="mb-0 pb-0">meron.alemu@email.com, 0734 567 890</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Debre Birhan</td>
+                                    <td>Highland District</td>
+                                    <td>6</td>
+                                    <td>22 Jan 2025 14:30:56 PM</td>
+                                    <td>
+                                        <strong>22 Jan 2025 14:30:56 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 800</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Dawit Yimer</a></td>
+                                    <td>22 Jan 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 800</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1238</td>
+                                    <td>
+                                        <strong>Dawit Gebremedhin</strong>
+                                        <p class="mb-0 pb-0">dawit.gebre@email.com, 0745 678 901</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>Fasil Castle Area</td>
+                                    <td>4</td>
+                                    <td>25 Jan 2025 11:20:33 AM</td>
+                                    <td>
+                                        <strong>25 Jan 2025 11:20:33 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Alex Wanjala</a></td>
+                                    <td>25 Jan 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1239</td>
+                                    <td>
+                                        <strong>Hirut Teshome</strong>
+                                        <p class="mb-0 pb-0">hirut.teshome@email.com, 0756 789 012</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Lalibela</td>
+                                    <td>Rock Churches District</td>
+                                    <td>2</td>
+                                    <td>27 Jan 2025 16:10:45 PM</td>
+                                    <td>
+                                        <strong>27 Jan 2025 16:10:45 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-danger float-end text-uppercase">Inactive</span></td>
+                                    <td><a href="#">Samuel Negash</a></td>
+                                    <td>27 Jan 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1240</td>
+                                    <td>
+                                        <strong>Bereket Ayele</strong>
+                                        <p class="mb-0 pb-0">bereket.ayele@email.com, 0767 890 123</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>University Area</td>
+                                    <td>5</td>
+                                    <td>01 Feb 2025 09:05:23 AM</td>
+                                    <td>
+                                        <strong>01 Feb 2025 09:05:23 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 600</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Feven Haile</a></td>
+                                    <td>01 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 600</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1241</td>
+                                    <td>
+                                        <strong>Hanna Mulugeta</strong>
+                                        <p class="mb-0 pb-0">hanna.mulugeta@email.com, 0778 901 234</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Bahir Dar</td>
+                                    <td>Blue Nile Falls Road</td>
+                                    <td>4</td>
+                                    <td>03 Feb 2025 13:45:12 PM</td>
+                                    <td>
+                                        <strong>03 Feb 2025 13:45:12 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Alex Wanjala</a></td>
+                                    <td>03 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1242</td>
+                                    <td>
+                                        <strong>Tewodros Bekele</strong>
+                                        <p class="mb-0 pb-0">tewodros.bekele@email.com, 0789 012 345</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Debre Tabor</td>
+                                    <td>Central District</td>
+                                    <td>3</td>
+                                    <td>05 Feb 2025 10:30:44 AM</td>
+                                    <td>
+                                        <strong>05 Feb 2025 10:30:44 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-warning float-end text-uppercase">Pending</span></td>
+                                    <td><a href="#">Dawit Yimer</a></td>
+                                    <td>05 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1243</td>
+                                    <td>
+                                        <strong>Meskerem Hailu</strong>
+                                        <p class="mb-0 pb-0">meskerem.hailu@email.com, 0790 123 456</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>Arada District</td>
+                                    <td>6</td>
+                                    <td>08 Feb 2025 15:20:33 PM</td>
+                                    <td>
+                                        <strong>08 Feb 2025 15:20:33 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 800</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Samuel Negash</a></td>
+                                    <td>08 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 800</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1244</td>
+                                    <td>
+                                        <strong>Elias Tadesse</strong>
+                                        <p class="mb-0 pb-0">elias.tadesse@email.com, 0701 234 567</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Dessie</td>
+                                    <td>Market Street</td>
+                                    <td>5</td>
+                                    <td>10 Feb 2025 11:05:54 AM</td>
+                                    <td>
+                                        <strong>10 Feb 2025 11:05:54 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 600</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Alex Wanjala</a></td>
+                                    <td>10 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 600</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1245</td>
+                                    <td>
+                                        <strong>Bethlehem Girma</strong>
+                                        <p class="mb-0 pb-0">bethlehem.girma@email.com, 0712 345 678</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Bahir Dar</td>
+                                    <td>Lakeside District</td>
+                                    <td>4</td>
+                                    <td>12 Feb 2025 14:15:22 PM</td>
+                                    <td>
+                                        <strong>12 Feb 2025 14:15:22 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Feven Haile</a></td>
+                                    <td>12 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1246</td>
+                                    <td>
+                                        <strong>Ephrem Weldesenbet</strong>
+                                        <p class="mb-0 pb-0">ephrem.weldesenbet@email.com, 0723 456 789</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>Castle View District</td>
+                                    <td>2</td>
+                                    <td>15 Feb 2025 09:45:11 AM</td>
+                                    <td>
+                                        <strong>15 Feb 2025 09:45:11 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-danger float-end text-uppercase">Inactive</span></td>
+                                    <td><a href="#">Dawit Yimer</a></td>
+                                    <td>15 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1247</td>
+                                    <td>
+                                        <strong>Mahlet Desalegn</strong>
+                                        <p class="mb-0 pb-0">mahlet.desalegn@email.com, 0734 567 890</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Debre Markos</td>
+                                    <td>Central Market Area</td>
+                                    <td>5</td>
+                                    <td>18 Feb 2025 11:30:45 AM</td>
+                                    <td>
+                                        <strong>18 Feb 2025 11:30:45 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 600</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Samuel Negash</a></td>
+                                    <td>18 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 600</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1248</td>
+                                    <td>
+                                        <strong>Tariku Belay</strong>
+                                        <p class="mb-0 pb-0">tariku.belay@email.com, 0745 678 901</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>University District</td>
+                                    <td>3</td>
+                                    <td>20 Feb 2025 14:55:32 PM</td>
+                                    <td>
+                                        <strong>20 Feb 2025 14:55:32 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Alex Wanjala</a></td>
+                                    <td>20 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1249</td>
+                                    <td>
+                                        <strong>Addisalem Gebre</strong>
+                                        <p class="mb-0 pb-0">addisalem.gebre@email.com, 0756 789 012</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Bahir Dar</td>
+                                    <td>Blue Nile Road</td>
+                                    <td>6</td>
+                                    <td>22 Feb 2025 10:10:23 AM</td>
+                                    <td>
+                                        <strong>22 Feb 2025 10:10:23 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 800</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-warning float-end text-uppercase">Pending</span></td>
+                                    <td><a href="#">Feven Haile</a></td>
+                                    <td>22 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 800</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1250</td>
+                                    <td>
+                                        <strong>Kidist Tekle</strong>
+                                        <p class="mb-0 pb-0">kidist.tekle@email.com, 0767 890 123</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Debre Birhan</td>
+                                    <td>Main Street</td>
+                                    <td>4</td>
+                                    <td>25 Feb 2025 13:25:44 PM</td>
+                                    <td>
+                                        <strong>25 Feb 2025 13:25:44 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 400</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Dawit Yimer</a></td>
+                                    <td>25 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1251</td>
+                                    <td>
+                                        <strong>Samson Abebe</strong>
+                                        <p class="mb-0 pb-0">samson.abebe@email.com, 0778 901 234</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>Historical District</td>
+                                    <td>5</td>
+                                    <td>28 Feb 2025 09:30:12 AM</td>
+                                    <td>
+                                        <strong>28 Feb 2025 09:30:12 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 500</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Samuel Negash</a></td>
+                                    <td>28 Feb 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 500</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1252</td>
+                                    <td>
+                                        <strong>Eyerusalem Teferi</strong>
+                                        <p class="mb-0 pb-0">eyerusalem.teferi@email.com, 0789 012 345</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Lalibela</td>
+                                    <td>Church Road</td>
+                                    <td>2</td>
+                                    <td>02 Mar 2025 11:50:33 AM</td>
+                                    <td>
+                                        <strong>02 Mar 2025 11:50:33 AM</strong>
+                                        <p class="mb-0 pb-0">ETB 300</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Active</span></td>
+                                    <td><a href="#">Alex Wanjala</a></td>
+                                    <td>02 Mar 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 300</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">AM1253</td>
+                                    <td>
+                                        <strong>Yonas Desta</strong>
+                                        <p class="mb-0 pb-0">yonas.desta@email.com, 0790 123 456</p>
+                                    </td>
+                                    <td>Amhara</td>
+                                    <td>Gondar</td>
+                                    <td>Piazza District</td>
+                                    <td>4</td>
+                                    <td>05 Mar 2025 14:40:21 PM</td>
+                                    <td>
+                                        <strong>05 Mar 2025 14:40:21 PM</strong>
+                                        <p class="mb-0 pb-0">ETB 425</p>
+                                    </td>
+                                    <td><span class="badge rounded-pill bg-danger float-end text-uppercase">Inactive</span></td>
+                                    <td><a href="#">Feven Haile</a></td>
+                                    <td>05 Mar 2026 12:00 AM</td>
+                                    <td class="text-right fw-bold text-black">ETB 400</td>
+                                    <td class="text-uppercase text-right">
+                                        <a href="member-details.html" type="button" class="btn btn-info waves-effect waves-light btn-sm">
+                                            <i class="bx bx-show font-size-16 align-middle me-2"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <!-- modals start -->
+             <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content  transaction-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Membership registration payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-7 mb-3">
+                                    <div class="table-responsive bg-light p-4 h-100">
+                                        <table class="table table-light ">
+                                            <thead class="">
+                                                <tr style="border-bottom: 5px solid black;">
+                                                    <th colspan="4" class="text-capitalize">
+                                                        <h4 class="mb-0 fw-bold text-black">Invoicing details</h4>
+                                                        <p class="mb-0 ">Primary Meber Kelvin Kelly</p>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Item</th>
+                                                    <th>QTY</th>
+                                                    <th class="text-right">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="border-dushed">
+                                                <tr>
+                                                    <td><strong>1.</strong></td>
+                                                    <td>Membership Application Fee</td>
+                                                    <td><span class="standardQuantity">1</span></td>
+                                                    <td class="text-right text-dark fw-semibold"><strong>ETB <span class="cbh-application">25</span> </strong></td>
+                                                </tr>
+
+                                                    <tr>
+                                                        <td><strong>2.</strong></td>
+                                                        <td>Standard CBHI membership fee</td>
+                                                        <td><span class="standard-qty">-</span></td>
+                                                        <td class="text-right text-dark fw-semibold"><strong>ETB <span class="std-fee">25</span></strong></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>3.</strong></td>
+                                                        <td>Extra Members</td>
+                                                        <td><span class="extra-qty">-</span></td>
+                                                        <td class="text-right text-dark fw-semibold"><strong>ETB <span class="extra-total">25</span></strong></td>
+                                                    </tr>
+                                                
+                                            </tbody>
+                                        <tfoot class="">
+                                                <tr style="border-top: 3px solid black; border-bottom: 3px solid black;">
+                                                    
+                                                    <th class="text-right text-dark fw-bold" colspan="4">
+                                                        <small class="text-uppercase">Sub totals</small>
+                                                        <h4 class="mb-0">ETB <span class="text-dark cbh-total">-</span></h4>
+                                                    </th>
+                                                </tr>
+                                        </tfoot>
+                                        </table>
+
+                                    <div>
+                                            <div class="alert alert-warning border-warning border-2 text-black" role="alert">
+                                                <strong>Attention:</strong> Payment is pending for this invoice. Kindly settle it to avoid service interruption.
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            <div class="col-sm-12 col-md-5 mb-3">
+                                <div class="p-3 rounded-1 border border-dashed border-gray-5 py-4">
+                                        <h4 class="mb-0 pb-0 fw-semibold d-block">Select Payment Method</h4>
+                                        <p class="pb-0 mb-0">
+                                            <span class="text-muted">Ask the member: <em>How would you like to make this premium payment?</em></span><br>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="accordion mt-3" id="accordionExample">
+                                        <!-- Mobile Money Wallet -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle" src="assets/images/users/mobile_money.png" alt="Mobile Money" height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">Mobile Money Wallets</p>                                                
+                                                        <p class="mb-0 p-0"><small>Use this option for clients using Telebirr or MPESA</small></p>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        A payment request of <strong class="text-black">ETB <span class="cbh-total">-</span></strong> will be sent to the mobile number provided, depending on the selected wallet.
+                                                    </p>
+                                                    <div class="form-group mb-3">
+                                                        <label for="wallet">Select Mobile Wallet</label>
+                                                        <select class="form-select" id="wallet">
+                                                            <option value="telebirr">Telebirr</option>
+                                                            <option value="mpesa">MPESA</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="phone-input">Mobile Number</label>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control font-21 text-success form-control-lg" id="phone-input" placeholder="Enter Phone Number">
+                                                            <label for="phone-input">Phone Number</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mt-3">
+                                                        <button class="btn btn-primary w-100 text-uppercase bank-nxt-bank btn-finish">Send Prompt</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cash Payment -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle" src="assets/images/users/money.jpg" alt="Cash Payment" height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">CASH</p>                                                
+                                                        <p class="mb-0 p-0"><small>Use this option when you have received direct cash payment from the client</small></p>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="cash-inputs">
+                                                        <div class="mb-3">
+                                                            <label for="cash-amount">Amount Received (ETB)</label>
+                                                            <div class="form-floating">
+                                                                <input type="text" class="form-control font-21 text-success form-control-lg" id="cash-amount" placeholder="Enter Amount">
+                                                                <label for="cash-amount">Enter Amount Received</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="alert alert-info mb-3">
+                                                            <i class="bx bx-info-circle me-2"></i>
+                                                            An OTP will be sent to your registered phone number to verify that you have received this cash payment.
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="confirm-cash-payment">
+                                                            <label class="form-check-label" for="confirm-cash-payment">
+                                                                I confirm that I have received cash payment of <strong>ETB <span class="cbh-total">-</span></strong> from the client and am authorized to process this transaction
+                                                            </label>
+                                                        </div>
+
+                                                        <button class="btn btn-primary w-100 text-uppercase cash-continue-btn">Continue</button>
+                                                    </div>
+
+                                                    <div class="cash-otp-input d-none">
+                                                        <p>
+                                                            An OTP has been sent to your registered phone number. Please check your SMS to complete the verification. 
+                                                            <a href="#">Click here to resend OTP</a>.
+                                                        </p>
+                                                        <div class="form-group">
+                                                            <label for="cash-otp-input">OTP</label>
+                                                            <div class="form-floating mb-3">
+                                                                <input type="text" class="form-control font-21 text-success form-control-lg cash-otp-code" id="cash-otp-input" placeholder="Enter OTP">
+                                                                <label for="cash-otp-input">Enter the OTP sent to your phone</label>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="button" class="btn btn-light me-3 cash-edit-btn">
+                                                                <i class="bx bxs-edit-alt font-size-16 align-middle me-2"></i> Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary cash-submit-btn btn-finish" disabled>
+                                                                Complete Payment <i class="bx bx-right-arrow-alt font-size-16 align-middle"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- qr code payment method -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle" src="assets/images/users/qrCodePay.png" alt="Bank Payment" height="65">
+                                                    </div>
+                                                <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">Bank QR Payment</p>                                                
+                                                        <p class="mb-0 p-0">
+                                                        <small>
+                                                                Show QR. Client scans with bank app. Payment auto-validates.
+                                                            </small>
+
+
+                                                        </p>
+                                                    </div>
+
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p class="fw-bold text-black text-center">Scan below to initiate QR code Payment</p>
+                                                    <div>
+                                                        <img src="assets/images/qrCode.png" class="img w-100" alt="">
+                                                    </div>
+
+                                                    <div>
+                                                        <button class="btn btn-info w-100 mt-3 btn-finish">Process</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bank Payment -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle" src="assets/images/users/bank.png" alt="Bank Payment" height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">BANK</p>                                                
+                                                        <p class="mb-0 p-0"><small>By selecting this option, you confirm that the payment was received via bank or direct cash deposit</small></p>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="bank-inputs">
+                                                        <div class="mb-3">
+                                                            <label for="">Select Bank</label>
+                                                            <select class="form-select">
+                                                                <option disabled selected>Select Bank Account</option>
+                                                                <option>Tsede Bank - 3344556677</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="">Bank Reference Number</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Ref No.">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="">Payer's Full Name</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Full Name">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="">Payer's Phone Number</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Phone Number">
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="confirm-cash">
+                                                            <label class="form-check-label" for="confirm-cash">
+                                                                I confirm that I have received the bank deposit or cheque payment of <strong>ETB <span class="cbh-total">-</span></strong> from the client
+                                                            </label>
+                                                        </div>
+
+                                                        <button class="btn btn-primary w-100 text-uppercase bank-nxt-bank">Next</button>
+                                                    </div>
+
+                                                    <div class="bank-input d-none">
+                                                        <p>
+                                                            An OTP has been sent to the client's phone number: <strong class="text-black">0912345678</strong>. Please ask them to check their SMS. 
+                                                            <a href="#">Click here to resend OTP</a>.
+                                                        </p>
+                                                        <div class="form-group">
+                                                            <label for="">OTP</label>
+                                                            <div class="form-floating mb-3">
+                                                                <input type="text" class="form-control font-21 text-success form-control-lg bank-otp-input" id="otp-input" placeholder="Enter OTP">
+                                                                <label for="otp-input">Enter OTP sent to client's phone</label>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="button" class="btn btn-light me-3 btn-otp-edit">
+                                                                <i class="bx bxs-edit-alt font-size-16 align-middle me-2"></i> Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary btn-otp-submit" disabled>
+                                                                Next <i class="bx bx-right-arrow-alt font-size-16 align-middle"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-loader modal-content d-none">
+                        <div class="row">
+                            <div class="col-12 processing-transaction">
+                                <div class="text-center d-flex w-100 h-100 align-center justify-items-center flex-column">
+                                    <div class="mb-4">
+                                        <div class="spinner-chase">
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                        </div>
+                                    </div>
+                                    <h4>Processing Transaction</h4>
+                                    <p>Be patient as the transaction is being processed. This may take a few seconds</p>
+                                </div>
+                            </div>
+
+                            <!-- show for a transaction that went through -->
+                           <div class="col-12 trans-succesfull bg-light border-top p-5 p-sm-3 border border-dashed border-success d-none flex-wrap border-radius-10">
+                                <div class="text-center d-flex w-100 h-100 align-items-center justify-content-center flex-column">
+                                    <div class="mb-4">
+                                        <span class="mdi mdi-check-circle-outline text-success display-2"></span>
+                                    </div>
+                                    <h4 class="fw-bold">Registration & Payment Successful</h4>
+                                    <p class="text-muted mb-2">
+                                        The member has been successfully registered and their premium payment received.
+                                    </p>
+                                    <p class="text-muted">
+                                        <strong>Membership/Card Number:</strong> <span id="card-number">CBH123456789</span>
+                                    </p>
+                                    <p class="text-muted mb-4">
+                                        You may now download the receipt or close this window.
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <button class="btn btn-outline-secondary" type="button"data-dismiss="modal" aria-label="Close">Close</button>
+                                        <button class="btn btn-primary" type="button" onclick="downloadReceipt()">Download Receipt</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                function downloadReceipt() {
+                                    // Replace with actual download logic
+                                    window.location.href = '/path/to/generated/receipt.pdf';
+                                }
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- modal end -->
+
+             <!-- filters modal -->
+              <!-- Filter Modal -->
+                <div class="modal fade" id="filtering-modal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <h5 class="modal-title " id="filterModalLabel">
+                                    <i class="bx bx-filter-alt me-1"></i> Filter Members Table
+                                </h5>
+                                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Membership Status -->
+                                    <div class="col-md-6">
+                                        <div class="mt-3">
+                                            <h5 class="font-size-18 mb-2">Membership Status</h5>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="allStatus" checked>
+                                                <label class="form-check-label" for="allStatus">
+                                                    All
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="activeMembers">
+                                                <label class="form-check-label" for="activeMembers">
+                                                    Active Members
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="inactiveMembers">
+                                                <label class="form-check-label" for="inactiveMembers">
+                                                    Inactive Members
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="pendingMembers">
+                                                <label class="form-check-label" for="pendingMembers">
+                                                    Pending Members
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Family Size -->
+                                    <div class="col-md-6">
+                                        <div class="mt-3">
+                                            <h5 class="font-size-18 mb-2">Family Size</h5>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="allFamilySize" checked>
+                                                <label class="form-check-label" for="allFamilySize">
+                                                    All
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="smallFamily">
+                                                <label class="form-check-label" for="smallFamily">
+                                                    Small Family (1-2 members)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="mediumFamily">
+                                                <label class="form-check-label" for="mediumFamily">
+                                                    Medium Family (3-4 members)
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="largeFamily">
+                                                <label class="form-check-label" for="largeFamily">
+                                                    Large Family (5+ members)
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Payment Range -->
+                                    <div class="col-md-6">
+                                        <div class="mt-4">
+                                            <h5 class="font-size-18 mb-2">Annual Payment Amount (ETB)</h5>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="minPayment">Minimum</label>
+                                                    <input type="number" class="form-control" placeholder="Min" name="minPayment" id="minPayment">
+                                                </div>
+                                                <div class="col-6">
+                                                    <label for="maxPayment">Maximum</label>
+                                                    <input type="number" class="form-control" placeholder="Max" name="maxPayment" id="maxPayment">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Registration Date Range -->
+                                    <div class="col-md-6">
+                                        <div class="mt-4">
+                                            <h5 class="font-size-18 mb-2">Registration Date Range</h5>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="registrationStartDate">From</label>
+                                                    <input type="date" class="form-control" name="registrationStartDate" id="registrationStartDate">
+                                                </div>
+                                                <div class="col-6">
+                                                    <label for="registrationEndDate">To</label>
+                                                    <input type="date" class="form-control" name="registrationEndDate" id="registrationEndDate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Last Payment Date Range -->
+                                    <div class="col-md-6">
+                                        <div class="mt-4">
+                                            <h5 class="font-size-18 mb-2">Last Payment Date Range</h5>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="paymentStartDate">From</label>
+                                                    <input type="date" class="form-control" name="paymentStartDate" id="paymentStartDate">
+                                                </div>
+                                                <div class="col-6">
+                                                    <label for="paymentEndDate">To</label>
+                                                    <input type="date" class="form-control" name="paymentEndDate" id="paymentEndDate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Woreda Selection -->
+                                    <div class="col-md-6">
+                                        <div class="mt-4">
+                                            <h5 class="font-size-18 mb-2">Woreda</h5>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="allWoredas" checked>
+                                                <label class="form-check-label" for="allWoredas">
+                                                    All Woredas
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaGondar">
+                                                <label class="form-check-label" for="woredaGondar">
+                                                    Gondar
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaBahirDar">
+                                                <label class="form-check-label" for="woredaBahirDar">
+                                                    Bahir Dar
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaDessie">
+                                                <label class="form-check-label" for="woredaDessie">
+                                                    Dessie
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaDebreBirhan">
+                                                <label class="form-check-label" for="woredaDebreBirhan">
+                                                    Debre Birhan
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaLalibela">
+                                                <label class="form-check-label" for="woredaLalibela">
+                                                    Lalibela
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaDebreTabor">
+                                                <label class="form-check-label" for="woredaDebreTabor">
+                                                    Debre Tabor
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="woredaDebreMarkos">
+                                                <label class="form-check-label" for="woredaDebreMarkos">
+                                                    Debre Markos
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Registered By -->
+                                    <div class="col-md-6">
+                                        <div class="mt-4">
+                                            <h5 class="font-size-18 mb-2">Registered By</h5>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="allAgents" checked>
+                                                <label class="form-check-label" for="allAgents">
+                                                    All Agents
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="agentAlex">
+                                                <label class="form-check-label" for="agentAlex">
+                                                    Alex Wanjala
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="agentFeven">
+                                                <label class="form-check-label" for="agentFeven">
+                                                    Feven Haile
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="agentSamuel">
+                                                <label class="form-check-label" for="agentSamuel">
+                                                    Samuel Negash
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="agentDawit">
+                                                <label class="form-check-label" for="agentDawit">
+                                                    Dawit Yimer
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    <i class="bx bx-x me-1"></i> Cancel
+                                </button>
+                                <button type="button" class="btn btn-primary" id="applyMemberFilters">
+                                    <i class="bx bx-filter me-1"></i> Apply Filters
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" id="resetMemberFilters">
+                                    <i class="bx bx-refresh me-1"></i> Reset Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- end of filters modal -->
+
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © CBHI
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                Ministry of Health- Ethiopia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay "></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/jquery/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+    <script src="assets/libs/simplebar/simplebar.min.js "></script>
+    <script src="assets/libs/node-waves/waves.min.js "></script>
+
+     <!-- Bootstrap select -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+
+    <!-- numerals number formater -->
+    <script src="assets/libs/numeral/numeral.js "></script>
+
+    <!-- apexcharts -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js "></script>
+
+
+    <!-- dashboard init -->
+    <script src="assets/js/pages/dashboard.init.js "></script>
+    <!-- Saas dashboard init -->
+    <script src="assets/js/pages/earlyBirdDashboard.js "></script>
+    <script src="assets/js/pages/saas-dashboard.init.js"></script>
+
+    <!-- highchart map modules -->
+ <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+ <script src="https://code.highcharts.com/highcharts.js"></script>
+ <script src="https://code.highcharts.com/highcharts-more.js"></script>
+ <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+ <!-- highchart js files -->
+ <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+ <script src="https://code.highcharts.com/modules/export-data.js"></script>
+ <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+  <script src="assets/js/pages/revenue-by-time.js "></script>
+  <script src="assets/js/pages/annial-perfomance.js"></script>
+  <script src="assets/js/pages/county-revenue.js"></script>
+
+  <script src="assets/js/dataMap.js "></script>
+
+
+
+
+    <!-- App js -->
+    <script src="assets/js/app.js "></script>
+    <script src="assets/js/custom.js "></script>
+
+    <script>
+        $('.click-me').click()
+    </script>
+
+   <script>
+     var applicationFee=25
+     var standardQty=1
+     var extrasFees=0
+     var extrasMembers=0
+     var stdFee=400
+     $('.cbh-application').text(applicationFee)
+     $('.std-fee').text(stdFee)
+     $('.extra-total').text(extrasFees)
+     $('.extra-qty').text(extrasMembers)
+     $('.standard-qty').text(standardQty)
+     $('.cbh-total').text(stdFee+applicationFee)
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const addBtn = document.querySelector('.add-ben');
+
+        // Function to update numbering, labels, and IDs for all beneficiary blocks
+        function updateBeneficiaryNumbers() {
+            const allBens = document.querySelectorAll('.ben-div:not(.d-none)');
+            allBens.forEach((benDiv, index) => {
+                const num = index+1 + 1;
+                var amount=400
+                var bens=num
+               
+                var totalFee=amount+applicationFee
+                // Update header
+                const header = benDiv.querySelector('h6');
+                header.textContent = `Beneficiary Number ${num}`;
+
+                // Update inputs/selects IDs and clear values only if adding new, else keep values
+                benDiv.querySelectorAll('input, select').forEach(el => {
+                    const baseId = el.id.split('-')[0]; // get base ID before any dash
+                    el.id = `${baseId}-${num}`;
+                });
+
+               
+                
+
+                if(bens>3){
+                    amount=500+(200*(bens-4))
+                   $('.ben-extra').text('(' + (bens - 3) + ' Extras)');
+                   extrasFees=200*(bens-3)
+                   extrasMembers=bens-3
+
+                }
+                 if(bens<3){
+                   $('.ben-extra').text("");
+
+                }
+
+                 totalFee=amount+applicationFee
+
+                $('.cbh-amount').text(amount)
+                 $('.tot-ben').text(bens+1+" Beneficiaries")
+                  $('.cbh-total').text(totalFee)
+                  $('.extra-total').text(extrasFees)
+                  $('.extra-qty').text(extrasMembers)
+                  $('.standard-qty').text(standardQty)
+                  console.log(extrasFees)
+
+               
+                
+            });
+        }
+
+        // Add beneficiary block
+        addBtn.addEventListener('click', function () {
+            const original = document.querySelector('.ben-div'); // template
+            const clone = original.cloneNode(true);
+
+            // Remove d-none and clear input/select values
+            clone.classList.remove('d-none');
+            clone.querySelectorAll('input, select').forEach(el => el.value = '');
+
+            // Append clone before add button container
+            addBtn.parentElement.before(clone);
+
+            // Update all numbering and IDs after adding
+            updateBeneficiaryNumbers();
+        });
+
+        // Remove beneficiary block (event delegation)
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('rem-ben')) {
+                const benDiv = e.target.closest('.ben-div');
+
+                // Only remove if more than one beneficiary remains
+                if (document.querySelectorAll('.ben-div:not(.d-none)').length > 1) {
+                    benDiv.remove();
+                    updateBeneficiaryNumbers();
+                } 
+            }
+        });
+
+        // Initial numbering update in case there's one visible at start
+        updateBeneficiaryNumbers();
+    });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const cashAmountInput = document.getElementById('cash-amount');
+    const confirmCashCheckbox = document.getElementById('confirm-cash-payment');
+    const cashContinueBtn = document.querySelector('.cash-continue-btn');
+    const cashInputsSection = document.querySelector('.cash-inputs');
+    const cashOtpSection = document.querySelector('.cash-otp-input');
+    const cashEditBtn = document.querySelector('.cash-edit-btn');
+    const cashOtpInput = document.querySelector('.cash-otp-code');
+    const cashSubmitBtn = document.querySelector('.cash-submit-btn');
+    
+    // Function to validate the cash payment form
+    function validateCashForm() {
+        const isAmountValid = cashAmountInput.value.trim() !== '';
+        const isCheckboxChecked = confirmCashCheckbox.checked;
+        
+        // Enable/disable continue button based on validation
+        cashContinueBtn.disabled = !(isAmountValid && isCheckboxChecked);
+    }
+    
+    // Add event listeners for form validation
+    cashAmountInput.addEventListener('input', validateCashForm);
+    confirmCashCheckbox.addEventListener('change', validateCashForm);
+    
+    // Initialize button state
+    validateCashForm();
+    
+    // Toggle between cash input form and OTP verification section
+    cashContinueBtn.addEventListener('click', function() {
+        // Hide cash inputs section
+        cashInputsSection.classList.add('d-none');
+        
+        // Show OTP verification section
+        cashOtpSection.classList.remove('d-none');
+        
+        // Focus on OTP input
+        cashOtpInput.focus();
+    });
+    
+    // Edit button functionality (go back to cash input form)
+    cashEditBtn.addEventListener('click', function() {
+        // Show cash inputs section
+        cashInputsSection.classList.remove('d-none');
+        
+        // Hide OTP verification section
+        cashOtpSection.classList.add('d-none');
+        
+        // Focus on cash amount input
+        cashAmountInput.focus();
+    });
+    
+    // Enable/disable OTP submit button based on OTP input
+    cashOtpInput.addEventListener('input', function() {
+        // Enable submit button if OTP is entered (at least 4 characters)
+        cashSubmitBtn.disabled = cashOtpInput.value.trim().length < 4;
+    });
+    
+    // No need to update the amount in span elements
+    // The input box value will be used directly when submitting the form
+});
+    </script>
+
+   <script>
+    $('.btn-finish').on('click', function () {
+        $('.modal-content').removeClass('d-none');
+
+        // Wait 3 seconds before toggling visibility
+        setTimeout(function () {
+            $('.processing-transaction').addClass('d-none');
+            $('.trans-succesfull').removeClass('d-none');
+        }, 3000); // 3000ms = 3 seconds
+    });
+
+    $('#invoiceModal').on('hidden.bs.modal', function () {
+        // Your logic here
+        $('#invoiceModal .modal-loader').addClass('d-none')
+        $('.processing-transaction').removeClass('d-none').siblings().addClass('d-none');
+    });
+
+</script>
+
+
+
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>

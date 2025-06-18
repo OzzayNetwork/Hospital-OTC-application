@@ -1,0 +1,2458 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>HOSPITAL MANAGEMENT INFORMATION SYSTEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="HMIS By Craft Silicon Payments" name="description" />
+    <meta content="Kelvin Njuguna" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+    <!-- droping file -->
+    <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    
+     <!-- owl.carousel css -->
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.carousel.min.css">
+
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                    <img src="assets/images/the-logo.png" alt="" height="50">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-text-white.png" alt="" height="55">
+                                </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt="" class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="bx bx-fullscreen"></i>
+                            </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-bell bx-tada"></i>
+                                <span class="badge bg-danger rounded-pill">3</span>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="bx bx-cart"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="bx bx-badge-check"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+       <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title" key="t-pages">Hospital Management Information system </li>
+
+                         <li class="side-bar-button" >
+                            <a href="outpatient-checkin.html" class="waves-effect btn btn-light btn-rounded text-left write-msg-btn">
+                                <i class=""><img src="assets/images/plus-icon.svg" alt=""></i>
+                                <span class="text-capitalize">Patient Chekin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home-circle"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                       <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-hand-heart"></i>
+                                <span>Community Health</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="community-anlytics.html">Analytics</a></li>      
+                                <li><a href="community-members.html">Member Register</a></li>
+                                <li><a href="community-deposits.html">Member Deposits</a></li>
+                                <li><a href="community-visit.html">Visit Coverage Log</a></li>
+                                <li><a href="community-setUp.html">Set Up</a></li> 
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bxs-user-detail"></i>
+                                <span>Master Patient Index</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="patient-new.html">Patient Registration</a></li>      
+                                <li><a href="patients.html">MPI Register</a></li> 
+                            </ul>
+                        </li>
+
+                      <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" data-toggle="tooltip" title="Insurance Processing">
+                                <i class="mdi mdi-shield-cross-outline"></i> <!-- Insurance-related icon -->
+                                <span>Insurance Processing</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="insurance-quick-stats.html" data-toggle="tooltip" title="View quick statistics on cases">Quick Stats</a></li>
+                                <li><a href="insurance-cases-all.html" data-toggle="tooltip" title="View quick statistics on cases">All cases</a></li>
+                                <li><a href="insurance-pending-approval.html" data-toggle="tooltip" title="View cases pending approval">Pending Approval</a></li>      
+                                <li><a href="insurance-rejected-approvals.html" data-toggle="tooltip" title="View cases rejected from approval">Rejected Approvals</a></li> 
+                                <li><a href="insurance-approved-processing.html" data-toggle="tooltip" title="View cases approved for processing">Approved for Processing</a></li> 
+                                <li><a href="insurance-reverted-approvals.html" data-toggle="tooltip" title="View cases reverted after approval">Reverted Approvals</a></li>
+                                <li><a href="insurance-awaiting-closure.html" data-toggle="tooltip" title="View cases awaiting closure">Awaiting Closure</a></li>   
+                                <li><a href="insurance-closed-cases.html" data-toggle="tooltip" title="View fully closed cases">Closed Cases</a></li>    
+                                <li><a href="insurance-archived-cases.html" data-toggle="tooltip" title="View fully closed cases">Archived Cases</a></li>      
+                                <li><a href="insurance-user-logs.html" data-toggle="tooltip" title="View fully closed cases">User Logs</a></li>     
+                                <li><a href="insurance-preferences.html" data-toggle="tooltip" title="View fully closed cases">Preferences</a></li>    
+
+                            </ul>
+                            
+                        </li>
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Clinical Activities">
+                                <i class="mdi mdi-hospital-building"></i> <!-- Hospital Building Icon -->
+                                <span>Clinical Management</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="clinical-quick-stats.html" title="View Quick Stats">Quick Stats</a></li>
+                                <li><a href="clinical-new-encounter.html" title="Log New Encounters">New Encounters</a></li>
+                                <li><a href="clinical-pending-consultation.html" title="View Pending Consultations">Pending Consults</a></li>
+                                <li><a href="clinical-active-consultation.html" title="View Active Consultations">Active Consults</a></li>
+                                <li><a href="clinical-lab-list.html" title="List of patients sent to the Lab for examination">To Lab</a></li>
+                                <li><a href="clinical-awaiting-interpretation.html" title="Patients results Awaiting Lab Interpretation">Pending Lab Review</a></li>
+                                <li><a href="clinical-discharged.html" title="Completed Visits Summary">Completed Visits</a></li>
+                            </ul>
+                        </li>
+                        
+
+                        <li>
+                            <a href="encounter-all.html" class="waves-effect">
+                                <i class="bx bx bx-list-ul"></i><span>Encounter List</span>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-human-queue mdi"></i>
+                                <span>Patient's Queue</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="out-Patient-visits.html">Out Patient Visits Queue</a></li> 
+                                <li><a href="queue-triage.html">Triage</a></li>      
+                                <li><a href="queue-OPD.html">Consaltation </a></li> 
+                                <li><a href="queue-cashier.html">Cashier </a></li> 
+                                <li><a href="queue-lab-schedule.html">Scheduled lab Tests</a></li> 
+                                <li><a href="queue-ongoing-schedule.html">Ongoing lab Tests</a></li> 
+                                <li><a href="queue-test-interpratation-schedule.html">Lab Test Interpratation</a></li> 
+                                <li><a href="queue-scan-exam-schedule.html">Scheduled Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-ongoing.html">Ongoing Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-interpratation.html">Scan exam Interpratation</a></li> 
+                                <li><a href="queue-pharmacey.html">Pharmacy</a></li> 
+                               
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="fas fa-flask"></i>
+                                <span>Medical Lab</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="lab-stats.html" title="Get a quick overview of lab activities and statistics">Lab Quick Stats</a></li>
+                                <li><a href="lab-orders-pending-payment.html" title="View tests awaiting payment or waiver before scheduling">Tests Pending Payment</a></li>
+                                <li><a href="lab-orders.html" title="Check all scheduled lab tests awaiting processing">Scheduled Lab Tests</a></li>
+                                <li><a href="lab-orders-acknowledged.html" title="See lab tests acknowledged and ready for processing">Acknowledged Lab Tests</a></li>
+                                <li><a href="lab-orders-collected-sample.html" title="View samples collected and ready for testing">Collected Samples</a></li>
+                                <li><a href="lab-orders-pending-results.html" title="Track lab tests with results pending">Pending Lab Results</a></li>
+                                <li><a href="lab-orders-released-tests.html" title="Access lab test results that have been finalized and released">Results Released</a></li>
+                                <li><a href="lab-setup.html" title="Manage and configure lab tests and settings">Lab Test Setup</a></li>
+                                <li><a href="patients.html" title="View patient lab reports and detailed results">Lab Reports</a></li>
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-calendar-month mdi"></i>
+                                <span>Appointments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="appointments-pending.html">Pending Appointments</a></li>      
+                                <li><a href="appointments-fullfiled.html">Fullfiled AAppointments</a></li> 
+                                <li><a href="appointments-due.html">Due Appointments</a></li> 
+                            </ul>
+                        </li>
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-clipboard-edit mdi"></i>
+                                <span>Stock Management</span>
+                            </a>
+                            <ul class="sub-menu text-capitalize" aria-expanded="false">
+                                <li><a href="stock-ordering.html">Stock Enquiry</a></li>     
+                                <li><a href="stock-taking.html">Stock Taking</a></li>                       
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-cog-outline mdi"></i>
+                                <span>Setups</span>
+                            </a>
+                           <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="set-up-departments.html">Departments</a></li>
+                                <li><a href="set-up-pricing.html">Pricing & Charges</a></li>
+                                <li><a href="set-up-equipments.html">Equipments</a></li>
+                                <li><a href="set-up-wards.html">Ward Set Up</a></li>
+                                <li><a href="set-up-bed.html">Beds Setup</a></li>
+                                <li><a href="set-Pharmacy.html">Pharmacy inventory</a></li>
+                                <li><a href="lab-setup-new.html">New Lab test Setup</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class="menu-title" key="t-pages">Reports</li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-outline"></i>
+                                <span>NHIF Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="nhif-reports.html">NHIF Payments</a></li>   
+                                <li><a href="nhif-cleared.html">Cleared Payemtnts</a></li>      
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="reports-outpatient.html" class="waves-effect">
+                                <i class="bx bx-clinic"></i><span>Outpatient Reports</span>
+                            </a>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-clipboard-text-outline"></i>
+                                <span>Stock Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="stock-daily-rep.html">Daily Reports</a></li>   
+                                <li><a href="stock-manual-exits.html">Manual Exits</a></li>      
+                                <li><a href="stock-order-enquarry.html">Order Enquarries</a></li>      
+                                                             
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reports-inpatient.html" class="waves-effect">
+                                <i class="mdi mdi-bed-outline"></i><span>Inpatient Reports</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reports-revenue-streams.html" class="waves-effect">
+                                <i class="mdi mdi-bank-transfer"></i><span>Revenue Perfomance</span>
+                            </a>
+                        </li>
+
+                      <li>
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-doctor"></i><span>Physician Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="d-none">
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-office-building"></i><span>Departmental Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bx-receipt"></i>
+                                <span>Bills</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                               
+                                <li><a href="bills-receipted.html">Receipted Bills</a></li>      
+                                <li><a href="bills-unpaid.html">Unpaid Bills</a></li>                               
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Covered Services">
+                                <i class="mdi mdi-clipboard-check-outline"></i>
+                                <span>Covered Services</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="covered-lab-tests.html" title="Manage Covered Lab Tests"><i class="mdi mdi-flask-outline"></i> Lab Tests</a></li>
+                                <li><a href="covered-radiology.html" title="Manage Covered Radiology Tests"><i class="mdi mdi-radiology-box"></i>Radiology Tests</a></li>
+                                <li><a href="covered-drugs.html" title="Manage Covered Drugs"><i class="mdi mdi-pill"></i> Drugs</a></li>
+                                <li><a href="covered-procedures.html" title="Manage Covered Procedures"><i class="mdi mdi-stethoscope"></i> Procedures</a></li>
+                                <li><a href="coverage-policies.html" title="Manage Coverage Policies and Rules"><i class="mdi mdi-file-document-outline"></i> Coverage Policies</a></li>
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html" title="Manage Designations">Designations</a></li>
+                                <li><a href="org-departments.html" title="Manage Departments">Departments</a></li>
+                                <li><a href="org-employment-types.html" title="Manage Employment Types">Employment Types</a></li>
+                                <li><a href="org-affiliated-institution.html" title="Manage Affiliated Institutions">Affiliated Institution</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html" title="Add New User">Add User</a></li>
+                                <li><a href="user-userlist.html" title="Add New User">Manage Users</a></li>
+                                <li><a href="users-deactivated.html" title="View Deactivated Users">Deactivated Users</a></li>
+                                <li><a href="use-logs.html" title="View System Logs">System Logs</a></li>
+                                <li><a href="users-roles.html" title="Manage User Roles">System Roles</a></li>
+                            </ul>
+                        </li>
+
+
+                        
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Lab Reports Overview</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="index.html">Dashboards</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Medical lab</a></li>
+                                        <li class="breadcrumb-item active">Test Setup</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body bg-soft bg-info border-1 pt-4 border border-primary">
+                                    <div class="row">
+                                        <!-- Lab Orders Overview Title -->
+                                        <div class="col-lg-4">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <img src="assets/images/users/avatar-1.png" alt="Your Logo" class="avatar-md rounded-circle img-thumbnail">
+                                                </div>
+                                                <div class="flex-grow-1 align-self-center">
+                                                    <div class="text-muted">
+                                                        <p class="mb-2">Lab Orders Overview - Homa Bay County Hospital</p>
+                                                        <h5 class="mb-1">Quick Stats on Medical Lab Orders</h5>
+                                                        <p class="mb-0">Summary of recent lab orders providing insight into the hospital’s medical testing activities.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Quick Stats -->
+                                        <div class="col-lg-8 align-self-center">
+                                            <div class="text-lg-left mt-4 mt-lg-0 text-black">
+                                                <div class="row">
+                                                    <!-- New Orders -->
+                                                    <div class="col-6 col-sm-4 col-md-2">
+                                                        <div data-toggle="tooltip" title="Newly Created Lab Orders">
+                                                            <div class="avatar-xs mb-3">
+                                                                <span class="avatar-title rounded-circle bg-info font-size-16">
+                                                                    <i class="mdi mdi-playlist-plus text-white"></i>
+                                                                </span>
+                                                            </div>
+                                                            <p class="text-muted text-truncate mb-2">New Orders</p>
+                                                            <h5 class="mb-0">480</h5>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Acknowledged Patients -->
+                                                    <div class="col-6 col-sm-4 col-md-2">
+                                                        <div data-toggle="tooltip" title="Patients whose Lab Orders were acknowledged">
+                                                            <div class="avatar-xs mb-3">
+                                                                <span class="avatar-title rounded-circle bg-primary font-size-16">
+                                                                    <i class="mdi mdi-account-multiple-outline text-white"></i>
+                                                                </span>
+                                                            </div>
+                                                            <p class="text-muted text-truncate mb-2">Acknowledged Patients</p>
+                                                            <h5 class="mb-0">1,200</h5>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Collected Samples -->
+                                                    <div class="col-6 col-sm-4 col-md-2">
+                                                        <div data-toggle="tooltip" title="Samples collected from patients for lab analysis">
+                                                            <div class="avatar-xs mb-3">
+                                                                <span class="avatar-title rounded-circle bg-danger font-size-16">
+                                                                    <i class="mdi mdi-flask-outline text-white"></i>
+                                                                </span>
+                                                            </div>
+                                                            <p class="text-muted text-truncate mb-2">Collected Samples</p>
+                                                            <h5 class="mb-0">850</h5>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Released Results -->
+                                                    <div class="col-6 col-sm-4 col-md-2 d-none d-md-block">
+                                                        <div data-toggle="tooltip" title="Results that have been processed and released">
+                                                            <div class="avatar-xs mb-3">
+                                                                <span class="avatar-title rounded-circle bg-warning font-size-16">
+                                                                    <i class="mdi mdi-check-all text-white"></i>
+                                                                </span>
+                                                            </div>
+                                                            <p class="text-muted text-truncate mb-2">Released Results</p>
+                                                            <h5 class="mb-0">700</h5>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Tests Pending Review -->
+                                                    <div class="col-6 col-sm-4 col-md-2">
+                                                        <div data-toggle="tooltip" title="Samples that are pending review before final results are released">
+                                                            <div class="avatar-xs mb-3">
+                                                                <span class="avatar-title rounded-circle bg-success font-size-16">
+                                                                    <i class="mdi mdi-magnify text-white"></i>
+                                                                </span>
+                                                            </div>
+                                                            <p class="text-muted text-truncate mb-2">Tests Pending Review</p>
+                                                            <h5 class="mb-0">950</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card ">
+                                <div class="card-header bg-white border-bottom">
+                                   
+
+                                    <div class="clearfix">
+                                        <div class="float-end mb-3">
+                                            <div class="input-group input-group-sm">
+                                                <select class="form-select form-select-sm">
+                                                    <option value="" disabled>Select Lab</option>
+                                                <option value="all-labs" selected>All Labs</option>
+                                                <option value="inpatient-lab">Inpatient Lab</option>
+                                                <option value="outpatient-lab">Outpatient Lab</option>
+                                                <option value="mch-lab">MCH Lab</option>
+                                                </select>
+                                                <label class="input-group-text">Lab</label>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-title text-uppercase text-black">Lab test Error Rate</h4>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="">
+                                       
+
+                                        <div id="lab-error-rate-gauge"></div>
+
+                                        <div>
+                                            <div class="alert alert-warning mb-0" role="alert">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <div class="avatar-xs me-3">
+                                                            <span class="avatar-title rounded-circle bg-warning bg-soft text-warning font-size-18">
+                                                                <i class="mdi mdi-alert"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        
+                                                        <div>
+                                                            <h5 class="font-size-14">Caution!</h5>
+                                                            <p class="text-muted pb-0">The current lab error rate is at <strong class="text-warning">10%</strong>. While within acceptable limits, it’s approaching the critical threshold. Continuous monitoring and corrective actions are recommended to prevent further increase.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div id="user-accounts" class="border-info p-1"></div>
+                                        </div>
+                                       
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-8">
+                            <div class="card bg-soft bg-">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="card-title mb-4 text-black text-uppercase">Test Breakdown by Gender</h4>
+                                       <div class="d-flex align-items-center">
+                                            <div class="input-group  mx-3 text-uppercase">
+                                                <select class="form-select form-select-sm">
+                                                    <option value="" disabled="">Select Age Group</option>
+                                                    <option value="all-ages" selected="">All Ages</option>
+                                                    <option value="neonates">Neonates (0 - 28d)</option>
+                                                    <option value="infants">Infants (1m - 1y)</option>
+                                                    <option value="young-children">Young Children (1 - 5y)</option>
+                                                    <option value="children">Children (6 - 12y)</option>
+                                                    <option value="adolescents">Adolescents (13 - 17y)</option>
+                                                    <option value="young-adults">Young Adults (18 - 35y)</option>
+                                                    <option value="middle-aged">Middle-aged (36 - 59y)</option>
+                                                    <option value="seniors">Seniors (60+)</option>
+                                                </select>
+                                                <label class="input-group-text ">Age</label>
+                                            </div>
+
+                                            <div class="ms-auto ">
+                                                <ul class="nav nav-pills nav-pills-sm nav-sm text-uppercase no-wrap flex-nowrap">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="javascript:void(0);">Week</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="javascript:void(0);">Month</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="javascript:void(0);">Year</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                       </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        
+                                        <div class="col-12">
+                                            <div id="TestTypeGraph"></div>
+                                        </div>
+
+                                        <div class="col-12 mt-3">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <div class="bg-soft p-3 stat-cont female-stat">
+                                                        <div class="d-flex">
+                                                            <h1><i class="fas fa-female"></i></h1>
+                                                            <div>
+                                                                <h2 class="mb-0 fw-thin fs-1">60%</h2>
+                                                                <p class="fw-bold text-uppercase fs-5 mb-0">Female-Based Tests</p>
+                                                                <p><strong>Total Tests Conducted: 300 of 500</strong><br>Tests conducted between <strong>1 June 2024</strong> and <strong>31 June 2024</strong></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-sm-6 col-md-6">
+                                                    <div class="bg-soft p-3 stat-cont male-stat">
+                                                        <div class="d-flex">
+                                                            <h1><i class="fas fa-male"></i></h1>
+                                                            <div>
+                                                                <h2 class="mb-0 fw-thin fs-1">40%</h2>
+                                                                <p class="fw-bold text-uppercase fs-5 mb-0">Male-Based Tests</p>
+                                                                <p><strong>Total Tests Conducted: 200 of 500</strong><br>Tests conducted between <strong>1 June 2024</strong> and <strong>31 June 2024</strong></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-5 col-lg-4">
+                            <div class="card">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title text-black text-uppercase">Top Performers</h4>
+                                       
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="">
+                                        <table class="table align-middle mb-0 table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">John Doe</h5>
+                                                        <p class="text-muted mb-0">Lab Technician</p>
+                                                    </td>
+                                        
+                                                    <td>
+                                                        <div id="radialchart-1" data-colors='["--bs-primary"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Tests</p>
+                                                        <h5 class="mb-0">37 %</h5>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">Jane Smith</h5>
+                                                        <p class="text-muted mb-0">Pathologist</p>
+                                                    </td>
+                                        
+                                                    <td>
+                                                        <div id="radialchart-2" data-colors='["--bs-success"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Tests</p>
+                                                        <h5 class="mb-0">72 %</h5>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">David Lee</h5>
+                                                        <p class="text-muted mb-0">Radiologist</p>
+                                                    </td>
+                                        
+                                                    <td>
+                                                        <div id="radialchart-3" data-colors='["--bs-danger"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Tests</p>
+                                                        <h5 class="mb-0">54 %</h5>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">Emily Clark</h5>
+                                                        <p class="text-muted mb-0">Microbiologist</p>
+                                                    </td>
+                                        
+                                                    <td>
+                                                        <div id="radialchart-4" data-colors='["--bs-warning"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Tests</p>
+                                                        <h5 class="mb-0">60 %</h5>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">Michael Johnson</h5>
+                                                        <p class="text-muted mb-0">Biomedical Engineer</p>
+                                                    </td>
+                                        
+                                                    <td>
+                                                        <div id="radialchart-5" data-colors='["--bs-info"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Tests</p>
+                                                        <h5 class="mb-0">85 %</h5>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top">
+                                    <div class="text-center">
+                                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light"> View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-7 col-lg-8">
+                            <div class="card">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title text-black text-uppercase">Average Turnaround Time</h4>
+                                        <div class="ms-auto">
+                                            <ul class="nav nav-pills text-uppercase">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="javascript:void(0);">Week</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Month</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Year</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="containerAvgTime"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+
+                       
+                       
+                    </div>
+
+                    <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <!-- receipting modal -->
+            <div class="modal fade receipting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Food Handler Certificate Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <address>
+                                        <strong class="text-capitalize">Patient Details</strong><br>
+                                        Mrs Jane Doe<br>
+                                        <a href="mailto:email@mail.com">email@mail.com</a>, <a href="tel:+254704549859">0704 549 859</a><br>                                   
+                                        
+                                        <br>
+                                        Valid From 1 Mar 2022, 10:20 AM
+                                        <br>
+                                        <span class="pr-2">Valid Till 2 Mar 2023, 10:20 AM </span>
+                                        <span class="badge rounded-pill bg-success text-uppercase me-3">Active</span>
+                                        
+                                    </address>
+                                </div>
+
+                                <div class="col-6 text-right">
+                                    <address>
+                                        <strong class="text-capitalize">Location Details</strong><br>
+                                        Street/Road: Mombasa Road<br>
+                                        Plot No.: 122202/1250<br>                                   
+                                        Building: The Tower. Floor: 12. Door/Stall No.: 123<br/>
+                                        Subcounty: CBD. Ward: Mututu
+                                        
+                                        
+                                    </address>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="hori-timeline mt-4">
+                                        <div class="owl-carousel owl-theme  navs-carousel events timeline-carousel" id="timeline-carousel">
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">12 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Application</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted text-capitalize">Self Service Portal</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">13 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Lab Test</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3 text-capitalize">
+                                                        <p class="text-muted">Dr Mary Jane at Taifa Clinic</p>
+                                                        <a href="PrintDocs/health-result-slip-master/health-result-slip-master/slip33.html" target="_blank" type="button" class="btn btn-link waves-effect"><i class="mdi mdi-eye-outline"></i> View Result Slip</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">14 Sep 2023 12:57 PM</div>
+                                                        <h5 class="mb-4">Approved</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">Mary Max</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">15 Sep 2023 12:54 PM</div>
+                                                        <h5 class="mb-4">Certification</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">Certifcate Issued By Kiprop Tanui</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 text-sm-end d-none">
+                                    <address class="mt-2 mt-sm-0">
+                                        <strong>Payment Method</strong><br>
+                                        <span class="fw-medium">MPESA</span><br>
+                                        Phone No. 0704 549 859<br> <br>
+                                        On 1 Mar 2022, 10:20 AM
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">ND12368</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap vertical-align-middle">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th>More Details</th>
+                                                <th class="text-end"></th>
+                                                
+                                            </tr>
+                                        </thead>
+                                       
+                                        <tbody>
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Serial Number</p>
+                                                </td>
+                                                <td class="">12WER345</td>
+                                                
+                                            </tr>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Business Owner(s)</p>
+                                                </td>
+                                                <td class="">John Doe Kamau, James Kuria Kimotho</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Profession/Occupation</p>
+
+                                                </td>
+                                                <td class="">Food Processing</td>
+                                                
+                                            </tr>
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Application Date</p>
+
+                                                </td>
+                                                <td class="">5 Jan 2022 10:09 AM</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Date Approved</p>
+
+                                                </td>
+                                                <td class="">11 Jan 2022 09:54 AM</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Days To Expiry</p>
+
+                                                </td>
+                                                <td class="">134 Days</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Amount Paid</p>
+
+                                                </td>
+                                                <td class="text-uppercase">KES 1,000</td>
+                                                
+                                            </tr>
+
+
+
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           
+                            <a href="PrintDocs/Food-handler/health-permit.html" target="_blank" type="button" class="btn btn-primary waves-effect waves-light">
+                                <i class="mdi mdi-printer font-size-16 align-middle me-2"></i> Print Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of receipting modal -->
+
+            <!-- invoice details -->
+            <div class="modal fade invoice-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Invoice Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <address>
+                                    <strong>Billed To:</strong><br>
+                                    Kelvin Njuguna<br>
+                                    email@mail.com, 0704 549 859<br>                                   
+                                    Hse No. 410, 90 Degrees By Tsavo
+                                    <br><br>
+                                    1 Mar 2022, 10:20 AM
+                                </address>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">Invoice Details ( <span class="text-primary fw-medium">No. 1237</span> )</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 70px;">No.</th>
+                                                <th>Item</th>
+                                                <th class="text-end">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Rent Deposit</td>
+                                                <td class="text-end">KES 24,500</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Monthly Rent</td>
+                                                <td class="text-end">KES 12,000</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>03</td>
+                                                <td>TAX (18%)</td>
+                                                <td class="text-end">KES 250</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-end">Total</td>
+                                                <td class="text-end fw-bold">KES 36,750</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-end">Paid</td>
+                                                <td class="text-end  fw-bold">KES 0.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="2" class="border-0 text-end">
+                                                    <strong>Balance</strong></td>
+                                                <td class="border-0 text-end">
+                                                    <h5 class="m-0 text-uppercase fw-bold">KES 36,750</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-12 d-none">
+                                <div class="table-resposive p-4 px-2 pt-2 overflow-visible">
+                                    <table class="w-100">
+                                        <tbody>
+                                            <tr data-id="1">
+                                                <td>
+                                                    <label for="" class="">Payment Method</label>
+                                                    <select class="form-control selectpicker w-100 payment-method" data-style="btn-secondary w-100" data-live-search="true" title="Select payment Method">
+                                                        <option value="Mpesa">MPESA</option>
+                                                        <option value="Cash">CASH</option>   
+                                                     </select>
+                                                </td>
+                                                <td class="px-3 ">
+                                                    <div class="phone-num d-none">
+                                                        <label for="">Phone No.</label>
+                                                        <input type="text " class="form-control w-100 d-flex " placeholder="Phone No." spellcheck="false" data-ms-editor="true">
+                                                    </div>
+
+                                                </td>
+                                                <td class="px-3">
+                                                    <label for="">Amount To Be Paid</label>
+                                                    <input type="text " class="form-control w-100 d-flex" placeholder="KES" spellcheck="false" data-ms-editor="true">
+
+                                                </td>
+                                                <td class="text-right float-right">
+                                                    <div class="d-flex flex-column">
+                                                        <label class="opacity-0">Something</label>
+                                                        <a href="#" class="btn btn-primary w-md waves-effect waves-light">Submit</a>
+                                                    </div>
+                                                </td>
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="float-end">
+                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="mdi mdi-printer font-16px"></i></a>
+                                <a href="javascript: void(0);" class="btn btn-primary w-md waves-effect waves-light">Receive Payment</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- invoice details -->
+
+            <!-- patients details modal -->
+            <div class="modal fade patient-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Add A bed to the ward</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="Bed Number">Bed Number</label>
+                                        <input type="text" class="form-control mb-3" placeholder="Enter Bed Number">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="Bed Number">Bed Type</label>
+                                        <select class="form-control selectpicker w-100 payment-method" data-live-search="true" title="Select Bed Type">
+                                            <option value="fowler">Fowler bed</option>
+                                            <option value="electric">Electric bed</option>
+                                            <option value="stretcher">Stretcher</option>
+                                            <option value="low">Low bed</option>
+                                            <option value="low_air_loss">Low air loss bed</option>
+                                            <option value="Other">Other ...</option>
+                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button class="btn btn-primary w-100">Save Changes</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of patieonts details modal -->
+
+            <!-- kin details modal -->
+            <div class="modal fade kin-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Jane's Kin Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap vertical-align-middle">
+                                       
+                                       
+                                        <tbody>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Relationship with patient</p>
+                                                </td>
+                                                <td class="">Brother</td>
+                                                
+                                            </tr>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Full Names</p>
+                                                </td>
+                                                <td class="">Alex Kinoti Livondo</td>
+                                                
+                                            </tr>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Phone Number</p>
+                                                </td>
+                                                <td class="">
+                                                    <a href="tel:+254712345678">0712 345 678</a>
+                                                </td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Email Address</p>
+
+                                                </td>
+                                                <td class=""><a href="mailto:Alex@kinoti.com">Alex@kinoti.com</a></td>
+                                                
+                                            </tr>
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Physical Address</p>
+
+                                                </td>
+                                                <td class="">Near Mount Kilimanjaro Joint</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-none">
+                           
+                            <a href="PrintDocs/Food-handler/health-permit.html" target="_blank" type="button" class="btn btn-primary waves-effect waves-light">
+                                <i class="mdi mdi-printer font-size-16 align-middle me-2"></i> Print Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of kin details modal -->
+
+             <!-- Patient registration -->
+        <div class="modal fade " id="registerCustomer" data-backdrop="static" data-keyboard="false" tabindex="-1 " role="dialog " aria-labelledby="staticBackdropLabel " aria-hidden="true ">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content ">
+                    
+
+                    <div class="modal-header">
+                        <h5 class="modal-title text-capitalize" id="exampleModalLongTitle">New Ward Registration</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body steps-container">
+                        <div class="mb-4 the-step patient-info active">
+                            <div class="avatar-md mx-auto mb-4 d-none">
+                                <div class="avatar-title bg-light rounded-circle text-primary h1 ">
+                                    <i class="mdi mdi-account-multiple-plus "></i>
+                                </div>
+                            </div>
+
+                            <div class="row  text-left">
+                                <div class="col-12">
+                                    <form>
+                                        <div class="row ">
+                                            <div class="col-12 mb-3">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label for="">Ward Name</label>
+                                                        <input type="text " class="form-control two-step " placeholder="Enter the Ward's Name">
+                                                    </div>
+
+                                                    <div class="col-6 mb-3">
+                                                        <div class="">
+                                                            <label for="digit1-input " class="">Ward Type</label>
+                                                            <select class="form-control selectpicker bg-white select-revenue" title="Select Ward">
+                                                                <option value="General ward">General ward</option>                                                                   
+                                                                <option value=" Intensive care unit (ICU)"> Intensive care unit (ICU)</option>    
+                                                                <option value=" Maternity ward"> Maternity ward</option>                                                                   
+                                                                <option value=" Pediatric ward"> Pediatric ward</option>   
+                                                                <option value="Psychiatric ward">Psychiatric ward</option>                                                                   
+                                                                                                                        
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6 mb-3">
+                                                        <div class="">
+                                                            <label for="digit1-input " class="">Ward's Location</label>
+                                                           <input type="text" class="form-control" placeholder="ie floor number, room number, wing etc">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6 mb-3">
+                                                        <div class="">
+                                                            <label for="digit1-input " class="">Number of Rooms</label>
+                                                           <input type="text" class="form-control" placeholder="Number of Rooms/Cubicals">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                       
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 the-step next-of-kin-modal d-none">
+                            <h4 class="text-primary text-capitalize">Next Of Kin Details</h4>
+                            <div class="row">
+                                
+                                <div class="col-12 mb-4">
+                                    <label for="" class="text-capitalize">Relationship with Patient Being registerd</label>
+                                    <select class="form-control selectpicker bg-white select-revenue" title="Select Next Of Kin's Relationship with the patient being registered" data-live-search="true">
+                                        <option value="">Mother</option>
+                                        <option value="">Father</option>
+                                        <option value="">Daughter</option>
+
+                                        <option value="">Son</option>
+                                        <option value="">Sister</option>
+                                        <option value="">Brother</option>
+
+                                        <option value="">Friend</option>
+                                        <option value="">Uncle</option>
+                                        <option value="">Aunt</option>
+                                     </select>
+                                </div>
+
+                                <div class="col-12 ">
+                                    <div class="">
+                                        <label for="digit1-input " class="">Next Of Kin Full Names</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <input type="text " class="form-control two-step " placeholder="First Name">
+                                        </div>
+
+                                        <div class="col-4">
+                                            <input type="text " class="form-control two-step " placeholder="Middle Name">
+                                        </div>
+
+                                        <div class="col-4">
+                                            <input type="text " class="form-control two-step " placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 ">
+                                    <div class="">
+                                        <label for="digit1-input " class="">Next Of Kin Contact information</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="text" class="form-control two-step " placeholder="Phone Number">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <input type="email" class="form-control two-step " placeholder="Email address">
+                                        </div>
+
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="">
+                                        <label for="digit1-input " class="">Physical Address</label>
+                                       <textarea name="" id=""  class="form-control" placeholder="Enter Address"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer d-flex">
+                        <div class="d-none">
+                            <button data-toggle="modal" data-target="#subscribeModal" data-dismiss="modal" type="button" class="btn btn-link waves-effect">Back To Patient Search</button>
+                        </div>
+                        <div class="d-flex modal-next-prev-container">
+                            <button type="button" class="btn btn-outline-secondary btn-prev waves-effect waves-effect waves-light me-3">
+                                <i class="bx bx-left-arrow-alt font-size-16 align-middle me-2"></i> Previouse
+                            </button>
+    
+                            <button type="button" class="btn btn-primary waves-effect waves-effect waves-light btn-next">
+                                Next <i class="bx bx-right-arrow-alt font-size-16 align-middle me-2"></i>
+                            </button>
+    
+                            <button type="button" class="btn btn-submit btn-success d-none ml-3 ms-3 waves-effect waves-effect waves-light btn-next">
+                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Submit Application 
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Patient registration -->
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Hospital Management Information System
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay "></div>
+
+   <!-- JAVASCRIPT -->
+   <script src="assets/libs/jquery/jquery.min.js "></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+   </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+   </script>
+
+   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+   <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+   <script src="assets/libs/simplebar/simplebar.min.js "></script>
+   <script src="assets/libs/node-waves/waves.min.js "></script>
+
+ 
+
+   <!-- Bootstrap select -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+
+   <!-- numerals number formater -->
+   <script src="assets/libs/numeral/numeral.js "></script>
+
+   <!-- apexcharts -->
+   <script src="assets/libs/apexcharts/apexcharts.min.js "></script>
+
+
+   <!-- dashboard init -->
+   <script src="assets/js/pages/dashboard.init.js "></script>
+   <!-- Saas dashboard init -->
+   <script src="assets/js/pages/earlyBirdDashboard.js "></script>
+   <script src="assets/js/pages/saas-dashboard.init.js"></script>
+
+   <!-- highchart map modules -->
+   <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+   <script src="https://code.highcharts.com/highcharts-more.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+   <script src="https://code.highcharts.com/modules/pictorial.js"></script>
+
+   <!-- highchart js files -->
+   <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+   <script src="https://code.highcharts.com/modules/export-data.js"></script>
+   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+   <script src="assets/js/pages/revenue-by-time.js "></script>
+   <script src="assets/js/pages/annial-perfomance.js"></script>
+   <script src="assets/js/pages/county-revenue.js"></script>
+
+
+    <!-- owl.carousel js -->
+   <script src="assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+
+
+   <script src="assets/js/map.js"></script>
+   <script src="assets/js/collected-rev.js"></script>
+
+   <script src="assets/libs/slick/slick.min.js"></script>
+
+
+
+
+   <!-- App js -->
+   <script src="assets/js/app.js "></script>
+   <script src="assets/js/custom.js "></script>
+
+   <script>
+    Highcharts.chart('lab-error-rate-gauge', {
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            height: '60%'
+        },
+
+        title: {
+            text: null // Title removed
+        },
+
+        pane: {
+            startAngle: -90,
+            endAngle: 89.9,
+            background: null,
+            center: ['50%', '75%'],
+            size: '110%'
+        },
+
+        // Disable exporting options
+        exporting: {
+            enabled: false
+        },
+
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 100, // Gauge max value set to 100 for percentage
+            tickPixelInterval: 72,
+            tickPosition: 'inside',
+            tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+            tickLength: 20,
+            tickWidth: 2,
+            minorTickInterval: null,
+            labels: {
+                distance: 20,
+                style: {
+                    fontSize: '14px'
+                },
+                format: '{value}%', // Show percentage on labels
+                formatter: function () {
+                    return this.value === 10 ? '10% Lab Test Error Rate' : this.value + '%';
+                }
+            },
+            lineWidth: 0,
+            plotBands: [{
+                from: 0,
+                to: 5,
+                color: '#55BF3B', // Green: Low error rate (Good)
+                thickness: 20
+            }, {
+                from: 5,
+                to: 15,
+                color: '#DDDF0D', // Yellow: Moderate error rate
+                thickness: 20
+            }, {
+                from: 15,
+                to: 100,
+                color: '#DF5353', // Red: High error rate (Critical)
+                thickness: 20
+            }]
+        },
+
+        series: [{
+            name: 'Error Rate',
+            data: [10], // Error rate in percentage
+            tooltip: {
+                valueSuffix: '%'
+            },
+            dataLabels: {
+                format: '{y}%', // Show percentage
+                borderWidth: 0,
+                color: (
+                    Highcharts.defaultOptions.title &&
+                    Highcharts.defaultOptions.title.style &&
+                    Highcharts.defaultOptions.title.style.color
+                ) || '#333333',
+                style: {
+                    fontSize: '16px'
+                },
+                formatter: function() {
+                    const totalTests = 500; // Replace with the actual total number of tests
+                    const errorTests = (this.y / 100) * totalTests;
+                    return `${this.y}%, ${Math.round(errorTests)} errors out of ${totalTests} tests`;
+                }
+            },
+            dial: {
+                radius: '80%',
+                backgroundColor: 'gray',
+                baseWidth: 12,
+                baseLength: '0%',
+                rearLength: '0%'
+            },
+            pivot: {
+                backgroundColor: 'gray',
+                radius: 6
+            }
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('TestTypeGraph', {
+        chart: {
+        type: 'pictorial',
+        backgroundColor: '#d5eef561',
+        
+        
+    },
+
+    title: {
+        text: null
+    },
+
+    accessibility: {
+        screenReaderSection: {
+            beforeChartFormat: '<{headingTagName}>' +
+                '{chartTitle}</{headingTagName}><p>{typeDescription}</p><p>' +
+                '{chartLongdesc}</p>'
+        },
+        point: {
+            valueDescriptionFormat: '{value}.'
+        },
+        series: {
+            descriptionFormat: ''
+        },
+        landmarkVerbosity: 'one'
+    },
+
+    xAxis: {
+        categories: ['Female', 'Male'],
+        lineWidth: 0,
+        opposite: true
+    },
+
+    yAxis: {
+        visible: false,
+        stackShadow: {
+            enabled: true
+        },
+        // max: 100
+    },
+
+    legend: {
+        itemMarginTop: 15,
+        itemMarginBottom: 15,
+        layout: 'vertical',
+        padding: 0,
+        verticalAlign: 'middle',
+        align: 'center',
+        margin: 0
+    },
+
+    tooltip: {
+        headerFormat: ''
+    },
+
+    plotOptions: {
+        series: {
+            pointPadding: 0,
+            groupPadding: 0,
+            dataLabels: {
+                enabled: true,
+                align: 'center',
+                format: '{y} Tests'
+            },
+            stacking: 'normal',
+            paths: [{
+                definition: 'm 656.59433,740.097 c -0.634,-1.435 -13.566,' +
+                    '-15.425 -33.487,-23.292 -4.568,-1.94 -4.545,2.705 ' +
+                    '-16.944,-34.925 -26.957,-72.647 -5.661,-112.736 -51.135,' +
+                    '-200.791 -6.888,-14.322 -9.901,-24.921 -16.16,-50.12 ' +
+                    '-25.397,-104.478 -6.032,-90.98 -15.87,-135.251 -17.961,' +
+                    '-63.049 -50.754,-59.498 -71.782,-59.155 -16.944,0.378 ' +
+                    '-45.224,-11.699 -52.936,-19.746 -10.555,-11.486 -17.912,' +
+                    '-20.548 -11.679,-58.855 0,0 7.037,-12.141 9.078,-34.125 ' +
+                    '9.284,11.287 24.572,-33.84 16.065,-42.691 -1.745,-1.867 ' +
+                    '-5.169,-1.236 -6.289,1.015 -1.292,1.484 -1.315,3.695 ' +
+                    '-2.888,4.964 -2,-9.359 3.289,-28.498 -7.935,-56.968 ' +
+                    '-5.541,-12.289 -11.235,-15.496 -21.547,-22.44 -8.401,' +
+                    '-6.048 -28.842,-7.595 -29.842,-7.717 h -9.461 c -1,' +
+                    '0.122 -21.441,1.669 -29.842,7.717 -10.312,6.944 -16.006,' +
+                    '10.151 -21.547,22.44 -11.224,28.47 -5.935,47.609 -7.935,' +
+                    '56.968 -1.573,-1.269 -1.596,-3.48 -2.888,-4.964 -1.12,' +
+                    '-2.251 -4.544,-2.882 -6.289,-1.015 -8.507,8.851 6.781,' +
+                    '53.978 16.065,42.691 2.041,21.984 9.078,34.125 9.078,' +
+                    '34.125 6.233,38.307 -1.124,47.369 -11.679,58.855 -7.712,' +
+                    '8.047 -35.992,20.124 -52.935,19.746 -21.029,-0.343 ' +
+                    '-53.822,-3.894 -71.782,59.155 -9.838,44.271 9.527,' +
+                    '30.773 -15.87,135.251 -6.259,25.199 -9.272,35.798 ' +
+                    '-16.16,50.12 -45.474004,88.055 -24.178004,128.144 ' +
+                    '-51.135004,200.791 -12.399,37.63 -12.376,32.985 -16.944,' +
+                    '34.925 -19.921,7.867 -32.853,21.857 -33.487,23.292 ' +
+                    '-8.923,20.454 -23.3280004,27.412 -19.92100038,33.844 ' +
+                    '0.89599998,1.702 3.31799998,2.588 4.94399998,1.381 ' +
+                    '5.1890004,0.91 12.7380004,-4.808 16.1270004,-8.599 ' +
+                    '4.102,-4.706 3.375,-7.457 11.332,-13.86 1.824,2.047 ' +
+                    '-2.155,20.335 -3.12,23.398 -4.877,14.729 -26.5670004,' +
+                    '49.619 -17.595,54.417 0.945,0.4 2.227,0.955 3.073,0.089 ' +
+                    '1.553,-1.53 3.53,-2.604 4.841,-4.372 8.025,-10.218 ' +
+                    '17.566,-34.36 24.059,-39.238 3.279,0.224 1.596,2.346 ' +
+                    '-4.475,22.532 -3.673,13.084 -5.142,19.941 -5.142,19.941 ' +
+                    '-10.126,30.466 6.229,25.716 11.501,6.808 0.448,-1.537 ' +
+                    '9.722,-26.912 10.129,-28.16 1.241,-3.291 4.602,-17.806 ' +
+                    '8.801,-14.872 0.646,2.469 -0.335,3.044 -3.536,31.521 ' +
+                    '-2.6,21.813 -3.236,8.789 -2.713,26.425 0.079,2.164 ' +
+                    '4.439,3.257 6.282,2.115 10.539,-9.723 12.692,-57.611 ' +
+                    '18.074,-61.022 3.669,4.293 4.272,33.754 5.982,39.221 ' +
+                    '2.652,9.705 7.446,4.802 7.981,3.239 3.825004,-9.324 ' +
+                    '-0.19,-30.536 0.628,-45.388 0,0 4.369004,-14.53 ' +
+                    '7.198004,-38.676 4.176,-45.514 -17.861004,13.267 48.59,' +
+                    '-167.185 0,0 5.299,-10.218 13.794,-30.791 9.81,-21.31 ' +
+                    '5.988,-35.652 19.766,-73.451 0.361,-1 16.239,-47.758 ' +
+                    '24.363,-68.15 45.673,232.645 -9.743,77.068 -28.904,' +
+                    '331.531 -5.708,105.042 1.862,76.707 18.19,223.544 ' +
+                    '31.719,289.304 -15.087,130.161 35.652,384.312 10.99,' +
+                    '51.495 9.837,44.86 11.854,56.284 2.28,21.363 -1.788,' +
+                    '21.528 -1.679,31.313 -0.699,24.031 5.964,8.574 -1.712,' +
+                    '52.53 -4.993,24.181 -4.913,9.214 -7.677,37.417 -3.463,' +
+                    '13.977 -13.912,52.732 0.856,52.45 1.286,7.64 5.541,' +
+                    '9.156 9.756,6.712 -0.684,2.455 1.381,4.293 2.766,6.011 ' +
+                    '4.813,1.322 4.76,1.029 6.828,-0.555 1.495,5.791 5.173,' +
+                    '5.742 6.748,6.16 4.768,1.476 5.904,-11.237 6.781,-16.16 ' +
+                    '0.856,-0.046 1.705,-0.096 2.551,-0.129 -1.072,3.151 ' +
+                    '-7.161,15.833 2.634,16.835 7.651,1.238 8.542,0.168 ' +
+                    '12.727,-3.791 6.992,-7.01 5.41,-8.94 6.623,-20.685 ' +
+                    '0.191,-2.384 5.685,-6.58 0.872,-37.642 -1.855,-15.952 ' +
+                    '-0.832,2.69 0.304,-35.715 0.371,-16.594 5.685,-19.576 ' +
+                    '6.408,-31.349 -6.493,-27.396 -1.465,-14.55 -4.045,' +
+                    '-30.51 -6.145,-34.313 -7.105,-27.255 0.575,-107.316 ' +
+                    '6.987,-65.839 14.147,-68.677 7.72,-136.864 -14.296,' +
+                    '-110.15 -0.224,-68.945 1.451,-126.216 1.503,-67.36 ' +
+                    '-4.198,-108.808 3.103,-168.203 4.314,-34.735 12.351,' +
+                    '-68.835 12.215,-90.227 2.948,-3.639 4.984,-7.885 7.168,' +
+                    '-11.993 3.172,-6.203 2.655,-0.513 2.627,-35.675 1.424,' +
+                    '-0.218 2.885,-0.281 4.27,-0.677 0.162,-0.334 0.307,' +
+                    '-0.661 0.436,-0.985 0.007,0.007 0.014,0.015 0.022,0.023 ' +
+                    '0.008,-0.008 0.015,-0.016 0.022,-0.023 0.129,0.324 ' +
+                    '0.274,0.651 0.436,0.985 1.385,0.396 2.846,0.459 4.27,' +
+                    '0.677 -0.028,35.162 -0.545,29.472 2.627,35.675 2.184,' +
+                    '4.108 4.22,8.354 7.168,11.993 -0.136,21.392 7.901,' +
+                    '55.493 12.215,90.227 7.301,59.394 1.6,100.842 3.103,' +
+                    '168.203 1.675,57.27 15.747,16.066 1.451,126.216 -6.427,' +
+                    '68.186 0.733,71.025 7.72,136.864 7.68,80.061 6.72,' +
+                    '73.003 0.575,107.316 -2.58,15.96 2.448,3.114 -4.045,' +
+                    '30.51 0.723,11.773 6.037,14.755 6.408,31.349 1.136,' +
+                    '38.405 2.159,19.763 0.304,35.715 -4.813,31.062 0.681,' +
+                    '35.258 0.872,37.642 1.213,11.745 -0.369,13.675 6.623,' +
+                    '20.685 4.185,3.959 5.076,5.029 12.727,3.791 9.795,' +
+                    '-1.002 3.706,-13.684 2.634,-16.835 0.846,0.033 1.695,' +
+                    '0.083 2.551,0.129 0.877,4.923 2.013,17.636 6.781,16.16 ' +
+                    '1.575,-0.418 5.253,-0.369 6.748,-6.16 2.068,1.584 2.015,' +
+                    '1.877 6.828,0.555 1.385,-1.718 3.45,-3.556 2.766,-6.011 ' +
+                    '4.215,2.444 8.47,0.928 9.756,-6.712 14.768,0.282 4.319,' +
+                    '-38.473 0.856,-52.45 -2.764,-28.203 -2.684,-13.236 ' +
+                    '-7.677,-37.417 -7.676,-43.956 -1.013,-28.499 -1.712,' +
+                    '-52.53 0.109,-9.785 -3.959,-9.95 -1.679,-31.313 2.017,' +
+                    '-11.424 0.864,-4.789 11.854,-56.284 50.739,-254.151 ' +
+                    '3.933,-95.007 35.652,-384.312 16.328,-146.837 23.898,' +
+                    '-118.502 18.19,-223.544 -19.161,-254.463 -74.576,' +
+                    '-98.886 -28.904,-331.531 8.124,20.392 24.002,67.15 ' +
+                    '24.363,68.15 13.778,37.8 9.956,52.142 19.766,73.451 ' +
+                    '8.495,20.573 13.794,30.791 13.794,30.791 66.451,180.451 ' +
+                    '44.414,121.671 48.59,167.185 2.829,24.146 7.198,38.676 ' +
+                    '7.198,38.676 0.818,14.852 -3.197,36.064 0.628,45.388 ' +
+                    '0.535,1.563 5.329,6.466 7.981,-3.239 1.71,-5.467 2.313,' +
+                    '-34.928 5.982,-39.221 5.382,3.411 7.535,51.3 18.074,' +
+                    '61.022 1.843,1.142 6.203,0.049 6.282,-2.115 0.523,' +
+                    '-17.636 -0.113,-4.612 -2.713,-26.425 -3.201,-28.477 ' +
+                    '-4.182,-29.052 -3.536,-31.521 4.199,-2.934 7.56,11.581 ' +
+                    '8.801,14.872 0.407,1.248 9.681,26.623 10.129,28.16 ' +
+                    '5.272,18.908 21.627,23.658 11.501,-6.808 0,0 -1.469,' +
+                    '-6.857 -5.142,-19.941 -6.071,-20.186 -7.754,-22.308 ' +
+                    '-4.475,-22.532 6.493,4.878 16.034,29.02 24.059,39.238 ' +
+                    '1.311,1.768 3.288,2.842 4.841,4.372 0.846,0.866 2.128,' +
+                    '0.311 3.073,-0.089 8.972,-4.798 -12.718,-39.688 -17.595,' +
+                    '-54.417 -0.965,-3.063 -4.944,-21.351 -3.12,-23.398 ' +
+                    '7.957,6.403 7.23,9.154 11.332,13.86 3.389,3.791 10.938,' +
+                    '9.509 16.127,8.599 1.626,1.207 4.048,0.321 4.944,-1.381 ' +
+                    '3.403,-6.432 -11.002,-13.39 -19.925,-33.844 z'
+            }, {
+                definition: 'm 288.24306,919.66652 c -2.887,-37.612 3.116,' +
+                    '-111.464 -6.141,-106.729 0,0 -1.513,6.585 -1.773,8.642 ' +
+                    '-1.752,13.994 -0.121,74.406 -2.134,96.522 0,0 -7.163,' +
+                    '57.876 -11.151,74.107 -3.988,16.22798 -11.166,115.22698 ' +
+                    '-19.144,139.57398 -7.976,24.345 -16.75,56.8 -8.774,' +
+                    '81.958 7.976,25.157 16.752,67.352 8.774,105.492 -7.976,' +
+                    '38.14 -16.75,91.288 -11.964,118.069 3.521,19.706 4.786,' +
+                    '38.546 7.978,42.603 3.188,4.057 0,12.169 0,22.721 0,' +
+                    '10.547 1.594,33.271 -1.995,41.793 0,6.082 5.183,22.719 ' +
+                    '2.394,30.427 -2.793,7.711 0,12.174 -3.591,15.417 -3.589,' +
+                    '3.247 -9.572,11.77 -22.733,8.525 -7.978,-2.438 -8.375,' +
+                    '-8.525 -7.178,-9.742 1.195,-1.216 -4.389,-0.402 -4.389,' +
+                    '-0.402 -2.78,5.181 -12.76,6.868 -17.548,-0.406 -0.796,' +
+                    '-1.218 -3.587,4.461 -9.969,3.243 -6.382,-1.218 -3.589,' +
+                    '-4.055 -3.589,-4.055 0,0 -8.377,0.404 -10.37,-4.463 ' +
+                    '-0.399,1.216 -4.387,2.839 -7.579,-0.406 -3.19,-3.245 ' +
+                    '-2.791,-13.793 -1.594,-19.07 1.195,-5.277 6.796,-14.401 ' +
+                    '8.774,-17.854 2.791,-4.867 13.161,-23.533 12.762,' +
+                    '-28.806 -0.248,-3.263 0.796,-27.998 3.19,-34.081 2.394,' +
+                    '-6.089 2.793,-13.391 2.793,-21.505 0,-8.116 1.995,' +
+                    '-53.965 -13.959,-110.363 -15.954,-56.396 -23.531,' +
+                    '-83.984 -23.928,-122.938 -0.399,-38.952 17.147,-62.483 ' +
+                    '6.777,-121.312 -10.368,-58.836 -14.755,-97.785 -15.952,' +
+                    '-101.439 -1.197,-3.647 -7.675,-87.08798 -7.675,' +
+                    '-87.08798 -0.914,-90.865 2.12,-75.593 3.35,-108.574 ' +
+                    '2.353,-63.252 1.051,-52.022 10.05,-88.612 1.577,-12.158 ' +
+                    '2.454,-23.04 4.031,-35.203 0.657,-5.071 2.01,-11.418 ' +
+                    '2.669,-16.489 9.196,-31.653 9.142,-25.304 5.191,-54.251 ' +
+                    '-2.61,-19.17 0.658,-16.691 2.614,-36.464 0.344,-3.505 ' +
+                    '3.794,-65.532 -2.78,-99.005 -4.466,-13.066 -8.932,' +
+                    '-26.134 -13.4,-39.197 h -0.557 c 0.201,32.151 -11.049,' +
+                    '55.538 -16.752,82.933 -1.867,13.001 -2.392,23.885 ' +
+                    '-4.297,36.877 -0.585,4.014 -1.713,6.857 -2.315,10.995 ' +
+                    '-2.596,17.861 2.82,24.968 -3.437,57.216 -7.242,37.317 ' +
+                    '-22.927002,69.907 -30.150002,107.358 -1.197,6.198 ' +
+                    '-0.553,12.864 -0.316,18.911 0.585,4.031 1.615,6.33 ' +
+                    '2.475,10.552 1.195,5.861 1.78,13.168 2.863,18.818 1.334,' +
+                    '6.942 1.438,15.31 1.664,23.435 0.207,7.346 1.037,12.54 ' +
+                    '0.288,21.87 -0.218,2.72 -0.033,36.328 -3.134,48.688 ' +
+                    '-1.434,5.7 -4.692,5.273 -6.077,4.279 -5.716,-7.654 ' +
+                    '-0.615,-25.119 -6.28,-43.599 -0.559,0.38 -0.559,0.046 ' +
+                    '-1.118,0.425 0.084,4.047 -0.667,9.273 -0.179,15.482 ' +
+                    '0.779,9.977 0.378,14.142 0.07,18.034 -0.832,10.572 ' +
+                    '-1.344,19.719 -3.924,25.218 -1.395,2.974 -5.2,5.59 ' +
+                    '-8.669,1.478 -1.937,-3.302 -2.208,-8.173 -2.411,-15.058 ' +
+                    '-0.878,-30.054 -0.969,-20.294 -1.334,-26.969 -0.388,' +
+                    '-7.183 -0.61,-12.768 -0.61,-12.768 -0.89,-0.236 -1.494,' +
+                    '-0.354 -2.345,-0.022 -2.167,19.698 -0.178,15.719 -2.96,' +
+                    '39.445 -0.491,4.187 -0.139,12.028 -1.225,17.079 -2.229,' +
+                    '10.363 -11.671,9.05 -12.444,1.027 -0.265,-2.74 -0.886,' +
+                    '-5.687 -1.238,-8.086 -0.38,-2.592 -0.164,-6.26 -0.254,' +
+                    '-8.989 -0.139,-4.209 -0.565,-7.888 -0.888,-12.069 ' +
+                    '-0.373,-4.839 2.084,-17.895 0.023,-27.551 -0.026,0 ' +
+                    '-1.142,0 -1.116,0 -0.734,4.359 -2.245,10.954 -3.969,' +
+                    '19.445 -0.265,1.309 -0.399,3.632 -0.681,4.975 -1.549,' +
+                    '7.394 -1.393,11.575 -2.166,16.148 -1.214,7.224 0.053,' +
+                    '8.318 -2.505,13.124 -2.791,5.249 -7.135,2.857 -8.296,' +
+                    '0.08 -1.801,-4.311 -2.814,-11.342 -2.795,-19.975 0.037,' +
+                    '-15.995 2.716,-19.356 2.825,-40.619 0.023,-4.404 0.267,' +
+                    '-8.277 -0.282,-12.349 v 2.129 c -2.435,4.109 -3.373,' +
+                    '8.129 -7.8160001,10.222 -2.213,0.79 -4.001,1.246 -5.663,' +
+                    '0.365 -1.62399996,-0.853 -2.71799996,-0.523 -2.11899996,' +
+                    '-3.736 0.461,-2.47 1.58999996,-5.861 2.01399996,-8.907 ' +
+                    '0.638,-4.582 0.555,-8.698 1.641,-13.506 0.632,-2.789 ' +
+                    '2.368,-6.204 3.203,-8.885 1.366,-4.384 1.958,-10.449 ' +
+                    '3.1560001,-12.473 0.903,-1.533 3.004,-3.975 4.31,-5.698 ' +
+                    '0.346,-0.457 8.944,-13.182 12.286,-17.574 3.356,-4.409 ' +
+                    '5.699,-8.14 5.699,-8.14 0.051,-11.746 3.059,-18.778 ' +
+                    '2.08,-30.076 -1.692,-19.557 -0.495,1.76 -2.339,-121.232 ' +
+                    '4.78,-68.261 11.045,-49.621 17.136,-111.518 4.058,' +
+                    '-41.052 4.798,-56.274 7.364,-64.797 2.452,-8.147 6.34,' +
+                    '-29.092 5.657,-43.675 -0.459,-9.801 -0.45,-14.221 ' +
+                    '-1.543,-20.477 -2.05,-11.754 -1.431,-42.739 11.725,' +
+                    '-69.299 11.477,-23.175 27.318,-34.048 49.629002,-43.289 ' +
+                    '15.531,-6.434 14.433,-2.79 42.978,-18.213 17.074,-9.227 ' +
+                    '57.814,-33.258 65.621,-50.863 0.124,-16.319 -0.366,' +
+                    '-14.443 0.009,-29.778 0,0 -3.213,-13.298 -4.53,-22.591 ' +
+                    '-6.854,-0.074 -10.769,-6.449 -13.127,-14.318 -2.094,' +
+                    '-6.98 -1.877,-19.262 -1.918,-20.897999 -0.163,-6.367 ' +
+                    '-0.441,-12.45 4.995,-14.77 1.445,-0.341 1.701,-0.376 ' +
+                    '2.351,-0.208 0.836,0.213 1.278,1.131 2.115,1.344 -1.056,' +
+                    '-33.236 4.238,-59.246 25.686,-73.844 38.147,-25.962 ' +
+                    '84.194,-4.385 96.595,31.244 4.15,11.926 4.212,28.343 ' +
+                    '2.791,42.601 h 0.557 c 1.212,-1.02 1.445,-1.628 3.877,' +
+                    '-1.237 4.303,1.889 5.591,6.919 5.712,15.963999 0.177,' +
+                    '13.445 -0.6,22.432 -9.367,31.903 -2.189,2.366 -4.282,' +
+                    '2.09 -7.477,3.358 -0.207,4.645 -2.703,18.616 -2.703,' +
+                    '18.616 0,0 -1.703,28.168 -0.651,31.938 4.364,15.563 ' +
+                    '55.746,47.859 85.792,61.08 17.748,7.814 48.444,11.768 ' +
+                    '69.031,44.574 13.863,22.079 19.151,53.497 15.704,74.476 ' +
+                    '-1.369,8.304 -2.896,28.95 -0.455,42.944 10.918,54.033 ' +
+                    '5.22,16.283 12.421,88.953 3.703,37.295 4.626,32.485 ' +
+                    '12.068,67.063 0.877,4.079 0.794,6.836 1.346,12.065 ' +
+                    '1.663,15.866 5.62,30.424 2.492,104.929 -2.799,66.377 ' +
+                    '-3.96,53.491 -0.943,68.354 1.208,5.992 -3.063,8.431 ' +
+                    '14.057,30.796 1.5,1.958 3.088,4.873 4.581,6.495 1.694,' +
+                    '1.845 3.269,2.407 4.457,4.93 1.314,2.802 0.723,5.179 ' +
+                    '1.38,8.273 0.807,3.74 1.647,6.727 4.105,12.349 1.013,' +
+                    '2.327 -0.075,8.781 0.653,13.461 0.41,2.637 1.961,5.16 ' +
+                    '2.388,7.739 0.002,0.022 0.939,1.3 0.762,2.483 -0.256,' +
+                    '1.687 -2.004,3.38 -5.381,2.653 -6.446,-1.04 -7.101,' +
+                    '-6.232 -10.611,-10.035 0.08,5.339 -0.595,7.281 1.099,' +
+                    '29.728 0.427,5.661 3.893,30.336 -1.199,40.461 -1.756,' +
+                    '3.495 -5.721,2.996 -7.803,0.51 -5.565,-6.642 -0.373,' +
+                    '-10.685 -8.925,-51.36 -1.116,-5.271 -2.349,-0.61 -2.349,' +
+                    '-0.61 -0.16,25.464 1.666,13.068 -0.25,31.836 -0.942,' +
+                    '9.126 -0.375,27.282 -5.445,28.639 -4.658,1.253 -7.366,' +
+                    '-2.318 -8.181,-5.416 -2.122,-8.108 -1.956,-18.062 ' +
+                    '-2.014,-19.063 -0.154,-2.729 -1.026,-9.119 -1.135,' +
+                    '-11.913 -0.365,-9.214 0.497,-12.819 -1.302,-26.917 ' +
+                    '-0.143,-1.174 -1.462,-1.35 -1.462,-1.35 -1.961,1.819 ' +
+                    '-0.851,8.454 -1.186,11.551 -3.15,28.922 0.442,32.063 ' +
+                    '-4.351,43.031 -1.628,3.721 -6.48,3.881 -8.433,0.491 ' +
+                    '-1.442,-2.512 -1.526,-5.726 -1.705,-6.352 -1.756,-6.089 ' +
+                    '-1.334,-12.805 -1.863,-18.569 -0.354,-3.81 -0.926,' +
+                    '-4.884 -0.856,-7.958 0.233,-10.437 2.309,-16.964 0.412,' +
+                    '-27.651 -0.373,-0.187 -0.747,-0.378 -1.118,-0.564 ' +
+                    '-0.745,1.157 -0.459,2.19 -0.832,3.716 -1.212,4.928 ' +
+                    '-1.404,12.154 -2.204,17.859 -1.259,9.017 0.911,20.359 ' +
+                    '-4.784,22.732 -2.791,-0.191 -2.603,-0.38 -4.274,-2.084 ' +
+                    '-5.376,-13.557 -1.805,-31.088 -3.117,-47.522 -1.586,' +
+                    '-19.77 -0.064,-18.681 0.35,-25.185 1.917,-31.072 0.966,' +
+                    '-16.394 3.205,-32.181 2.262,-15.944 3.054,-13.863 4.133,' +
+                    '-21.228 2.059,-14.053 -0.666,-20.851 -4.999,-37.704 ' +
+                    '-0.491,-1.921 -1.163,-3.497 -1.622,-5.483 -2.089,-8.967 ' +
+                    '-5.855,-19.003 -8.234,-27.605 -19.318,-69.827 -14.488,' +
+                    '-54.078 -17.153,-72.648 -1.286,-8.943 -1.133,-5.494 ' +
+                    '-0.113,-35.667 -0.809,-5.598 -2.364,-10.439 -3.177,' +
+                    '-16.035 -1.797,-12.391 -2.844,-25.539 -4.639,-37.927 ' +
+                    '-5.657,-26.218 -15.956,-48.792 -16.193,-80.094 -0.369,' +
+                    '0.189 -0.743,0.378 -1.116,0.569 -2.808,11.112 -8.142,' +
+                    '23.815 -12.783,35.175 -2.405,5.894 -0.418,6.326 -2.522,' +
+                    '15.378 -2.886,12.424 -4.145,63.823 -0.885,88.047 0.927,' +
+                    '6.952 1.197,1.809 2.793,20.448 0.284,3.354 -0.164,5.8 ' +
+                    '-0.448,9.638 -0.233,3.137 -0.224,7.706 -0.638,10.272 ' +
+                    '-1.468,9.087 -3.239,15.532 -1.15,24.966 2.02,9.109 ' +
+                    '2.677,4.255 8.751,34.942 0.994,5.012 0.751,7.619 1.466,' +
+                    '13.365 0.565,4.546 2.078,12.258 2.836,16.265 0.745,' +
+                    '3.916 1.063,8.954 1.788,12.814 1.568,8.348 8.083,29.891 ' +
+                    '8.46,62.064 0.704,59.53 4.476,55.504 4.024,102.244 ' +
+                    '-0.614,56.92 -8.584,147.53898 -14.226,174.12198 -7.577,' +
+                    '35.704 -12.762,81.961 -9.967,90.885 2.787,8.926 12.363,' +
+                    '79.119 6.775,111.58 -5.582,32.455 -34.296,139.976 ' +
+                    '-33.897,161.887 0.397,21.911 -5.919,41.448 0.397,55.584 ' +
+                    '3.99,8.926 1.199,27.188 2.793,32.459 1.596,5.275 3.589,' +
+                    '20.288 9.173,24.751 5.584,4.465 15.154,27.184 13.161,' +
+                    '34.489 -1.995,7.302 -5.185,12.983 -10.37,10.956 -4.385,' +
+                    '4.869 -9.971,3.651 -11.166,3.245 -1.197,-0.406 -4.387,' +
+                    '8.926 -13.959,1.624 -2.392,3.649 -5.582,6.488 -12.365,' +
+                    '3.649 -6.779,-2.839 -4.784,-3.649 -4.784,-3.649 l ' +
+                    '-5.185,0.81 c 0,0 0.796,10.55 -8.776,10.55 -9.57,0 ' +
+                    '-23.529,-6.493 -22.731,-17.04 0.796,-10.552 -0.798,' +
+                    '-24.753 3.988,-39.358 -4.786,-10.144 -5.185,-26.372 ' +
+                    '-2.791,-34.085 2.392,-7.704 0,-17.85 -0.401,-23.123 ' +
+                    '-0.399,-5.277 7.579,-37.33 7.579,-46.254 0,-8.93 0.798,' +
+                    '-90.483 -4.786,-102.654 -5.584,-12.169 -12.762,-60.049 ' +
+                    '-4.387,-93.316 0,0 10.11,-48.282 10.37,-60.455 0.397,' +
+                    '-18.666 -20.341,-75.874 -20.341,-98.593 0,-22.723 ' +
+                    '-13.56,-109.14698 -15.154,-115.63998 -1.594,-6.492 ' +
+                    '-9.109,-49.82 -9.109,-49.82'
+            }]
+        }
+    },
+
+    series: [{
+        name: 'Complete Blood Count (CBC)',
+        data: [120, 100], // Female, Male
+        color: '#007BFF', // Healthcare Blue
+        borderColor: '#0056b3', // Darker Blue for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }, {
+        name: 'Urinalysis',
+        data: [90, 85], // Female, Male
+        color: '#28A745', // Clinical Green
+        borderColor: '#218838', // Darker Green for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }, {
+        name: 'Liver Function Tests (LFT)',
+        data: [45, 55], // Female, Male
+        color: '#FFC107', // Diagnostic Yellow
+        borderColor: '#e0a800', // Darker Yellow for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }, {
+        name: 'Kidney Function Tests (KFT)',
+        data: [110, 120], // Female, Male
+        color: '#FD7E14', // Surgical Orange
+        borderColor: '#d86d11', // Darker Orange for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }, {
+        name: 'COVID-19 PCR Test',
+        data: [80, 70], // Female, Male
+        color: '#6F42C1', // Medical Purple
+        borderColor: '#5936a6', // Darker Purple for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }, {
+        name: 'Blood Glucose Test',
+        data: [100, 95], // Female, Male
+        color: '#6C757D', // Patient Gray
+        borderColor: '#5a6268', // Darker Gray for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }, {
+        name: 'Others',
+        data: [70, 65], // Female, Male (Combined total for all other tests)
+        color: '#20C997', // Supportive Teal
+        borderColor: '#1ab394', // Darker Teal for Outline
+        //borderWidth: 2,
+        fillColor: '#E9ECEF' // Default color for blank area
+    }]
+
+,
+
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    padding: 8,
+                    margin: 12,
+                    itemMarginTop: 0,
+                    itemMarginBottom: 0,
+                    verticalAlign: 'bottom',
+                    layout: 'horizontal'
+                }
+            }
+        }, {
+            condition: {
+                maxWidth: 400
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'vertical'
+                }
+            }
+        }]
+    }
+});
+</script>
+
+<script>
+    Highcharts.chart('containerAvgTime', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: null
+        },
+        
+        xAxis: {
+            type: 'category',
+            labels: {
+                autoRotation: [-45, -90],
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Average Turnaround Time (Hours)',
+                align: 'high'
+            },
+            opposite: false // Keep yAxis on the left for the column series
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Average Turnaround Time (Hours)'
+            }
+        }, {
+            title: {
+                text: 'Number of Tests',
+                
+            },
+            opposite: true // Place this yAxis on the right side for the line series
+        }],
+        legend: {
+            enabled: true // Enable legend to differentiate labs
+        },
+
+        tooltip: {
+            shared: true,
+            valueSuffix: ' Hrs',  // Add the suffix "Hrs" to the value
+            valueDecimals: 2      // Number of decimals in the value
+        },
+        
+        series: [{
+            name: 'Inpatient Lab',
+            type: 'column',
+            color: '#B0E0E6', // Light Steel Blue
+            data: [
+                ['Monday', 4.5],
+                ['Tuesday', 5.0],
+                ['Wednesday', 4.2],
+                ['Thursday', 4.1],
+                ['Friday', 4.8],
+                ['Saturday', 5.3],
+                ['Sunday', 5.0]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                inside: true,
+                verticalAlign: 'top',
+                format: '{point.y:.1f}',
+                y: 10,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }, {
+            name: 'Outpatient Lab',
+            type: 'column',
+            color: '#87CEFA', // Light Sky Blue
+            data: [
+                ['Monday', 5.2],
+                ['Tuesday', 5.5],
+                ['Wednesday', 4.8],
+                ['Thursday', 5.0],
+                ['Friday', 5.7],
+                ['Saturday', 6.1],
+                ['Sunday', 5.4]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                inside: true,
+                verticalAlign: 'top',
+                format: '{point.y:.1f}',
+                y: 10,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }, {
+            name: 'MCH Lab',
+            type: 'column',
+            color: '#ADD8E6', // Light Blue
+            data: [
+                ['Monday', 3.9],
+                ['Tuesday', 4.1],
+                ['Wednesday', 3.7],
+                ['Thursday', 4.0],
+                ['Friday', 4.5],
+                ['Saturday', 5.0],
+                ['Sunday', 4.3]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                inside: true,
+                verticalAlign: 'top',
+                format: '{point.y:.1f}',
+                y: 10,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }, {
+            name: 'X-ray Lab',
+            type: 'column',
+            color: '#4682B4', // Steel Blue
+            data: [
+                ['Monday', 4.6],
+                ['Tuesday', 4.4],
+                ['Wednesday', 5.1],
+                ['Thursday', 4.8],
+                ['Friday', 5.2],
+                ['Saturday', 5.7],
+                ['Sunday', 5.3]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                inside: true,
+                verticalAlign: 'top',
+                format: '{point.y:.1f}',
+                y: 10,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }, {
+            name: 'Completed Tests',
+            type: 'spline', // Set this series type to line
+            color: '#FF6347', // Tomato
+            data: [
+                ['Monday', 50],  // Monday
+                ['Tuesday', 60],  // Tuesday
+                ['Wednesday', 55],  // Wednesday
+                ['Thursday', 70],  // Thursday
+                ['Friday', 65],  // Friday
+                ['Saturday', 80],  // Saturday
+                ['Sunday', 75]   // Sunday
+            ],
+            tooltip: {
+                shared: true,
+                valueSuffix: ' Tests',  // Add the suffix "Hrs" to the value
+                valueDecimals: 0      // Number of decimals in the value
+            },
+            yAxis: 1, // Link this series to the second yAxis (for patients)
+            marker: {
+                enabled: true
+            }
+        }]
+    });
+    </script>
+ <script>
+    Highcharts.chart('user-accounts', {
+chart: {
+    type: 'bar',
+    height: 150, // Set the height of the chart to 200px
+    with:'100%'
+},
+title: {
+    text: null // Remove the title
+},
+xAxis: {
+    categories: ['Test Requests'],
+    lineWidth: 0, // Remove the X-axis line
+    labels: {
+        enabled: false // Disable X-axis labels
+    }
+},
+yAxis: {
+    min: 0,
+    title: {
+        text: null // Remove the Y-axis title
+    },
+    gridLineWidth: 0, // Remove grid lines
+    labels: {
+        enabled: false // Disable Y-axis labels
+    }
+},
+legend: {
+    layout: 'horizontal', // Align legend items horizontally
+    align: 'left', // Align the legend to the left
+    verticalAlign: 'bottom', // Align the legend to the bottom
+    x: -10, // Offset from the left edge
+    y: 0, // Offset from the top edge
+    reversed: true
+},
+plotOptions: {
+    series: {
+        stacking: 'normal',
+        pointWidth: 30, // Set the width of the column
+        dataLabels: {
+            enabled: true
+        },
+        borderWidth: 2 // Increase the border width around each bar
+    }
+},
+tooltip: {
+        pointFormat: '<span style="color:black">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>', // Show value and percentage
+        shared: false // Show tooltip for individual series
+    },
+series: [{
+        name: 'Invoice',
+        data: [50], // Number of requests that stopped at Invoicing
+        color: '#00796B' // Teal for Invoicing
+    }, {
+        name: 'Ackn',
+        data: [30], // Number of requests that stopped at Acknowledged
+        color: '#E57373' // Light Red for Acknowledged
+    }, {
+        name: 'Sample',
+        data: [20], // Number of requests that stopped at Sample Taking
+        color: '#FFD54F' // Light Yellow for Sample Taking
+    }, {
+        name: 'Released',
+        data: [10], // Number of requests that stopped at Results Released
+        color: '#4FC3F7' // Light Blue for Results Released
+    }, {
+        name: 'Interp',
+        data: [5], // Number of requests that stopped at Results Interpretation
+        color: '#673AB7' // Purple for Results Interpretation
+    }],
+exporting: {
+    enabled: false // Disable the export options button
+}
+});
+
+   </script>
+
+    
+    
+
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>

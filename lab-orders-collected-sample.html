@@ -1,0 +1,2284 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>HOSPITAL MANAGEMENT INFORMATION SYSTEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="HMIS By Craft Silicon Payments" name="description" />
+    <meta content="Kelvin Njuguna" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+    <!-- droping file -->
+    <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+     <!-- owl.carousel css -->
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.carousel.min.css">
+
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                    <img src="assets/images/the-logo.png" alt="" height="50">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-text-white.png" alt="" height="55">
+                                </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt="" class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="bx bx-fullscreen"></i>
+                            </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-bell bx-tada"></i>
+                                <span class="badge bg-danger rounded-pill">3</span>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="bx bx-cart"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="bx bx-badge-check"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+       <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title" key="t-pages">Hospital Management Information system </li>
+
+                         <li class="side-bar-button" >
+                            <a href="outpatient-checkin.html" class="waves-effect btn btn-light btn-rounded text-left write-msg-btn">
+                                <i class=""><img src="assets/images/plus-icon.svg" alt=""></i>
+                                <span class="text-capitalize">Patient Chekin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home-circle"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                       <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-hand-heart"></i>
+                                <span>Community Health</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="community-anlytics.html">Analytics</a></li>      
+                                <li><a href="community-members.html">Member Register</a></li>
+                                <li><a href="community-deposits.html">Member Deposits</a></li>
+                                <li><a href="community-visit.html">Visit Coverage Log</a></li>
+                                <li><a href="community-setUp.html">Set Up</a></li> 
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bxs-user-detail"></i>
+                                <span>Master Patient Index</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="patient-new.html">Patient Registration</a></li>      
+                                <li><a href="patients.html">MPI Register</a></li> 
+                            </ul>
+                        </li>
+
+                      <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" data-toggle="tooltip" title="Insurance Processing">
+                                <i class="mdi mdi-shield-cross-outline"></i> <!-- Insurance-related icon -->
+                                <span>Insurance Processing</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="insurance-quick-stats.html" data-toggle="tooltip" title="View quick statistics on cases">Quick Stats</a></li>
+                                <li><a href="insurance-cases-all.html" data-toggle="tooltip" title="View quick statistics on cases">All cases</a></li>
+                                <li><a href="insurance-pending-approval.html" data-toggle="tooltip" title="View cases pending approval">Pending Approval</a></li>      
+                                <li><a href="insurance-rejected-approvals.html" data-toggle="tooltip" title="View cases rejected from approval">Rejected Approvals</a></li> 
+                                <li><a href="insurance-approved-processing.html" data-toggle="tooltip" title="View cases approved for processing">Approved for Processing</a></li> 
+                                <li><a href="insurance-reverted-approvals.html" data-toggle="tooltip" title="View cases reverted after approval">Reverted Approvals</a></li>
+                                <li><a href="insurance-awaiting-closure.html" data-toggle="tooltip" title="View cases awaiting closure">Awaiting Closure</a></li>   
+                                <li><a href="insurance-closed-cases.html" data-toggle="tooltip" title="View fully closed cases">Closed Cases</a></li>    
+                                <li><a href="insurance-archived-cases.html" data-toggle="tooltip" title="View fully closed cases">Archived Cases</a></li>      
+                                <li><a href="insurance-user-logs.html" data-toggle="tooltip" title="View fully closed cases">User Logs</a></li>     
+                                <li><a href="insurance-preferences.html" data-toggle="tooltip" title="View fully closed cases">Preferences</a></li>    
+
+                            </ul>
+                            
+                        </li>
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Clinical Activities">
+                                <i class="mdi mdi-hospital-building"></i> <!-- Hospital Building Icon -->
+                                <span>Clinical Management</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="clinical-quick-stats.html" title="View Quick Stats">Quick Stats</a></li>
+                                <li><a href="clinical-new-encounter.html" title="Log New Encounters">New Encounters</a></li>
+                                <li><a href="clinical-pending-consultation.html" title="View Pending Consultations">Pending Consults</a></li>
+                                <li><a href="clinical-active-consultation.html" title="View Active Consultations">Active Consults</a></li>
+                                <li><a href="clinical-lab-list.html" title="List of patients sent to the Lab for examination">To Lab</a></li>
+                                <li><a href="clinical-awaiting-interpretation.html" title="Patients results Awaiting Lab Interpretation">Pending Lab Review</a></li>
+                                <li><a href="clinical-discharged.html" title="Completed Visits Summary">Completed Visits</a></li>
+                            </ul>
+                        </li>
+                        
+
+                        <li>
+                            <a href="encounter-all.html" class="waves-effect">
+                                <i class="bx bx bx-list-ul"></i><span>Encounter List</span>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-human-queue mdi"></i>
+                                <span>Patient's Queue</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="out-Patient-visits.html">Out Patient Visits Queue</a></li> 
+                                <li><a href="queue-triage.html">Triage</a></li>      
+                                <li><a href="queue-OPD.html">Consaltation </a></li> 
+                                <li><a href="queue-cashier.html">Cashier </a></li> 
+                                <li><a href="queue-lab-schedule.html">Scheduled lab Tests</a></li> 
+                                <li><a href="queue-ongoing-schedule.html">Ongoing lab Tests</a></li> 
+                                <li><a href="queue-test-interpratation-schedule.html">Lab Test Interpratation</a></li> 
+                                <li><a href="queue-scan-exam-schedule.html">Scheduled Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-ongoing.html">Ongoing Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-interpratation.html">Scan exam Interpratation</a></li> 
+                                <li><a href="queue-pharmacey.html">Pharmacy</a></li> 
+                               
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="fas fa-flask"></i>
+                                <span>Medical Lab</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="lab-stats.html" title="Get a quick overview of lab activities and statistics">Lab Quick Stats</a></li>
+                                <li><a href="lab-orders-pending-payment.html" title="View tests awaiting payment or waiver before scheduling">Tests Pending Payment</a></li>
+                                <li><a href="lab-orders.html" title="Check all scheduled lab tests awaiting processing">Scheduled Lab Tests</a></li>
+                                <li><a href="lab-orders-acknowledged.html" title="See lab tests acknowledged and ready for processing">Acknowledged Lab Tests</a></li>
+                                <li><a href="lab-orders-collected-sample.html" title="View samples collected and ready for testing">Collected Samples</a></li>
+                                <li><a href="lab-orders-pending-results.html" title="Track lab tests with results pending">Pending Lab Results</a></li>
+                                <li><a href="lab-orders-released-tests.html" title="Access lab test results that have been finalized and released">Results Released</a></li>
+                                <li><a href="lab-setup.html" title="Manage and configure lab tests and settings">Lab Test Setup</a></li>
+                                <li><a href="patients.html" title="View patient lab reports and detailed results">Lab Reports</a></li>
+                            </ul>
+                        </li>
+                        
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-calendar-month mdi"></i>
+                                <span>Appointments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="appointments-pending.html">Pending Appointments</a></li>      
+                                <li><a href="appointments-fullfiled.html">Fullfiled AAppointments</a></li> 
+                                <li><a href="appointments-due.html">Due Appointments</a></li> 
+                            </ul>
+                        </li>
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-clipboard-edit mdi"></i>
+                                <span>Stock Management</span>
+                            </a>
+                            <ul class="sub-menu text-capitalize" aria-expanded="false">
+                                <li><a href="stock-ordering.html">Stock Enquiry</a></li>     
+                                <li><a href="stock-taking.html">Stock Taking</a></li>                       
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-cog-outline mdi"></i>
+                                <span>Setups</span>
+                            </a>
+                           <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="set-up-departments.html">Departments</a></li>
+                                <li><a href="set-up-pricing.html">Pricing & Charges</a></li>
+                                <li><a href="set-up-equipments.html">Equipments</a></li>
+                                <li><a href="set-up-wards.html">Ward Set Up</a></li>
+                                <li><a href="set-up-bed.html">Beds Setup</a></li>
+                                <li><a href="set-Pharmacy.html">Pharmacy inventory</a></li>
+                                <li><a href="lab-setup-new.html">New Lab test Setup</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class="menu-title" key="t-pages">Reports</li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-outline"></i>
+                                <span>NHIF Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="nhif-reports.html">NHIF Payments</a></li>   
+                                <li><a href="nhif-cleared.html">Cleared Payemtnts</a></li>      
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="reports-outpatient.html" class="waves-effect">
+                                <i class="bx bx-clinic"></i><span>Outpatient Reports</span>
+                            </a>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-clipboard-text-outline"></i>
+                                <span>Stock Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="stock-daily-rep.html">Daily Reports</a></li>   
+                                <li><a href="stock-manual-exits.html">Manual Exits</a></li>      
+                                <li><a href="stock-order-enquarry.html">Order Enquarries</a></li>      
+                                                             
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reports-inpatient.html" class="waves-effect">
+                                <i class="mdi mdi-bed-outline"></i><span>Inpatient Reports</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reports-revenue-streams.html" class="waves-effect">
+                                <i class="mdi mdi-bank-transfer"></i><span>Revenue Perfomance</span>
+                            </a>
+                        </li>
+
+                      <li>
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-doctor"></i><span>Physician Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="d-none">
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-office-building"></i><span>Departmental Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bx-receipt"></i>
+                                <span>Bills</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                               
+                                <li><a href="bills-receipted.html">Receipted Bills</a></li>      
+                                <li><a href="bills-unpaid.html">Unpaid Bills</a></li>                               
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Covered Services">
+                                <i class="mdi mdi-clipboard-check-outline"></i>
+                                <span>Covered Services</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="covered-lab-tests.html" title="Manage Covered Lab Tests"><i class="mdi mdi-flask-outline"></i> Lab Tests</a></li>
+                                <li><a href="covered-radiology.html" title="Manage Covered Radiology Tests"><i class="mdi mdi-radiology-box"></i>Radiology Tests</a></li>
+                                <li><a href="covered-drugs.html" title="Manage Covered Drugs"><i class="mdi mdi-pill"></i> Drugs</a></li>
+                                <li><a href="covered-procedures.html" title="Manage Covered Procedures"><i class="mdi mdi-stethoscope"></i> Procedures</a></li>
+                                <li><a href="coverage-policies.html" title="Manage Coverage Policies and Rules"><i class="mdi mdi-file-document-outline"></i> Coverage Policies</a></li>
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html" title="Manage Designations">Designations</a></li>
+                                <li><a href="org-departments.html" title="Manage Departments">Departments</a></li>
+                                <li><a href="org-employment-types.html" title="Manage Employment Types">Employment Types</a></li>
+                                <li><a href="org-affiliated-institution.html" title="Manage Affiliated Institutions">Affiliated Institution</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html" title="Add New User">Add User</a></li>
+                                <li><a href="user-userlist.html" title="Add New User">Manage Users</a></li>
+                                <li><a href="users-deactivated.html" title="View Deactivated Users">Deactivated Users</a></li>
+                                <li><a href="use-logs.html" title="View System Logs">System Logs</a></li>
+                                <li><a href="users-roles.html" title="Manage User Roles">System Roles</a></li>
+                            </ul>
+                        </li>
+
+
+                        
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Collected specimen samples</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="index.html">Dashboards</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Medical Lab</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Collected Samples</a></li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- quick lab stats -->
+                    <div class="row">
+    <div class="col-12">
+        <div class="card mb-0">
+            <div class="card-body bg-soft bg-info border-1 pt-4 border border-primary">
+                <div class="row">
+                    <!-- Lab Orders Overview Title -->
+                    <div class="col-lg-4">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                                <img src="assets/images/users/avatar-1.png" alt="Your Logo" class="avatar-md rounded-circle img-thumbnail">
+                            </div>
+                            <div class="flex-grow-1 align-self-center">
+                                <div class="text-muted">
+                                    <p class="mb-2">Lab Orders Overview - Homa Bay County Hospital</p>
+                                    <h5 class="mb-1">Quick Stats on Medical Lab Orders</h5>
+                                    <p class="mb-0">Summary of recent lab orders providing insight into the hospital’s medical testing activities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="col-lg-8 align-self-center">
+                        <div class="text-lg-left mt-4 mt-lg-0">
+                            <div class="row">
+                                <!-- New Orders -->
+                                <div class="col-6 col-sm-4 col-md-2">
+                                    <div data-toggle="tooltip" title="Newly Created Lab Orders">
+                                        <div class="avatar-xs mb-3">
+                                            <span class="avatar-title rounded-circle bg-info font-size-16">
+                                                <i class="mdi mdi-playlist-plus text-white"></i>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted text-truncate mb-2">New Orders</p>
+                                        <h5 class="mb-0">480</h5>
+                                    </div>
+                                </div>
+                                <!-- Acknowledged Patients -->
+                                <div class="col-6 col-sm-4 col-md-2">
+                                    <div data-toggle="tooltip" title="Patients whose Lab Orders were acknowledged">
+                                        <div class="avatar-xs mb-3">
+                                            <span class="avatar-title rounded-circle bg-primary font-size-16">
+                                                <i class="mdi mdi-account-multiple-outline text-white"></i>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted text-truncate mb-2">Acknowledged Patients</p>
+                                        <h5 class="mb-0">1,200</h5>
+                                    </div>
+                                </div>
+                                <!-- Collected Samples -->
+                                <div class="col-6 col-sm-4 col-md-2">
+                                    <div data-toggle="tooltip" title="Samples collected from patients for lab analysis">
+                                        <div class="avatar-xs mb-3">
+                                            <span class="avatar-title rounded-circle bg-danger font-size-16">
+                                                <i class="mdi mdi-flask-outline text-white"></i>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted text-truncate mb-2">Collected Samples</p>
+                                        <h5 class="mb-0">850</h5>
+                                    </div>
+                                </div>
+                                <!-- Released Results -->
+                                <div class="col-6 col-sm-4 col-md-2 d-none d-md-block">
+                                    <div data-toggle="tooltip" title="Results that have been processed and released">
+                                        <div class="avatar-xs mb-3">
+                                            <span class="avatar-title rounded-circle bg-warning font-size-16">
+                                                <i class="mdi mdi-check-all text-white"></i>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted text-truncate mb-2">Released Results</p>
+                                        <h5 class="mb-0">700</h5>
+                                    </div>
+                                </div>
+                                <!-- Tests Pending Review -->
+                                <div class="col-6 col-sm-4 col-md-2">
+                                    <div data-toggle="tooltip" title="Samples that are pending review before final results are released">
+                                        <div class="avatar-xs mb-3">
+                                            <span class="avatar-title rounded-circle bg-success font-size-16">
+                                                <i class="mdi mdi-magnify text-white"></i>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted text-truncate mb-2">Tests Pending Review</p>
+                                        <h5 class="mb-0">950</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+                     <!-- end of stats -->
+                     <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="kev-card-nav">
+                                    <div class="card-body pb-0">
+                                        <ul class="nav nav-tabs text-uppercase" role="tablist">
+                                            <!-- Orders Pending Payment -->
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" href="lab-orders-pending-payment.html" title="Lab test orders awaiting payment or waiver" role="tab" aria-selected="false" tabindex="-1">
+                                                    <span class="d-none d-sm-block ">Pending Payment</span>
+                                                </a>
+                                            </li>
+                                        
+                                            <!-- Scheduled Lab Tests -->
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" href="lab-orders.html" title="Overview of scheduled lab activities" role="tab" aria-selected="true">
+                                                    <span class="d-none d-sm-block">Scheduled Tests</span>
+                                                </a>
+                                            </li>
+                                        
+                                            <!-- Acknowledged Lab Tests -->
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" href="lab-orders-acknowledged.html" title="Lab tests received by the lab" role="tab" aria-selected="false" tabindex="-1">
+                                                    <span class="d-none d-sm-block ">Acknowledged Tests</span>
+                                                </a>
+                                            </li>
+                                        
+                                            <!-- Collected Samples -->
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" href="lab-orders-collected-sample.html" title="Samples collected for lab tests" role="tab" aria-selected="false" tabindex="-1">
+                                                    <span class="d-none d-sm-block">Collected Samples</span>
+                                                </a>
+                                            </li>
+                                        
+                                            <!-- Results Released -->
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" href="lab-orders-released-tests.html"
+                                                    title="Finalized lab test results" role="tab" aria-selected="false"
+                                                    tabindex="-1">
+                                                    <span class="d-none d-sm-block ">Released Results</span>
+                                                </a>
+                                            </li>     
+                                            
+                                            <!-- results pending doctor's review -->
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" href="lab-orders-pending-review.html"
+                                                    title="Finalized lab test results awaiting review by the doctor" role="tab" aria-selected="false"
+                                                    tabindex="-1">
+                                                    <span class="d-none d-sm-block ">Pending Review</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        
+                                        
+                                    </div>
+                                </div>
+                                
+
+                           <div class="card-header bg-white border-bottom d-none">
+                                <h4 class="card-title text-uppercase">Scheduled lab tests</h4> 
+                           </div>
+
+                           <div class="card-header bg-white pt-0 pr-0 p-0 d-flex justify-content-between align-items-center w-100 border-bottom mt-4">
+
+                            <div class="btn-toolbar p-3 d-flex justify-content-between align-items-center w-100" role="toolbar">
+                              <div class="flex-grow-1">
+                                <div class="search-box mb-0 me-3">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control bg-light border-light rounded" placeholder="Search..." fdprocessedid="husj3l" spellcheck="false" data-ms-editor="true">
+                                        <i class="bx bx-search-alt search-icon"></i>
+                                    </div>
+                                </div>
+                              </div>
+
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center me-3 pe-3">
+                                        <div>
+                                            <div class="float-end d-flex ">
+                                                <div class="input-group fw-semibold text-uppercase me-3">
+                                                    <label class="input-group-text text-uppercase">Patient Type</label>
+                                                    <select class="form-select ">
+                                                        <option value="">Select patient Visit Type</option>
+                                                        <option value="All Patients" selected="">All Patients</option>
+                                                        <option value="Inpatient">Inpatient</option>
+                                                        <option value="Outpatient">Outpatient</option>                                                        
+                                                    </select>
+                                                </div>
+
+                                                <div class="input-group fw-semibold text-uppercase">
+                                                    <label class="input-group-text text-uppercase">FROM:</label>
+                                                    <input class="form-control form-control-sm" type="date" value="2019-08-19" id="example-date-input">
+                                                </div>
+
+                                                <div class="input-group fw-semibold text-uppercase">
+                                                    <label class="input-group-text text-uppercase">TO:</label>
+                                                    <input class="form-control form-control-sm" type="date" value="2019-08-19" id="example-date-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button data-bs-toggle="modal" data-bs-target=".download-modal" type="button" class="btn btn-primary dropdown-toggle option-selector me-3 text-capitalize">
+                                        <i class="bx bxs-download  font-size-16"></i> <span class="pl-1 d-md-inline">Download Report</span>
+                                    </button>
+
+                                </div>
+
+
+                            </div>
+                            <div class="btn-toolbar p-3 align-items-center d-none animated delete-tool-bar" role="toolbar">
+                                <button type="button" data-bs-toggle="modal" data-bs-target=".download-modal" class="btn btn-primary waves-effect btn-label waves-light me-3"><i class="mdi mdi-printer label-icon"></i> Print Selected Invoices</button>
+                            </div>
+                        </div>
+
+                            <div class="card-body">
+                                  <div class="table-responsive">
+                                    <table class="table table-striped table-striped-info table-s align-middle text-nowrap table-s">
+                                        <thead class="bg-info text-black text-uppercase border border-info">
+                                            <tr>
+                                                <th title="Date and Time of Test Order">Collected On</th>
+                                                <th title="Visit ID on the day the samples were taken">Visit ID</th>
+                                                <th title="Name of the Patient">Patient</th>
+                                                <th title="Patient Visit Number">Specimen Sample(s)</th>
+                                                <th title="Order Number for the Test(s)">Test(s)</th>
+                                                <th title="Type of Visit (Outpatient or Inpatient)">Visit Type</th>
+                                                <th title="Payment Status">Status</th>
+                                                <th title="Available Actions (View, Acknowledge)" class="text-right">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="border border-info">
+                                            <tr>
+                                                <td>11 Oct 2024 11:23 AM</td>
+                                                <td>ADM123</td> <!-- Changed to ADM for inpatient -->
+                                                <td>Kelvin Kiptanui</td>
+                                                <td>Stool, Blood</td>
+                                                <td>Amoebic Examination Test, Biochemistry T4 Test</td>
+                                                <td>Inpatient</td>
+                                                <td><span class="badge rounded-pill bg-warning text-uppercase">Pending Collection</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12 Oct 2024 09:15 AM</td>
+                                                <td>OPD124</td>
+                                                <td>Jane Doe</td>
+                                                <td>Urine</td>
+                                                <td>Urinalysis</td>
+                                                <td>Outpatient</td>
+                                                <td><span class="badge rounded-pill bg-info text-uppercase">All samples collected</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12 Oct 2024 10:00 AM</td>
+                                                <td>ADM124</td> <!-- Changed to ADM for inpatient -->
+                                                <td>John Smith</td>
+                                                <td>Blood</td>
+                                                <td>Complete Blood Count</td>
+                                                <td>Inpatient</td>
+                                                <td><span class="badge rounded-pill bg-info text-uppercase">All samples collected</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12 Oct 2024 11:45 AM</td>
+                                                <td>OPD126</td>
+                                                <td>Mary Johnson</td>
+                                                <td>Saliva</td>
+                                                <td>Saliva Test</td>
+                                                <td>Outpatient</td>
+                                                <td><span class="badge rounded-pill bg-info text-uppercase">All samples collected</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>13 Oct 2024 08:30 AM</td>
+                                                <td>ADM125</td> <!-- Changed to ADM for inpatient -->
+                                                <td>Michael Brown</td>
+                                                <td>Blood</td>
+                                                <td>Glucose Test</td>
+                                                <td>Inpatient</td>
+                                                <td><span class="badge rounded-pill bg-info text-uppercase">All samples collected</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>14 Oct 2024 10:15 AM</td>
+                                                <td>ADM126</td> <!-- Changed to ADM for inpatient -->
+                                                <td>Robert Green</td>
+                                                <td>Blood, Urine</td>
+                                                <td>Lipid Panel</td>
+                                                <td>Inpatient</td>
+                                                <td><span class="badge rounded-pill bg-warning text-uppercase">Pending Collection</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>14 Oct 2024 11:30 AM</td>
+                                                <td>OPD130</td>
+                                                <td>Emily Davis</td>
+                                                <td>Blood</td>
+                                                <td>Thyroid Panel</td>
+                                                <td>Outpatient</td>
+                                                <td><span class="badge rounded-pill bg-info text-uppercase">All samples collected</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>15 Oct 2024 09:00 AM</td>
+                                                <td>ADM127</td> <!-- Changed to ADM for inpatient -->
+                                                <td>Sarah Wilson</td>
+                                                <td>Blood, Urine</td>
+                                                <td>Comprehensive Metabolic Panel</td>
+                                                <td>Inpatient</td>
+                                                <td><span class="badge rounded-pill bg-warning text-uppercase">Pending Collection</span></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-sm btn-info text-uppercase mx-2" data-bs-toggle="modal" data-bs-target=".test-details-modal" title="View Lab Test Details">
+                                                        Detailed View
+                                                    </button>
+                                                    <a href="lab-orders-acknowledged-patient.html" class="btn btn-sm btn-dark text-uppercase" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results.">
+                                                        Test Actions
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot class="border border-dark text-uppercase">
+                                            <tr class="table-primary text-black border-dark">
+                                                <th colspan="3">22 Patients</th>
+                                                <th colspan="">34 Samples</th>
+                                                <th colspan="">45 Tests</th>
+                                                <th colspan="3">11 Inpatient | 23 Outpatient</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    
+                                    
+                                    
+                                  </div>                    
+                            </div>
+                           
+
+                           
+
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <!-- Test results modal -->
+            <div class="modal fade receipting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog  w-100 modal-lg modal-dialog-centered modal-full">
+                    <div class="modal-content w-100">
+                        <div class="modal-header">
+                            <h5 class="modal-title ml-3 me-3" id="myLargeModalLabel">Lab Test Details For Ticket No T45</h5>
+                            <span class="badge rounded-pill bg-success text-uppercase font-12px">Critical Level: Expectant</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <address>
+                                        <strong class="text-capitalize">Patient Details:</strong><br>
+                                        Alex Wanjala, 23 Year Old Male,<br>
+                                        email@mail.com, 0704 549 859<br>                                   
+                                        Patient ID. MPI/23455<br/>
+                                        <br>
+                                       
+                                        
+                                    </address>
+                                </div>
+                                <div class="col-6 text-right d-none">
+                                    <address>
+                                        <strong class="text-capitalize">Location Details</strong><br>
+                                        Street/Road: Mombasa Road<br>
+                                        Plot No.: 122202/1250<br>                                   
+                                        Building: The Tower. Floor: 12. Door/Stall No.: 123<br/>
+                                        Subcounty: CBD. Ward: Mututu                                        
+                                        
+                                    </address>
+                                </div>
+                            </div>
+
+                           <div class="row">
+                            <div class="col-12">
+                                <div class="hori-timeline mt-4">
+                                    <div class="owl-carousel owl-theme  navs-carousel events timeline-carousel" id="timeline-carousel">
+                                        <div class="item event-list">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">12 Sep 2023, 10:09 AM</div>
+                                                    <h5 class="mb-4">Checked In</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted text-capitalize">By <a href="#">Sharon Omondi</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="item event-list">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">12 Sep 2023, 10:47 AM</div>
+                                                    <h5 class="mb-4">Triage</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted">By Kelvin Kinoti</p>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="item event-list">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">12 Sep, 10:45 AM</div>
+                                                    <h5 class="mb-4">Consaltation</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted">By Dr Kip Patel</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item event-list ">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">12 Sep, 10:47 AM</div>
+                                                    <h5 class="mb-4">Cashier</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted">Served By Josphine</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item event-list active">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">Pending ...</div>
+                                                    <h5 class="mb-4">Specimen Collection</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted">-</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item event-list">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">Pending ...</div>
+                                                    <h5 class="mb-4">Test Results</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted">-</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item event-list">
+                                            <div>
+                                                <div class="event-date">
+                                                    <div class="text-primary mb-1">Pending ...</div>
+                                                    <h5 class="mb-4">Pharmecey</h5>
+                                                </div>
+                                                <div class="event-down-icon">
+                                                    <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                </div>
+        
+                                                <div class="mt-3 px-3">
+                                                    <p class="text-muted">-</p>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                            </div>
+
+                           <!-- consaltation findings and feedback -->
+                           <div class="col-12 pt-3">
+                                
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-2 mb-4 d-flex align-items-center">
+                                            <i class="mdi mdi-test-tube  font-28 mr-15px"></i>
+                                            <p class="fw-semibold mb-0 pb-0">Specimen Collection  (2 Tests are to be conducted)</p>
+        
+                                        </div>
+                                    </div>
+                                    <div class="col-12 allergy-table">
+                                        <h3 class="font-size-15 fw-bold text-capitalize mb-3 mt-1 d-none">Patient's Specimen</h3>
+                                        <p>Select the specimen collected for each test and indicate correctly the label for the corresponding specimen.</p>
+
+
+                                        <h3 class="font-size-15 fw-bold text-capitalize mb-3 mt-4">A. ABO Blood Group</h3>
+                                        <div class="table-responsive">
+                                            <table class="table table-nowrap table-sm table-editable-1">
+                                                <thead class="bg-light">
+                                                    <tr>
+                                                        <th style="width: 40px;">#</th>
+                                                        <th>Specimen</th>
+                                                        <th>Specimen Label</th>
+                                                    </tr>
+                                                    <tbody>
+                                                    
+        
+                                                        <tr>
+                                                            <td>1.</td>
+                                                            <td>
+                                                                <select class="form-control selectpicker bg-white select-revenue form-control-sm" title="Specimen" data-live-search="true">
+                                                                    <option value="Sputum">Sputum</option>
+                                                                    <option value="Semen">Semen</option>
+                                                                    <option value="Stool">Stool</option>
+                                                                    <option value="Urine">Urine</option>
+                                                                    <option value="Saliva">Saliva</option>
+                                                                    <option value="Oral fluid">Oral fluid</option>
+                                                                    <option value="Sweat">Sweat</option>
+
+                                                                    <option value="Blood">Blood</option>
+                                                                    <option value="Tissue biopsy">Tissue biopsy</option>
+                                                                    <option value="Cerebrospinal fluid (CSF)">Cerebrospinal fluid (CSF)</option>
+                                                                    <option value="Bone marrow">Bone marrow</option>
+                                                                    <option value="Amniotic fluid">Amniotic fluid</option>
+                                                              </select>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Enter Specimen label"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="cloneCharges d-none">
+                                                            <td style="width: 80px " class="categoryIndex ">#</td>
+            
+                                                            <td>
+                                                                <select class="form-control selectpicker bg-white select-revenue form-control-sm" title="Specimen" data-live-search="true">
+                                                                    <option value="Sputum">Sputum</option>
+                                                                    <option value="Semen">Semen</option>
+                                                                    <option value="Stool">Stool</option>
+                                                                    <option value="Urine">Urine</option>
+                                                                    <option value="Saliva">Saliva</option>
+                                                                    <option value="Oral fluid">Oral fluid</option>
+                                                                    <option value="Sweat">Sweat</option>
+
+                                                                    <option value="Blood">Blood</option>
+                                                                    <option value="Tissue biopsy">Tissue biopsy</option>
+                                                                    <option value="Cerebrospinal fluid (CSF)">Cerebrospinal fluid (CSF)</option>
+                                                                    <option value="Bone marrow">Bone marrow</option>
+                                                                    <option value="Amniotic fluid">Amniotic fluid</option>
+                                                              </select>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Enter Specimen label"/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+        
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="7" class="bg-light add-field-1 cursor-pointer text-black fw-bold">
+                                                                <span class="d-flex align-items-center "><i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21 "></i><span class="pl-5 ">Add Specimen</span></span>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+        
+                                                </thead>
+                                            </table>
+                                            
+                                        </div>
+
+                                        <h3 class="font-size-15 fw-bold text-capitalize mb-3 mt-4">B. Fasting Blood Sugar</h3>
+                                        <div class="table-responsive">
+                                            <table class="table table-nowrap table-sm table-editable-1">
+                                                <thead class="bg-light">
+                                                    <tr>
+                                                        <th style="width: 40px;">#</th>
+                                                        <th>Specimen</th>
+                                                        <th>Specimen Label</th>
+                                                    </tr>
+                                                    <tbody>
+                                                    
+        
+                                                        <tr>
+                                                            <td>1.</td>
+                                                            <td>
+                                                                <select class="form-control selectpicker bg-white select-revenue form-control-sm" title="Specimen" data-live-search="true">
+                                                                    <option value="Sputum">Sputum</option>
+                                                                    <option value="Semen">Semen</option>
+                                                                    <option value="Stool">Stool</option>
+                                                                    <option value="Urine">Urine</option>
+                                                                    <option value="Saliva">Saliva</option>
+                                                                    <option value="Oral fluid">Oral fluid</option>
+                                                                    <option value="Sweat">Sweat</option>
+
+                                                                    <option value="Blood">Blood</option>
+                                                                    <option value="Tissue biopsy">Tissue biopsy</option>
+                                                                    <option value="Cerebrospinal fluid (CSF)">Cerebrospinal fluid (CSF)</option>
+                                                                    <option value="Bone marrow">Bone marrow</option>
+                                                                    <option value="Amniotic fluid">Amniotic fluid</option>
+                                                              </select>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Enter Specimen label"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="cloneCharges d-none">
+                                                            <td style="width: 80px " class="categoryIndex ">#</td>
+            
+                                                            <td>
+                                                                <select class="form-control selectpicker bg-white select-revenue form-control-sm" title="Specimen" data-live-search="true">
+                                                                    <option value="Sputum">Sputum</option>
+                                                                    <option value="Semen">Semen</option>
+                                                                    <option value="Stool">Stool</option>
+                                                                    <option value="Urine">Urine</option>
+                                                                    <option value="Saliva">Saliva</option>
+                                                                    <option value="Oral fluid">Oral fluid</option>
+                                                                    <option value="Sweat">Sweat</option>
+
+                                                                    <option value="Blood">Blood</option>
+                                                                    <option value="Tissue biopsy">Tissue biopsy</option>
+                                                                    <option value="Cerebrospinal fluid (CSF)">Cerebrospinal fluid (CSF)</option>
+                                                                    <option value="Bone marrow">Bone marrow</option>
+                                                                    <option value="Amniotic fluid">Amniotic fluid</option>
+                                                              </select>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Enter Specimen label"/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+        
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="7" class="bg-light add-field-1 cursor-pointer text-black fw-bold">
+                                                                <span class="d-flex align-items-center "><i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21 "></i><span class="pl-5 ">Add Specimen</span></span>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+        
+                                                </thead>
+                                            </table>
+                                            
+                                        </div>
+                                    </div>
+        
+                                   
+                                </div>                           
+                           </div>
+                           <!-- end of consaltation -->
+                            <div class="col-12 mt-3">
+                                <button class="btn btn-primary w-100 text-center text-uppercase generate-bill"> Done <i class="dripicons-checkmark"></i></button>
+                            </div>
+
+
+                            
+
+                           </div>
+                        </div>
+                        <div class="modal-footer d-none">
+                           
+                            <a href="#" target="_blank" type="button" class="btn btn-primary waves-effect waves-light w-100">
+                                <i class="mdi mdi-check font-size-16 align-middle me-2"></i> Submit Form
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of receipting modal -->
+
+            <!-- decline application modal -->
+            <div class="modal fade decline-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Decline The Application</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <address>
+                                        <strong class="text-capitalize">Test Results For:</strong><br>
+                                        Alex Wanjala AT Mombasa Road<br>
+                                        email@mail.com, 0704 549 859<br>                                   
+                                        ID No. 12345689.<br/>
+                                        <br>
+                                        <small class="text-uppercase d-none">Application Date 1 Mar 2022, 10:20 AM</small>
+                                        
+                                    </address>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <address>
+                                        <strong class="text-capitalize">Location Details</strong><br>
+                                        Street/Road: Mombasa Road<br>
+                                        Plot No.: 122202/1250<br>                                   
+                                        Building: The Tower. Floor: 12. Door/Stall No.: 123<br/>
+                                        Subcounty: CBD. Ward: Mututu
+                                        
+                                        
+                                    </address>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <div class="hori-timeline">
+                                        <div class="owl-carousel owl-theme  navs-carousel events timeline-carousel" id="timeline-carousel">
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">12 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Application</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted text-capitalize">Self Service Portal</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">13 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Lab Test</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3 text-capitalize">
+                                                        <p class="text-muted">Dr Mary Jane at Taifa Clinic</p>
+                                                        <a href="PrintDocs/health-result-slip-master/health-result-slip-master/slip33.html" target="_blank" type="button" class="btn btn-link waves-effect"><i class="mdi mdi-eye-outline"></i> View Result Slip</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list active">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">Pending</div>
+                                                        <h5 class="mb-4">Application Verdict</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">-</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">Pending ...</div>
+                                                        <h5 class="mb-4">Certification</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">-</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">ND12368</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th style="width: 70px;">#</th>
+                                                <th>Test</th>
+                                                <th class="" >Results</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Stool</td>
+                                                <td>
+                                                    <span class="badge badge-soft-success fw-bolder  text-uppercase">Pass</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Urinalysis</td>
+                                                <td>
+                                                    <span class="badge badge-soft-success fw-bolder  text-uppercase">Pass</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>03</td>
+                                                <td>Salmonella Ag</td>
+                                                <td>
+                                                    <span class="badge badge-soft-danger fw-bolder  text-uppercase">Fail</span>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading">Doctor Notes</h4>
+                                <p>
+                                    The applicant needs a retake ...
+                                </p>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <div class="mb-3">
+                                    <label for="formrow-firstname-input" class="form-label text-capitalize">Reasons for Declining the application</label>
+                                    <textarea class="form-control" id="" cols="30" rows="3" placeholder="Start Typing ..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           
+                            <a href="#" target="_blank" type="button" class="btn btn-danger waves-effect waves-light w-100">
+                                <i class="mdi mdi-close font-size-16 align-middle me-2"></i> Decline application
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- delcine application modal -->
+
+            <!-- Approve application -->
+            <div class="modal fade approve-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Approve The Application</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <address>
+                                        <strong class="text-capitalize">Test Results For:</strong><br>
+                                        Alex Wanjala AT Mombasa Road<br>
+                                        email@mail.com, 0704 549 859<br>                                   
+                                        ID No. 12345689.<br/>
+                                        <br>
+                                        <small class="text-uppercase d-none">Application Date 1 Mar 2022, 10:20 AM</small>
+                                        
+                                    </address>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <address>
+                                        <strong class="text-capitalize">Location Details</strong><br>
+                                        Street/Road: Mombasa Road<br>
+                                        Plot No.: 122202/1250<br>                                   
+                                        Building: The Tower. Floor: 12. Door/Stall No.: 123<br/>
+                                        Subcounty: CBD. Ward: Mututu
+                                        
+                                        
+                                    </address>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <div class="hori-timeline">
+                                        <div class="owl-carousel owl-theme  navs-carousel events timeline-carousel" id="timeline-carousel">
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">12 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Application</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted text-capitalize">Self Service Portal</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">13 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Lab Test</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3 text-capitalize">
+                                                        <p class="text-muted">Dr Mary Jane at Taifa Clinic</p>
+                                                        <a href="PrintDocs/health-result-slip-master/health-result-slip-master/slip33.html" target="_blank" type="button" class="btn btn-link waves-effect"><i class="mdi mdi-eye-outline"></i> View Result Slip</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list active">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">Pending</div>
+                                                        <h5 class="mb-4">Application Verdict</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">-</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">Pending ...</div>
+                                                        <h5 class="mb-4">Certification</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">-</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">ND12368</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th style="width: 70px;">#</th>
+                                                <th>Test</th>
+                                                <th class="" >Results</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Stool</td>
+                                                <td>
+                                                    <span class="badge badge-soft-success fw-bolder  text-uppercase">Pass</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Urinalysis</td>
+                                                <td>
+                                                    <span class="badge badge-soft-success fw-bolder  text-uppercase">Pass</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>03</td>
+                                                <td>Salmonella Ag</td>
+                                                <td>
+                                                    <span class="badge badge-soft-success fw-bolder  text-uppercase">Pass</span>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading">Doctor Notes</h4>
+                                <p>
+                                    Looks good
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           
+                            <a href="#" target="_blank" type="button" class="btn btn-success waves-effect waves-light w-100">
+                                <i class="mdi mdi-check font-size-16 align-middle"></i> Approve Appliction
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.Approve application -->
+            </div>
+            <!-- invoice details -->
+
+            <!-- Lab test details modal -->
+            <div class="modal fade test-details-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-uppercase" id="myLargeModalLabel">Lab Test Requisition Details </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <address>
+                                        <strong class="text-uppercase">Patient's Details</strong><br>
+                                        Kelvin Njuguna Ndungu<br>
+                                        Age: 890 Gender: Female<br>                                   
+                                        ID No. 12345689, Phone: 0704549859, Email: email@email.com<br/>
+                                        <p class="text-black fw-semibold text-uppercase mb-0">(Visit No. 22 Order Num ORD-1234)</p>
+                                        <br>
+                                        <small class="text-uppercase d-none">Application Date 1 Mar 2022, 10:20 AM</small>
+                                        <br>    
+                                       
+                                                                             
+                                        <hr class="mt-0 pt-0">
+                                        
+                                    </address>
+                                </div>
+                                <div class="col-12">
+                                    <div class="hori-timeline">
+                                        <div class="owl-carousel owl-theme  navs-carousel events timeline-carousel mb-3" id="timeline-carousel">
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">12 Oct 2024, 12:54 AM</div>
+                                                        <h5 class="mb-4">Scheduled for Lab Test</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bxs-check-circle h1 text-success down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted text-capitalize mb-0">By ALex Wanjala (Physician)</p>
+                                                        <i><small>General OPD department</small></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list ">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">12 Oct 2024, 12:54 AM</div>
+                                                        <h5 class="mb-4">Acknowledgement</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bxs-check-circle h1 text-success down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted text-capitalize mb-0">By Jane John (Lab Receptionist)</p>
+                                                        <i><small>Medical Lab Two</small></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list active">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">Pending ...</div>
+                                                        <h5 class="mb-4">Sample collection</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">-</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list ">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">Pending ...</div>
+                                                        <h5 class="mb-4">Results Release</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">-</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-12">
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-nowrap border border-dark text-uppercase align-middle text-black table-striped">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th style="width: 70px;" title="Date when the order was placed">Collection Date</th>
+                                                    <th title="Order Number">No.</th>
+                                                    <th title="Type of Test">Test</th>
+                                                    <th title="Collected Specimen">Specimen</th>
+                                                    <th title="Person who collected the specimen">Collected By</th>
+                                                    <th title="Person who brought the specimen">Brought By</th>
+                                                    <th title="System-generated code for the specimen">Gen Code</th>
+                                                    <th title="Manually entered code (if any)">Man Code</th>
+                                                    <th title="Status of label print" class="text-right">Print</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>01 Jan 2024 10:15 AM</td>
+                                                    <td>ORD-12345</td>
+                                                    <td>Urinalysis</td>
+                                                    <td>Urine</td>
+                                                    <td>Steve K.</td>
+                                                    <td>Patient</td>
+                                                    <td>URI-04102401</td>
+                                                    <td>-</td>
+                                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Printed</span></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>01 Jan 2024 10:15 AM</td>
+                                                    <td>ORD-12346</td>
+                                                    <td>Blood Culture</td>
+                                                    <td>Blood</td>
+                                                    <td>Mary A.</td>
+                                                    <td>Lab Staff</td>
+                                                    <td>BLO-04102402</td>
+                                                    <td>-</td>
+                                                    <td><span class="badge rounded-pill bg-warning float-end text-uppercase">Not Printed</span></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>01 Jan 2024 10:15 AM</td>
+                                                    <td>ORD-12347</td>
+                                                    <td>Sputum Test</td>
+                                                    <td>Sputum</td>
+                                                    <td>James M.</td>
+                                                    <td>Patient</td>
+                                                    <td>SPU-04102403</td>
+                                                    <td>SPU-MAN01</td>
+                                                    <td><span class="badge rounded-pill bg-success float-end text-uppercase">Printed</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
+                                </div>
+
+                                <!-- tests that were paid for using MPESA -->
+    
+                                <div class="col-12">
+                                    <div class="row flex-justify-end justify-content-end">
+
+                                        <div class="col-8">
+                                            <div class="table-responsive mt-4">
+                                                <table class="table border border-success text-uppercase table-sm table-striped table-striped-success">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Invoice Amount</th>
+                                                            <td  class="text-black">KES 7000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Amount Discounted</th>
+                                                            <td  class="text-black text-black">KES 0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Amount Paid</th>
+                                                            <td  class="text-black FS-2 text-black fw-bold">KES 7,000</td>
+                                                        </tr>                                                      
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-8">
+                                            <div class="table-responsive mt-4">
+                                                <table class="table border border-success text-uppercase table-sm table-striped table-striped-success">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Invoice Number</th>
+                                                            <td  class="text-black">HSP1234</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Receipt No.</th>
+                                                            <td  class="text-black">RCP12345</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Payment Mode.</th>
+                                                            <td  class="text-black">MPESA-0704549859 REF: SERYU5785</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Paid By</th>
+                                                            <td  class="text-black">Kelvin Ndungu</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Invoiced/Scheduled By</th>
+                                                            <td  class="text-black">Alex Wanjala (Physician)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Receipted By</th>
+                                                            <td class="text-black">Self Payment</td>
+                                                        </tr>
+        
+                                                        <!-- for receipts receipted by hospital staff -->
+                                                        <tr>
+                                                            <th>Receipted By</th>
+                                                            <td class="text-black">Alex Wanjala - (Lab Receptionist)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Date receipted</th>
+                                                            <td class="text-black">12 Oct 2024 at 12:54 AM</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+        
+                                        <!-- tests that were paid for using insurance -->
+                                        <div class="col-8 d-none">
+                                            <div class="table-responsive mt-4">
+                                                <table class="table border border-success text-uppercase table-sm table-striped table-striped-success">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Invoice Number</th>
+                                                            <td  class="text-black">HSP1234</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Payment Mode</th>
+                                                            <td  class="text-black">NHIF (Owner)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Policy Number</th>
+                                                            <td  class="text-black">UIIU50698</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Policy Holder's Name</th>
+                                                            <td  class="text-black">Kelvin Njuguna Ndungu</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Invoiced/Scheduled By</th>
+                                                            <td  class="text-black">Alex Wanjala (Physician)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Approved By</th>
+                                                            <td class="text-black">Felix Obong (Hospital CEO)</td>
+                                                        </tr>
+        
+                                                        <!-- for receipts receipted by hospital staff -->
+                                                        <tr>
+                                                            <th>Approved By</th>
+                                                            <td class="text-black">Alex Wanjala - (NHIF Accountant)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Date Approved</th>
+                                                            <td class="text-black">12 Oct 2024 at 12:54 AM</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+        
+                                        <!-- exempted tests that have been approved -->
+                                        <div class="col-8 d-none">
+                                            <div class="table-responsive mt-4">
+                                                <table class="table border border-success text-uppercase table-sm table-striped table-striped-success">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Invoice Number</th>
+                                                            <td  class="text-black">HSP1234</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Exemption Number</th>
+                                                            <td  class="text-black">EX031024-01</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Exemption Reason</th>
+                                                            <td  class="text-black">Gender Based Violence Victim</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Initiated By</th>
+                                                            <td  class="text-black">Patrick Martion Otieno (Hospital Social Worker)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Invoiced/Scheduled By</th>
+                                                            <td  class="text-black">Alex Wanjala (Physician)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Received By</th>
+                                                            <td class="text-black">Felix Tanui (Hospital Receptionist)</td>
+                                                        </tr>
+        
+                                                        <!-- for receipts receipted by hospital staff -->
+                                                        <tr>
+                                                            <th>Approved By</th>
+                                                            <td class="text-black">Alex Wanjala - (Hospital CEO)</td>
+                                                        </tr>
+            
+                                                        <tr>
+                                                            <th>Date Approved</th>
+                                                            <td class="text-black">12 Oct 2024 at 12:54 AM</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                         
+
+                          
+                        </div>
+                        <div class="modal-footer">
+                            <a href="lab-orders-acknowledged-patient.html" class="btn btn-dark text-uppercase d-flex align-items-center ms-2" title="Navigate to the Test Action Center to Manage Lab Tests, Collect Samples, and Enter Results">
+                                <div>Navigate to test action center</div>
+                                <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </a>
+                            
+                        </div>
+                        
+                      
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.Approve application -->
+            </div>
+            <!-- lab test details modal -->
+
+            <!-- acknowledged lab test request that has been approved -->
+            <div class="modal fade test-acknowledged-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-none">
+                            <h4 class="modal-title text-uppercase" id="myLargeModalLabel">Acknowledgment confirmartion</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                        
+                                <!-- Confirmation Icon and Message -->
+                                <div class="col-12 d-flex align-items-center justify-content-center pt-3">
+                                    <div class="p-4 px-5 d-flex align-items-center justify-content-center flex-column pt-5">
+                                        <div class="flex-shrink-0 align-self-center mb-4">
+                                            <div class="avatar-md rounded-circle bg-primary mini-stat-icon" title="Action Successful">
+                                                <span class="avatar-title rounded-circle bg-success">
+                                                    <i class="bx bx-check-double fs-1" title="Acknowledgment Successful"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <h4 class="text-uppercase text-success text-black modal-title" title="Acknowledgment Confirmed">Acknowledgement Confirmation</h4>
+                                        <p class="text-center px-5" title="Patient has been queued for specimen collection">
+                                            The patient has been queued for specimen collection. If this was accidental, you can revert the action by clicking the <strong>Revert Button</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                        
+                                <!-- Patient and Visit Details -->
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table border border-info table-sm table-striped-info table-striped text-black" title="Patient and visit details">
+                                            <tbody class="text-black text-uppercase">
+                                                <tr>
+                                                    <td title="Visit Number">Visit No.</td>
+                                                    <th title="OPD Number">OPD123</th>
+                                                </tr>
+                                                <tr>
+                                                    <td title="Patient Name">Patient</td>
+                                                    <th title="Full Name of Patient">Kelvin Njuguna Ndungu</th>
+                                                </tr>
+                                                <tr>
+                                                    <td title="Patient's Age and Gender">Age & Gender</td>
+                                                    <th title="Patient's Age and Gender">30 Years 5 Months Male</th>
+                                                </tr>
+                                                <tr>
+                                                    <td title="Type of Visit">Visit Type</td>
+                                                    <th title="Outpatient or Inpatient">Outpatient</th>
+                                                </tr>
+                                                <tr>
+                                                    <td title="Order Number">Order No.</td>
+                                                    <th title="Test Order Number">ORD-123</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        
+                                <!-- Test Details -->
+                                <div class="col-12">
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-nowrap border border-dark text-uppercase" title="List of tests and their costs">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th style="width: 70px;" title="Test number">#</th>
+                                                    <th title="Name of Test">Test</th>
+                                                    <th class="text-right" title="Test Amount">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td title="Test 1">01</td>
+                                                    <td title="Glucose Challenge Test">GLUCOSE CHALLENGE TEST</td>  
+                                                    <td class="text-right" title="Cost of the test">KES 3,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td title="Test 2">02</td>
+                                                    <td title="Cardiac Enzyme Tests">CARDIAC ENZYMES (CpPK, LDH, SGOT)</td>  
+                                                    <td class="text-right" title="Cost of the test">KES 2,500</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot class="border border-dark table-light">
+                                                <tr class="text-black">
+                                                    <th colspan="2" title="Total number of tests">3 Tests</th>
+                                                    <th class="text-right" title="Total cost of tests">KES 5,500</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-8">
+                                    <div class="table-responsive mt-4">
+                                        <table class="table border border-success text-uppercase table-sm table-striped table-striped-success">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Invoice Amount</th>
+                                                    <td  class="text-black ">KES 7000</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Amount Discounted</th>
+                                                    <td  class="text-black text-black ">KES 0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Amount Paid</th>
+                                                    <td  class="text-black FS-2 text-black fw-bold">KES 7,000</td>
+                                                </tr>                                                      
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        
+                                <!-- Action Buttons with Tooltips -->
+                                <!-- Action Buttons with Modal Dismiss Functionality -->
+                                <div class="col-12 d-flex justify-content-end pt-4 text-uppercase">
+                                    <button type="button"class="btn btn-sm btn-danger text-uppercase d-flex align-items-center revertAcknowledgment mx-2" id="revertButton" title="Click to undo this action">
+                                        <div>Revert Acknowledgment</div>
+                                        <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-dark waves-effect waves-light text-uppercase" data-bs-dismiss="modal" title="Click to close the modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="modal-footer d-none">
+                            <button class="btn btn-sm btn-success text-uppercase d-flex align-items-center ms-2 Acknowledge-order" data-bs-toggle="modal" data-bs-target="#payment-modal" title="Initiate Payment for Lab Tests">
+                                <div>Acknowledge</div>
+                                <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </button>
+                        </div>
+                      
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.Approve application -->
+            </div>
+             <!-- end of confirmed acknowledgment -->
+
+             <!-- revert modal confirmation -->
+             <div class="modal fade test-revert-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-none">
+                            <h4 class="modal-title text-uppercase" id="myLargeModalLabel">Acknowledgment Reverted</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <!-- Confirmation Icon and Message -->
+                                <div class="col-12 d-flex align-items-center justify-content-center pt-2">
+                                    <div class="d-flex align-items-center justify-content-center flex-column pt-3">
+                                        <div class="flex-shrink-0 align-self-center mb-4">
+                                            <div class="avatar-md rounded-circle bg-warning mini-stat-icon" title="Action Reverted">
+                                                <span class="avatar-title rounded-circle bg-danger">
+                                                    <i class="bx bx-undo fs-1" title="Acknowledgment Reverted"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <h4 class="text-uppercase text-danger text-black modal-title" title="Acknowledgment Reverted">Acknowledgement Reverted</h4>
+                                        <p class="text-center" title="You have successfully reverted this acknowledgment">
+                                            The acknowledgment has been successfully reverted. If you would like to acknowledge the order again, you can do so from the <strong>order table</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="col-12 d-flex justify-content-center pt-4 text-uppercase pb-2">
+                                    <!-- Acknowledge Again Button -->
+                                    <button type="button" class="btn btn-sm btn-success text-uppercase d-flex align-items-center mx-2 Acknowledge-order" id="acknowledgeAgainButton" title="Click to acknowledge this order again">
+                                        <div>Acknowledge Again</div>
+                                        <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </button>
+            
+                                    <!-- Close Button -->
+                                    <button type="button" class="btn btn-outline-dark waves-effect waves-light text-uppercase" id="closeButton" data-bs-dismiss="modal" title="Click to close the modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.Approve application -->
+            </div>
+            
+              <!-- end of revert modal -->
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Hospital Management Information System
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay "></div>
+
+    <script src="assets/libs/jquery/jquery.min.js "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+    <script src="assets/libs/simplebar/simplebar.min.js "></script>
+    <script src="assets/libs/node-waves/waves.min.js "></script>
+
+
+
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js "></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js "></script>
+    <!-- Buttons examples -->
+    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js "></script>
+    <script src="assets/libs/jszip/jszip.min.js "></script>
+    <script src="assets/libs/pdfmake/build/pdfmake.min.js "></script>
+    <script src="assets/libs/pdfmake/build/vfs_fonts.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js "></script>
+    <!-- numerals number formater -->
+    <script src="assets/libs/numeral/numeral.js "></script>
+
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js "></script>
+    <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js "></script>
+
+    <!-- Bootstrap select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/dropzone/min/dropzone.min.js "></script>
+    <!-- Datatable init js -->
+    <script src="assets/js/pages/datatables.init.js "></script>
+
+     <!-- owl.carousel js -->
+     <script src="assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+     <!-- timeline init js -->
+     <script src="assets/js/pages/timeline.init.js"></script>
+
+      <!-- Table Editable plugin -->
+    <script src="assets/libs/table-edits/build/table-edits.min.js"></script>
+    <script src="assets/js/pages/table-editable.int.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js "></script>
+    <script src="assets/js/custom.js "></script>
+
+    <script>
+        $('.modal-details-btn').click()
+    </script>
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>

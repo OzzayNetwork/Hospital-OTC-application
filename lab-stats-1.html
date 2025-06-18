@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.datetime {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.quick-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Laboratory Dashboard</h1>
+        <div class="datetime">
+            <span id="date"></span>
+            <span id="time"></span>
+        </div>
+    </header>
+    <main>
+        <section class="overview">
+            <h2>Overview</h2>
+            <div class="card">Total Tests Conducted: <span id="total-tests">0</span></div>
+            <div class="card">Tests in Progress: <span id="tests-in-progress">0</span></div>
+            <div class="card">Completed Tests: <span id="completed-tests">0</span></div>
+            <div class="card">Pending Tests: <span id="pending-tests">0</span></div>
+        </section>
+        <section class="key-metrics">
+            <h2>Key Metrics</h2>
+            <div class="card">Average Turnaround Time: <span id="turnaround-time">0</span></div>
+            <div class="card">Error Rate: <span id="error-rate">0%</span></div>
+            <div class="card">Utilization Rate: <span id="utilization-rate">0%</span></div>
+        </section>
+        <section class="test-types">
+            <h2>Test Types Breakdown</h2>
+            <div id="pie-chart"></div>
+            <div id="bar-graph"></div>
+        </section>
+        <section class="real-time">
+            <h2>Real-Time Data</h2>
+            <div id="live-feed"></div>
+            <div id="alerts"></div>
+        </section>
+        <section class="staff-performance">
+            <h2>Staff Performance</h2>
+            <div class="card">Top Performers: <span id="top-performers">N/A</span></div>
+            <div class="card">Average Processing Time: <span id="processing-time">0</span></div>
+        </section>
+        <section class="equipment-status">
+            <h2>Equipment Status</h2>
+            <div class="card">Operational Status: <span id="operational-status">N/A</span></div>
+            <div class="card">Utilization Graph: <span id="utilization-graph">N/A</span></div>
+        </section>
+    </main>
+    <footer>
+        <div class="quick-links">
+            <a href="#">Detailed Reports</a>
+            <a href="#">Settings</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="contact-info">
+            <p>Contact: support@labfacility.com</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

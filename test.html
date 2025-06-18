@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Tracking System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a3d7c, #2c5282);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dashboard-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            border: none;
+        }
+        
+        .payment-method {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .method-bank {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .method-mpesa {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .method-telebir {
+            background-color: #f3e5f5;
+            color: #6a1b9a;
+        }
+        
+        .table-hover tbody tr:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .timestamp {
+            display: block;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .payer-info {
+            min-width: 150px;
+        }
+        
+        .phone-number {
+            font-family: monospace;
+            font-size: 13px;
+        }
+        
+        .source-details {
+            min-width: 160px;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        .payment-totals {
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        
+        .footer-stats {
+            background-color: #e9ecef;
+            border-radius: 0 0 10px 10px;
+            padding: 10px;
+            font-size: 13px;
+        }
+        
+        .summary-row {
+            font-weight: 600;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-card card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table align-middle table-hover border table-striped text-nowrap" id="paymentTable">
+                        <thead class="table-light text-uppercase">
+                            <tr>
+                                <th>Payment Ref</th>
+                                <th>Date & Time</th>
+                                <th>Payer Name</th>
+                                <th>Phone Number</th>
+                                <th>Source</th>
+                                <th>Agent</th>
+                                <th>Beneficiary Account</th>
+                                <th>Invoices Covered</th>
+                                <th class="text-right">Amount (ETB)</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Bank Payment - Multiple Invoices -->
+                            <tr>
+                                <td>PAY-2023-001</td>
+                                <td>
+                                    05/Jun/2023
+                                    <span class="timestamp">14:25:36</span>
+                                </td>
+                                <td class="payer-info">Tewodros Abebe</td>
+                                <td class="phone-number">+251 91 234 5678</td>
+                                <td class="source-details">
+                                    <span class="payment-method method-bank">
+                                        <i class="bi bi-bank me-1"></i> Bank Transfer
+                                    </span>
+                                    <div class="small text-muted">CBE • Ref: CBE-TR-7845</div>
+                                </td>
+                                <td>Abebe Kebede</td>
+                                <td>
+                                    CBE Account ****7890
+                                    <div class="small text-muted">Main Operating Account</div>
+                                </td>
+                                <td>
+                                    INV-347, INV-351
+                                    <div class="small text-muted">2 invoices</div>
+                                </td>
+                                <td class="text-right">8,500.00</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#invoiceDetailsModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Mpesa Payment - Single Invoice -->
+                            <tr>
+                                <td>PAY-2023-002</td>
+                                <td>
+                                    07/Jun/2023
+                                    <span class="timestamp">09:15:42</span>
+                                </td>
+                                <td class="payer-info">Meron Girma</td>
+                                <td class="phone-number">+251 92 345 6789</td>
+                                <td class="source-details">
+                                    <span class="payment-method method-mpesa">
+                                        <i class="bi bi-phone me-1"></i> Mpesa
+                                    </span>
+                                    <div class="small text-muted">Code: MPX7B9C</div>
+                                </td>
+                                <td>Tewodros Abebe</td>
+                                <td>
+                                    Awash Account ****4567
+                                    <div class="small text-muted">Mpesa Collection</div>
+                                </td>
+                                <td>
+                                    INV-366
+                                    <div class="small text-muted">1 invoice</div>
+                                </td>
+                                <td class="text-right">2,300.00</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#invoiceDetailsModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Telebir Payment - Multiple Invoices -->
+                            <tr>
+                                <td>PAY-2023-003</td>
+                                <td>
+                                    10/Jun/2023
+                                    <span class="timestamp">16:45:21</span>
+                                </td>
+                                <td class="payer-info">Kebede Abebe</td>
+                                <td class="phone-number">+251 93 456 7890</td>
+                                <td class="source-details">
+                                    <span class="payment-method method-telebir">
+                                        <i class="bi bi-phone me-1"></i> Telebir
+                                    </span>
+                                    <div class="small text-muted">Ref: TEL-9A8B7C</div>
+                                </td>
+                                <td>Meron Girma</td>
+                                <td>
+                                    Dashen Account ****1234
+                                    <div class="small text-muted">Mobile Payments</div>
+                                </td>
+                                <td>
+                                    INV-372, INV-379, INV-385
+                                    <div class="small text-muted">3 invoices</div>
+                                </td>
+                                <td class="text-right">12,750.00</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#invoiceDetailsModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Bank Payment - Single Invoice -->
+                            <tr>
+                                <td>PAY-2023-004</td>
+                                <td>
+                                    12/Jun/2023
+                                    <span class="timestamp">11:30:15</span>
+                                </td>
+                                <td class="payer-info">Zeritu Kebede</td>
+                                <td class="phone-number">+251 94 567 8901</td>
+                                <td class="source-details">
+                                    <span class="payment-method method-bank">
+                                        <i class="bi bi-bank me-1"></i> Bank Transfer
+                                    </span>
+                                    <div class="small text-muted">Awash Bank • Ref: AW-TR-1234</div>
+                                </td>
+                                <td>Kebede Abebe</td>
+                                <td>
+                                    Awash Account ****4567
+                                    <div class="small text-muted">General Account</div>
+                                </td>
+                                <td>
+                                    INV-398
+                                    <div class="small text-muted">1 invoice</div>
+                                </td>
+                                <td class="text-right">15,000.00</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#invoiceDetailsModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Mpesa Payment - Multiple Invoices -->
+                            <tr>
+                                <td>PAY-2023-005</td>
+                                <td>
+                                    15/Jun/2023
+                                    <span class="timestamp">18:20:05</span>
+                                </td>
+                                <td class="payer-info">Abebe Tilahun</td>
+                                <td class="phone-number">+251 95 678 9012</td>
+                                <td class="source-details">
+                                    <span class="payment-method method-mpesa">
+                                        <i class="bi bi-phone me-1"></i> Mpesa
+                                    </span>
+                                    <div class="small text-muted">Code: MPX5D6F</div>
+                                </td>
+                                <td>Zeritu Kebede</td>
+                                <td>
+                                    CBE Account ****7890
+                                    <div class="small text-muted">Mpesa Collection</div>
+                                </td>
+                                <td>
+                                    INV-401, INV-405
+                                    <div class="small text-muted">2 invoices</div>
+                                </td>
+                                <td class="text-right">9,300.00</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#invoiceDetailsModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Telebir Payment - Single Invoice -->
+                            <tr>
+                                <td>PAY-2023-006</td>
+                                <td>
+                                    18/Jun/2023
+                                    <span class="timestamp">13:45:33</span>
+                                </td>
+                                <td class="payer-info">Frehiwot Teshome</td>
+                                <td class="phone-number">+251 96 789 0123</td>
+                                <td class="source-details">
+                                    <span class="payment-method method-telebir">
+                                        <i class="bi bi-phone me-1"></i> Telebir
+                                    </span>
+                                    <div class="small text-muted">Ref: TEL-3C4D5E</div>
+                                </td>
+                                <td>Meron Girma</td>
+                                <td>
+                                    Dashen Account ****1234
+                                    <div class="small text-muted">Mobile Payments</div>
+                                </td>
+                                <td>
+                                    INV-412
+                                    <div class="small text-muted">1 invoice</div>
+                                </td>
+                                <td class="text-right">7,850.00</td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#invoiceDetailsModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot class="table-light">
+                            <tr class="fw-bold summary-row">
+                                <td colspan="7" class="text-end">TOTALS</td>
+                                <td class="text-muted">10 invoices</td>
+                                <td class="text-right payment-totals">55,700.00</td>
+                                <td></td>
+                            </tr>
+                            <tr class="fw-bold table-active">
+                                <td colspan="7" class="text-end">AVERAGE PAYMENT</td>
+                                <td colspan="2" class="text-right payment-totals">ETB 9,283.33</td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" class="footer-stats text-center">
+                                    <i class="bi bi-info-circle me-1"></i>
+                                    Payment Summary • 6 payments • 
+                                    Bank Payments: ETB 23,500 (42%) • Mobile Payments: ETB 32,200 (58%)
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal placeholder -->
+    <div class="modal fade" id="invoiceDetailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Payment Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Payment details would be displayed here when "View" button is clicked.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

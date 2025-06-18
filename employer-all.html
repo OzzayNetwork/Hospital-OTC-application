@@ -1,0 +1,2377 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>HOSPITAL MANAGEMENT INFORMATION SYSTEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="HMIS By Craft Silicon Payments" name="description" />
+    <meta content="Kelvin Njuguna" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+    <!-- droping file -->
+    <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="assets/images/logo.svg" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-dark.png" alt="" height="17">
+                            </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="assets/images/the-logo.png" alt="" height="50">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-text-white.png" alt="" height="45">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt=""
+                            class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-bs-toggle="fullscreen">
+                            <i class="bx bx-fullscreen"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-bell bx-tada"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                <i class="bx bx-cart"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the
+                                                    grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg"
+                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.
+                                                </p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                <i class="bx bx-badge-check"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the
+                                                    grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg"
+                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of
+                                                    mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View
+                                        More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i
+                                    class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My
+                                    Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i
+                                    class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My
+                                    Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i
+                                    class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span
+                                    key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i
+                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                    key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title" key="t-pages">Hospital Management Information system </li>
+
+                        <li class="side-bar-button">
+                            <a href="outpatient-checkin.html"
+                                class="waves-effect btn btn-light btn-rounded text-left write-msg-btn">
+                                <i class=""><img src="assets/images/plus-icon.svg" alt=""></i>
+                                <span class="text-capitalize">Patient Chekin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home-circle"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                         <li>
+                            <a href="index-hospital.html" class="waves-effect">
+                                <i class="bx bx-pulse"></i><span>Hospital Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-hand-heart"></i>
+                                <span>Community Health</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="community-anlytics.html">Analytics</a></li>
+                                <li><a href="community-members.html">Member Register</a></li>
+                                <li><a href="community-deposits.html">Member Deposits</a></li>
+                                <li><a href="community-visit.html">Visit Coverage Log</a></li>
+                                <li><a href="community-setUp.html">Set Up</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bxs-user-detail"></i>
+                                <span>Master Patient Index</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="patient-new.html">Patient Registration</a></li>
+                                <li><a href="patients.html">MPI Register</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" data-toggle="tooltip"
+                                title="Insurance Processing">
+                                <i class="mdi mdi-shield-cross-outline"></i> <!-- Insurance-related icon -->
+                                <span>Insurance Processing</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="insurance-quick-stats.html" data-toggle="tooltip"
+                                        title="View quick statistics on cases">Quick Stats</a></li>
+                                <li><a href="insurance-cases-all.html" data-toggle="tooltip"
+                                        title="View quick statistics on cases">All cases</a></li>
+                                <li><a href="insurance-pending-approval.html" data-toggle="tooltip"
+                                        title="View cases pending approval">Pending Approval</a></li>
+                                <li><a href="insurance-rejected-approvals.html" data-toggle="tooltip"
+                                        title="View cases rejected from approval">Rejected Approvals</a></li>
+                                <li><a href="insurance-approved-processing.html" data-toggle="tooltip"
+                                        title="View cases approved for processing">Approved for Processing</a></li>
+                                <li><a href="insurance-reverted-approvals.html" data-toggle="tooltip"
+                                        title="View cases reverted after approval">Reverted Approvals</a></li>
+                                <li><a href="insurance-awaiting-closure.html" data-toggle="tooltip"
+                                        title="View cases awaiting closure">Awaiting Closure</a></li>
+                                <li><a href="insurance-closed-cases.html" data-toggle="tooltip"
+                                        title="View fully closed cases">Closed Cases</a></li>
+                                <li><a href="insurance-archived-cases.html" data-toggle="tooltip"
+                                        title="View fully closed cases">Archived Cases</a></li>
+                                <li><a href="insurance-user-logs.html" data-toggle="tooltip"
+                                        title="View fully closed cases">User Logs</a></li>
+                                <li><a href="insurance-preferences.html" data-toggle="tooltip"
+                                        title="View fully closed cases">Preferences</a></li>
+
+                            </ul>
+
+                        </li>
+
+
+
+
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow"
+                                title="Manage Clinical Activities">
+                                <i class="mdi mdi-hospital-building"></i> <!-- Hospital Building Icon -->
+                                <span>Clinical Management</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="clinical-quick-stats.html" title="View Quick Stats">Quick Stats</a></li>
+                                <li><a href="clinical-new-encounter.html" title="Log New Encounters">New Encounters</a>
+                                </li>
+                                <li><a href="clinical-pending-consultation.html"
+                                        title="View Pending Consultations">Pending Consults</a></li>
+                                <li><a href="clinical-active-consultation.html" title="View Active Consultations">Active
+                                        Consults</a></li>
+                                <li><a href="clinical-lab-list.html"
+                                        title="List of patients sent to the Lab for examination">To Lab</a></li>
+                                <li><a href="clinical-awaiting-interpretation.html"
+                                        title="Patients results Awaiting Lab Interpretation">Pending Lab Review</a></li>
+                                <li><a href="clinical-discharged.html" title="Completed Visits Summary">Completed
+                                        Visits</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="encounter-all.html" class="waves-effect">
+                                <i class="bx bx bx-list-ul"></i><span>Encounter List</span>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-human-queue mdi"></i>
+                                <span>Patient's Queue</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="out-Patient-visits.html">Out Patient Visits Queue</a></li>
+                                <li><a href="queue-triage.html">Triage</a></li>
+                                <li><a href="queue-OPD.html">Consaltation </a></li>
+                                <li><a href="queue-cashier.html">Cashier </a></li>
+                                <li><a href="queue-lab-schedule.html">Scheduled lab Tests</a></li>
+                                <li><a href="queue-ongoing-schedule.html">Ongoing lab Tests</a></li>
+                                <li><a href="queue-test-interpratation-schedule.html">Lab Test Interpratation</a></li>
+                                <li><a href="queue-scan-exam-schedule.html">Scheduled Scan Exams</a></li>
+                                <li><a href="queue-scan-exam-ongoing.html">Ongoing Scan Exams</a></li>
+                                <li><a href="queue-scan-exam-interpratation.html">Scan exam Interpratation</a></li>
+                                <li><a href="queue-pharmacey.html">Pharmacy</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="fas fa-flask"></i>
+                                <span>Medical Lab</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="lab-stats.html"
+                                        title="Get a quick overview of lab activities and statistics">Lab Quick
+                                        Stats</a></li>
+                                <li><a href="lab-orders-pending-payment.html"
+                                        title="View tests awaiting payment or waiver before scheduling">Tests Pending
+                                        Payment</a></li>
+                                <li><a href="lab-orders.html"
+                                        title="Check all scheduled lab tests awaiting processing">Scheduled Lab
+                                        Tests</a></li>
+                                <li><a href="lab-orders-acknowledged.html"
+                                        title="See lab tests acknowledged and ready for processing">Acknowledged Lab
+                                        Tests</a></li>
+                                <li><a href="lab-orders-collected-sample.html"
+                                        title="View samples collected and ready for testing">Collected Samples</a></li>
+                                <li><a href="lab-orders-pending-results.html"
+                                        title="Track lab tests with results pending">Pending Lab Results</a></li>
+                                <li><a href="lab-orders-released-tests.html"
+                                        title="Access lab test results that have been finalized and released">Results
+                                        Released</a></li>
+                                <li><a href="lab-setup.html" title="Manage and configure lab tests and settings">Lab
+                                        Test Setup</a></li>
+                                <li><a href="patients.html" title="View patient lab reports and detailed results">Lab
+                                        Reports</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-calendar-month mdi"></i>
+                                <span>Appointments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="appointments-pending.html">Pending Appointments</a></li>
+                                <li><a href="appointments-fullfiled.html">Fullfiled AAppointments</a></li>
+                                <li><a href="appointments-due.html">Due Appointments</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-clipboard-edit mdi"></i>
+                                <span>Stock Management</span>
+                            </a>
+                            <ul class="sub-menu text-capitalize" aria-expanded="false">
+                                <li><a href="stock-ordering.html">Stock Enquiry</a></li>
+                                <li><a href="stock-taking.html">Stock Taking</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-cog-outline mdi"></i>
+                                <span>Setups</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="set-up-departments.html">Departments</a></li>
+                                <li><a href="set-up-pricing.html">Pricing & Charges</a></li>
+                                <li><a href="set-up-equipments.html">Equipments</a></li>
+                                <li><a href="set-up-wards.html">Ward Set Up</a></li>
+                                <li><a href="set-up-bed.html">Beds Setup</a></li>
+                                <li><a href="set-Pharmacy.html">Pharmacy inventory</a></li>
+                                <li><a href="lab-setup-new.html">New Lab test Setup</a></li>
+                            </ul>
+                        </li>
+                       <li class="menu-title" key="t-pages">Patient Billing & Payments</li>
+                        <li>
+                            <a href="patient-billing-new-invoice.html" class="waves-effect">
+                                <i class="mdi mdi-file-document-outline"></i>
+                                <span>New Invoice</span>
+                            </a>
+                        </li>
+                          <li>
+                            <a href="patients-billing-patient-list.html" class="waves-effect">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Patients</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="patients-billing-patient-new.html" class="waves-effect" title="Add New Patient">
+                                <i class="mdi mdi-account-plus-outline"></i>
+                                <span>Add Patient</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="patients-billing-patient-invoices.html" class="waves-effect" title="View and manage all patient invoices">
+                                <i class="mdi mdi-file-document-outline"></i>
+                                <span>Patient Invoices</span>
+                            </a>
+                        </li>
+                       <li>
+                            <a href="patients-billing-patient-transactions.html" class="waves-effect" title="View and track incoming payments from patients">
+                                <i class="mdi mdi-cash-multiple"></i>
+                                <span>Transactions</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">Employer Credits</li>
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-domain"></i>
+                                <span>Legible Employers</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="employer-all.html">View Employers</a></li>
+                                <li><a href="employer-add.html">Add Employer</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="employees-all.html" class="waves-effect">
+                                <i class="mdi mdi-account-group-outline"></i>
+                                <span>Employees</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-file-document-multiple-outline"></i>
+                                <span>Employer Invoices</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="employer-invoices.html">All Invoices</a></li>
+                                <li><a href="employer-invoices-outstanding.html">Outstanding Invoices</a></li>
+                                <li><a href="employer-invoices-archived.html">Archived Invoices</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-check-outline"></i>
+                                <span>Payments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="employer-payments-reconciled.html">Reconciled Payments</a></li>
+                                <li><a href="employer-payments-unreconciled.html">Unreconciled Payments</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">Reports</li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-outline"></i>
+                                <span>NHIF Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="nhif-reports.html">NHIF Payments</a></li>
+                                <li><a href="nhif-cleared.html">Cleared Payemtnts</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="reports-outpatient.html" class="waves-effect">
+                                <i class="bx bx-clinic"></i><span>Outpatient Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-clipboard-text-outline"></i>
+                                <span>Stock Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="stock-daily-rep.html">Daily Reports</a></li>
+                                <li><a href="stock-manual-exits.html">Manual Exits</a></li>
+                                <li><a href="stock-order-enquarry.html">Order Enquarries</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reports-inpatient.html" class="waves-effect">
+                                <i class="mdi mdi-bed-outline"></i><span>Inpatient Reports</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reports-revenue-streams.html" class="waves-effect">
+                                <i class="mdi mdi-bank-transfer"></i><span>Revenue Perfomance</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-doctor"></i><span>Physician Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="d-none">
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-office-building"></i><span>Departmental Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bx-receipt"></i>
+                                <span>Bills</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+
+                                <li><a href="bills-receipted.html">Receipted Bills</a></li>
+                                <li><a href="bills-unpaid.html">Unpaid Bills</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow"
+                                title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html" title="Manage Designations">Designations</a></li>
+                                <li><a href="org-departments.html" title="Manage Departments">Departments</a></li>
+                                <li><a href="org-employment-types.html" title="Manage Employment Types">Employment
+                                        Types</a></li>
+                                <li><a href="org-affiliated-institution.html"
+                                        title="Manage Affiliated Institutions">Affiliated Institution</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html" title="Add New User">Add User</a></li>
+                                <li><a href="user-userlist.html" title="Add New User">Manage Users</a></li>
+                                <li><a href="users-deactivated.html" title="View Deactivated Users">Deactivated
+                                        Users</a></li>
+                                <li><a href="use-logs.html" title="View System Logs">System Logs</a></li>
+                                <li><a href="users-roles.html" title="Manage User Roles">System Roles</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Employer Management</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="index.html">Dashboards</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Employer Credits</a></li>
+                                        <li class="breadcrumb-item active">Employer Management</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member Statistics Dashboard -->
+                    <div class="row">
+                        <!-- Total Credit Granted -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Credit Granted</p>
+                                            <h5 class="mb-0">2,450,000 <small>ETB</small></h5>
+                                            <p class="text-muted mt-1 mb-0"><small>Across all employers</small></p>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
+                                                <i class="bx bx-credit-card"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Credit Past Due -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Credit Past Due</p>
+                                            <h5 class="mb-0">387,500 <small>ETB</small></h5>
+                                            <p class="text-danger mt-1 mb-0"><small>From 23 employers</small></p>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                                <i class="bx bx-calendar-x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Covered Employees -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Employees</p>
+                                            <h5 class="mb-0">1,842</h5>
+                                            <p class="text-muted mt-1 mb-0"><small>Active coverage</small></p>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-success rounded-circle text-white font-size-20">
+                                                <i class="bx bx-group"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Avg. Credit Per Employee -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Avg. Credit/Employee</p>
+                                            <h5 class="mb-0">1,330 <small>ETB</small></h5>
+                                            <p class="text-muted mt-1 mb-0"><small>Monthly average</small></p>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-info rounded-circle text-white font-size-20">
+                                                <i class="bx bx-calculator"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+
+                        <div class="col-12">
+                            <div class="card">
+                                <div
+                                    class="card-header bg-white d-flex justify-content-between align-items-center w-100 border-bottom-1 pb-3 border-bottom-1 border-bottom">
+                                    <!-- Filters -->
+                                    <div class="me-3 text-nowrap filter-tool-bar-btns">
+                                        <!-- Column Visibility Dropdown -->
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light waves-effect me-2"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bx bxs-hide font-size-16 me-1 align-middle"></i> Hide fields
+                                            </button>
+                                            <div class="dropdown-menu p-4" style="width: 300px;">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5 class="text-capitalize mb-0">Column Visibility</h5>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-employer-id" data-column="0"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-employer-id">Employer ID</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-company" data-column="1"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-company">Company</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-industry" data-column="2"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-industry">Industry</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-region" data-column="3"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-region">Region</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-contact" data-column="4"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-contact">Contact</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-employees" data-column="5"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-employees">Employees</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-credit-limit" data-column="6"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-credit-limit">Credit Limit</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-balance" data-column="7"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-balance">Balance</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-last-payment" data-column="8"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-last-payment">Last Payment</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-2">
+                                                            <input class="form-check-input toggle-column"
+                                                                type="checkbox" id="column-status" data-column="9"
+                                                                checked>
+                                                            <label class="form-check-label"
+                                                                for="column-status">Status</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="button" id="showAllColumns"
+                                                            class="btn btn-sm btn-outline-primary me-2">Show
+                                                            All</button>
+                                                        <button type="button" id="hideAllColumns"
+                                                            class="btn btn-sm btn-outline-danger">Hide All</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sort Dropdown -->
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light waves-effect"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bx bx-sort font-size-16 me-1 align-middle"></i> Sort
+                                            </button>
+                                            <div class="dropdown-menu p-4" style="width: 300px;">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5 class="text-capitalize mb-0">Sort Employers</h5>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <label for="sort-field-select" class="form-label">Sort
+                                                                By</label>
+                                                            <select class="form-select" id="sort-field-select">
+                                                                <option value="" selected disabled>Select field</option>
+                                                                <option value="1">Company Name (A-Z)</option>
+                                                                <option value="5">Employee Count</option>
+                                                                <option value="6">Credit Limit</option>
+                                                                <option value="7">Current Balance</option>
+                                                                <option value="8">Last Payment Date</option>
+                                                                <option value="2">Industry Type</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <div class="btn-group" role="group"
+                                                                aria-label="Sort direction">
+                                                                <input type="radio" class="btn-check"
+                                                                    name="sortDirection" id="btn-asc" value="asc"
+                                                                    autocomplete="off" checked>
+                                                                <label class="btn btn-outline-secondary" for="btn-asc">
+                                                                    <i class="bx bx-sort-up"></i> Ascending
+                                                                </label>
+                                                                <input type="radio" class="btn-check"
+                                                                    name="sortDirection" id="btn-desc" value="desc"
+                                                                    autocomplete="off">
+                                                                <label class="btn btn-outline-secondary" for="btn-desc">
+                                                                    <i class="bx bx-sort-down"></i> Descending
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-4">
+                                                        <button type="button" id="applySort"
+                                                            class="btn btn-primary w-100">Apply Sort</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Date Range Dropdown -->
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light waves-effect mx-2"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bx bx-calendar font-size-16 me-1 align-middle"></i> Date Range
+                                            </button>
+                                            <div class="dropdown-menu p-4" style="width: 300px;">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5 class="text-capitalize mb-0">Filter by Date</h5>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <label for="date-type-select" class="form-label">Date
+                                                                Type</label>
+                                                            <select class="form-select" id="date-type-select">
+                                                                <option value="registration">Registration Date</option>
+                                                                <option value="last-payment">Last Payment Date</option>
+                                                                <option value="contract-start">Contract Start Date
+                                                                </option>
+                                                                <option value="contract-end">Contract End Date</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <label for="start-date-input"
+                                                                class="form-label">From</label>
+                                                            <input type="date" class="form-control"
+                                                                id="start-date-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <label for="end-date-input" class="form-label">To</label>
+                                                            <input type="date" class="form-control" id="end-date-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-4">
+                                                        <button type="button" id="applyDateFilter"
+                                                            class="btn btn-primary w-100">Apply Filter</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Status Filter Button -->
+                                        <button type="button" data-toggle="modal" data-target="#status-filter-modal"
+                                            class="btn btn-light waves-effect active">
+                                            <i class="bx bx-filter font-size-16 me-1 align-middle"></i> Status
+                                        </button>
+                                    </div>
+
+                                    <!-- Search and Action Buttons -->
+                                    <div class="btn-toolbar d-flex justify-content-between align-items-center w-100"
+                                        role="toolbar">
+                                        <div class="flex-grow-1">
+                                            <div class="search-box mb-0 me-3">
+                                                <div class="position-relative">
+                                                    <input type="text" id="searchInput"
+                                                        class="form-control bg-light border-light rounded"
+                                                        placeholder="Search employers..." spellcheck="false">
+                                                    <i class="bx bx-search-alt search-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex">
+                                            <div class="btn-group me-3">
+                                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bx bxs-download"></i> <span
+                                                        class="pl-1 d-md-inline">Export</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">PDF Report</a></li>
+                                                    <li><a class="dropdown-item" href="#">Excel Data</a></li>
+                                                    <li><a class="dropdown-item" href="#">CSV Export</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                data-toggle="modal" data-target="#uploadEmployeesModal">
+                                                <i class="bx bxs-download"></i> <span class="pl-1 d-md-inline">Upload
+                                                    Employees</span>
+                                            </button>
+
+                                            <a href="employer-add.html" type="button" class="btn btn-success ms-3">
+                                                <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Add
+                                                    Employer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table
+                                            class="table align-middle table-hover contacts-table border table-striped text-nowrap"
+                                            id="membersTable">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th scope="col">No.</th>
+                                                    <th scope="col">Date Added</th>
+                                                    <th scope="col">Company</th>
+                                                    <th>Woreda</th>
+                                                    <th scope="col">Contact Person</th>
+                                                    <th scope="col">Employees</th>
+                                                    <th scope="col" class="text-right">Credit Amount (ETB)</th>
+                                                    <th scope="col">Billing Contacts</th>
+                                                    <th scope="col">Last Updated</th>
+                                                    <th class="text-right">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Employer 1 -->
+                                                <tr>
+                                                    <th>1.</th>
+                                                    <td>15 Jan 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Bahir Dar Textile PLC</p>
+                                                        <span>Textile Manufacturing</span>
+                                                    </td>
+                                                    <td>Bahir Dar</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Alemayehu Kebede</p>
+                                                        <span><span>0911123456</span>
+                                                            <span>hr@bahirdartextile.com</span></span>
+                                                    </td>
+                                                    <td>142</td>
+                                                    <td class="text-right text-black fw-bold">350,000</td>
+                                                    <td><span><span>0911123457</span>
+                                                            <span>accounts@bahirdartextile.com</span></span></td>
+                                                    <td>20 Feb 2024</td>
+                                                    <td class="text-uppercase text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 2 -->
+                                                <tr>
+                                                    <th>2.</th>
+                                                    <td>22 Jan 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Gondar Pharmaceuticals</p>
+                                                        <span>Pharmaceutical Manufacturing</span>
+                                                    </td>
+                                                    <td>Gondar</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Mekdes Hailu</p>
+                                                        <span><span>0922113344</span>
+                                                            <span>admin@gondarpharma.com</span></span>
+                                                    </td>
+                                                    <td>87</td>
+                                                    <td class="text-right text-black fw-bold">275,000</td>
+                                                    <td><span><span>0922113355</span>
+                                                            <span>finance@gondarpharma.com</span></span></td>
+                                                    <td>05 Mar 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 3 -->
+                                                <tr>
+                                                    <th>3.</th>
+                                                    <td>05 Feb 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Amhara Construction</p>
+                                                        <span>Building Construction</span>
+                                                    </td>
+                                                    <td>Dessie</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Tewodros Assefa</p>
+                                                        <span><span>0933445566</span>
+                                                            <span>tewodros@amharaconstruction.com</span></span>
+                                                    </td>
+                                                    <td>215</td>
+                                                    <td class="text-right text-black fw-bold">420,000</td>
+                                                    <td><span><span>0933445577</span>
+                                                            <span>billing@amharaconstruction.com</span></span></td>
+                                                    <td>12 Mar 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 4 -->
+                                                <tr>
+                                                    <th>4.</th>
+                                                    <td>18 Feb 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Lalibela Hospitality</p>
+                                                        <span>Hotel & Tourism</span>
+                                                    </td>
+                                                    <td>Lalibela</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Selamawit Yohannes</p>
+                                                        <span><span>0944556677</span>
+                                                            <span>manager@lalibelahotel.com</span></span>
+                                                    </td>
+                                                    <td>68</td>
+                                                    <td class="text-right text-black fw-bold">185,000</td>
+                                                    <td><span><span>0944556688</span>
+                                                            <span>accounting@lalibelahotel.com</span></span></td>
+                                                    <td>28 Feb 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 5 -->
+                                                <tr>
+                                                    <th>5.</th>
+                                                    <td>03 Mar 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Debre Markos Agro Processing
+                                                        </p>
+                                                        <span>Agricultural Processing</span>
+                                                    </td>
+                                                    <td>Debre Markos</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Getachew Mulatu</p>
+                                                        <span><span>0955667788</span>
+                                                            <span>hr@debremarkosagro.com</span></span>
+                                                    </td>
+                                                    <td>120</td>
+                                                    <td class="text-right text-black fw-bold">310,000</td>
+                                                    <td><span><span>0955667799</span>
+                                                            <span>finance@debremarkosagro.com</span></span></td>
+                                                    <td>15 Mar 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 6 -->
+                                                <tr>
+                                                    <th>6.</th>
+                                                    <td>10 Mar 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Woldia Transport Services</p>
+                                                        <span>Logistics & Transportation</span>
+                                                    </td>
+                                                    <td>Woldia</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Kassahun Demissie</p>
+                                                        <span><span>0966778899</span>
+                                                            <span>admin@woldiatransport.com</span></span>
+                                                    </td>
+                                                    <td>95</td>
+                                                    <td class="text-right text-black fw-bold">240,000</td>
+                                                    <td><span><span>0966778800</span>
+                                                            <span>billing@woldiatransport.com</span></span></td>
+                                                    <td>22 Mar 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 7 -->
+                                                <tr>
+                                                    <th>7.</th>
+                                                    <td>17 Mar 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Kombolcha Steel Factory</p>
+                                                        <span>Industrial Manufacturing</span>
+                                                    </td>
+                                                    <td>Kombolcha</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Ephrem Tadesse</p>
+                                                        <span><span>0977889900</span>
+                                                            <span>hr@kombolchasteel.com</span></span>
+                                                    </td>
+                                                    <td>180</td>
+                                                    <td class="text-right text-black fw-bold">390,000</td>
+                                                    <td><span><span>0977889911</span>
+                                                            <span>accounts@kombolchasteel.com</span></span></td>
+                                                    <td>30 Mar 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 8 -->
+                                                <tr>
+                                                    <th>8.</th>
+                                                    <td>25 Mar 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Debre Birhan Education Center
+                                                        </p>
+                                                        <span>Private Education</span>
+                                                    </td>
+                                                    <td>Debre Birhan</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Zewditu Mekonnen</p>
+                                                        <span><span>0988990011</span>
+                                                            <span>director@dbeducation.edu</span></span>
+                                                    </td>
+                                                    <td>75</td>
+                                                    <td class="text-right text-black fw-bold">200,000</td>
+                                                    <td><span><span>0988990022</span>
+                                                            <span>finance@dbeducation.edu</span></span></td>
+                                                    <td>05 Apr 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 9 -->
+                                                <tr>
+                                                    <th>9.</th>
+                                                    <td>02 Apr 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Addis Zemen Health Clinic</p>
+                                                        <span>Private Healthcare</span>
+                                                    </td>
+                                                    <td>Addis Zemen</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Dr. Yohannes Wolde</p>
+                                                        <span><span>0999001122</span>
+                                                            <span>admin@addiszemenclinic.com</span></span>
+                                                    </td>
+                                                    <td>52</td>
+                                                    <td class="text-right text-black fw-bold">175,000</td>
+                                                    <td><span><span>0999001133</span>
+                                                            <span>billing@addiszemenclinic.com</span></span></td>
+                                                    <td>10 Apr 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Employer 10 -->
+                                                <tr>
+                                                    <th>10.</th>
+                                                    <td>09 Apr 2024</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Shewa Robit Agricultural
+                                                            Co-op</p>
+                                                        <span>Agricultural Cooperative</span>
+                                                    </td>
+                                                    <td>Shewa Robit</td>
+                                                    <td>
+                                                        <p class="fw-bold text-black mb-0">Asnakech Tefera</p>
+                                                        <span><span>0911223344</span>
+                                                            <span>manager@shewarobitagro.com</span></span>
+                                                    </td>
+                                                    <td>110</td>
+                                                    <td class="text-right text-black fw-bold">290,000</td>
+                                                    <td><span><span>0911223355</span>
+                                                            <span>accounts@shewarobitagro.com</span></span></td>
+                                                    <td>18 Apr 2024</td>
+                                                    <td class="text-right">
+                                                        <a href="employer-all-details.html" type="button"
+                                                            class="btn btn-info waves-effect waves-light btn-sm">
+                                                            <i class="bx bx-show font-size-16 align-middle me-2"></i>
+                                                            Details
+                                                        </a>
+                                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                                            data-target="#new-employee">Add Employee</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <!-- modals start -->
+            <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-bs-backdrop="static"
+                data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content  transaction-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Membership registration payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-7 mb-3">
+                                    <div class="table-responsive bg-light p-4 h-100">
+                                        <table class="table table-light ">
+                                            <thead class="">
+                                                <tr style="border-bottom: 5px solid black;">
+                                                    <th colspan="4" class="text-capitalize">
+                                                        <h4 class="mb-0 fw-bold text-black">Invoicing details</h4>
+                                                        <p class="mb-0 ">Primary Meber Kelvin Kelly</p>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Item</th>
+                                                    <th>QTY</th>
+                                                    <th class="text-right">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="border-dushed">
+                                                <tr>
+                                                    <td><strong>1.</strong></td>
+                                                    <td>Membership Application Fee</td>
+                                                    <td><span class="standardQuantity">1</span></td>
+                                                    <td class="text-right text-dark fw-semibold"><strong>ETB <span
+                                                                class="cbh-application">25</span> </strong></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>2.</strong></td>
+                                                    <td>Standard CBHI membership fee</td>
+                                                    <td><span class="standard-qty">-</span></td>
+                                                    <td class="text-right text-dark fw-semibold"><strong>ETB <span
+                                                                class="std-fee">25</span></strong></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>3.</strong></td>
+                                                    <td>Extra Members</td>
+                                                    <td><span class="extra-qty">-</span></td>
+                                                    <td class="text-right text-dark fw-semibold"><strong>ETB <span
+                                                                class="extra-total">25</span></strong></td>
+                                                </tr>
+
+                                            </tbody>
+                                            <tfoot class="">
+                                                <tr
+                                                    style="border-top: 3px solid black; border-bottom: 3px solid black;">
+
+                                                    <th class="text-right text-dark fw-bold" colspan="4">
+                                                        <small class="text-uppercase">Sub totals</small>
+                                                        <h4 class="mb-0">ETB <span class="text-dark cbh-total">-</span>
+                                                        </h4>
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+
+                                        <div>
+                                            <div class="alert alert-warning border-warning border-2 text-black"
+                                                role="alert">
+                                                <strong>Attention:</strong> Payment is pending for this invoice. Kindly
+                                                settle it to avoid service interruption.
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-12 col-md-5 mb-3">
+                                    <div class="p-3 rounded-1 border border-dashed border-gray-5 py-4">
+                                        <h4 class="mb-0 pb-0 fw-semibold d-block">Select Payment Method</h4>
+                                        <p class="pb-0 mb-0">
+                                            <span class="text-muted">Ask the member: <em>How would you like to make this
+                                                    premium payment?</em></span><br>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="accordion mt-3" id="accordionExample">
+                                        <!-- Mobile Money Wallet -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button fw-medium" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle"
+                                                            src="assets/images/users/mobile_money.png"
+                                                            alt="Mobile Money" height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">Mobile Money
+                                                            Wallets</p>
+                                                        <p class="mb-0 p-0"><small>Use this option for clients using
+                                                                Telebirr or MPESA</small></p>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        A payment request of <strong class="text-black">ETB <span
+                                                                class="cbh-total">-</span></strong> will be sent to the
+                                                        mobile number provided, depending on the selected wallet.
+                                                    </p>
+                                                    <div class="form-group mb-3">
+                                                        <label for="wallet">Select Mobile Wallet</label>
+                                                        <select class="form-select" id="wallet">
+                                                            <option value="telebirr">Telebirr</option>
+                                                            <option value="mpesa">MPESA</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="phone-input">Mobile Number</label>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text"
+                                                                class="form-control font-21 text-success form-control-lg"
+                                                                id="phone-input" placeholder="Enter Phone Number">
+                                                            <label for="phone-input">Phone Number</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mt-3">
+                                                        <button
+                                                            class="btn btn-primary w-100 text-uppercase bank-nxt-bank btn-finish">Send
+                                                            Prompt</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cash Payment -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button fw-medium collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                    aria-expanded="false" aria-controls="collapseFour">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle" src="assets/images/users/money.jpg"
+                                                            alt="Cash Payment" height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">CASH</p>
+                                                        <p class="mb-0 p-0"><small>Use this option when you have
+                                                                received direct cash payment from the client</small></p>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="cash-inputs">
+                                                        <div class="mb-3">
+                                                            <label for="cash-amount">Amount Received (ETB)</label>
+                                                            <div class="form-floating">
+                                                                <input type="text"
+                                                                    class="form-control font-21 text-success form-control-lg"
+                                                                    id="cash-amount" placeholder="Enter Amount">
+                                                                <label for="cash-amount">Enter Amount Received</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="alert alert-info mb-3">
+                                                            <i class="bx bx-info-circle me-2"></i>
+                                                            An OTP will be sent to your registered phone number to
+                                                            verify that you have received this cash payment.
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary mb-3">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="confirm-cash-payment">
+                                                            <label class="form-check-label" for="confirm-cash-payment">
+                                                                I confirm that I have received cash payment of
+                                                                <strong>ETB <span class="cbh-total">-</span></strong>
+                                                                from the client and am authorized to process this
+                                                                transaction
+                                                            </label>
+                                                        </div>
+
+                                                        <button
+                                                            class="btn btn-primary w-100 text-uppercase cash-continue-btn">Continue</button>
+                                                    </div>
+
+                                                    <div class="cash-otp-input d-none">
+                                                        <p>
+                                                            An OTP has been sent to your registered phone number. Please
+                                                            check your SMS to complete the verification.
+                                                            <a href="#">Click here to resend OTP</a>.
+                                                        </p>
+                                                        <div class="form-group">
+                                                            <label for="cash-otp-input">OTP</label>
+                                                            <div class="form-floating mb-3">
+                                                                <input type="text"
+                                                                    class="form-control font-21 text-success form-control-lg cash-otp-code"
+                                                                    id="cash-otp-input" placeholder="Enter OTP">
+                                                                <label for="cash-otp-input">Enter the OTP sent to your
+                                                                    phone</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="button"
+                                                                class="btn btn-light me-3 cash-edit-btn">
+                                                                <i
+                                                                    class="bx bxs-edit-alt font-size-16 align-middle me-2"></i>
+                                                                Edit
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-primary cash-submit-btn btn-finish"
+                                                                disabled>
+                                                                Complete Payment <i
+                                                                    class="bx bx-right-arrow-alt font-size-16 align-middle"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- qr code payment method -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button fw-medium collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle"
+                                                            src="assets/images/users/qrCodePay.png" alt="Bank Payment"
+                                                            height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">Bank QR Payment
+                                                        </p>
+                                                        <p class="mb-0 p-0">
+                                                            <small>
+                                                                Show QR. Client scans with bank app. Payment
+                                                                auto-validates.
+                                                            </small>
+
+
+                                                        </p>
+                                                    </div>
+
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p class="fw-bold text-black text-center">Scan below to initiate QR
+                                                        code Payment</p>
+                                                    <div>
+                                                        <img src="assets/images/qrCode.png" class="img w-100" alt="">
+                                                    </div>
+
+                                                    <div>
+                                                        <button
+                                                            class="btn btn-info w-100 mt-3 btn-finish">Process</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bank Payment -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button fw-medium collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <img class="rounded-circle" src="assets/images/users/bank.png"
+                                                            alt="Bank Payment" height="65">
+                                                    </div>
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0 p-0 text-uppercase fw-semibold">BANK</p>
+                                                        <p class="mb-0 p-0"><small>By selecting this option, you confirm
+                                                                that the payment was received via bank or direct cash
+                                                                deposit</small></p>
+                                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="bank-inputs">
+                                                        <div class="mb-3">
+                                                            <label for="">Select Bank</label>
+                                                            <select class="form-select">
+                                                                <option disabled selected>Select Bank Account</option>
+                                                                <option>Tsede Bank - 3344556677</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="">Bank Reference Number</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Ref No.">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="">Payer's Full Name</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Full Name">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="">Payer's Phone Number</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter Phone Number">
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary mb-3">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="confirm-cash">
+                                                            <label class="form-check-label" for="confirm-cash">
+                                                                I confirm that I have received the bank deposit or
+                                                                cheque payment of <strong>ETB <span
+                                                                        class="cbh-total">-</span></strong> from the
+                                                                client
+                                                            </label>
+                                                        </div>
+
+                                                        <button
+                                                            class="btn btn-primary w-100 text-uppercase bank-nxt-bank">Next</button>
+                                                    </div>
+
+                                                    <div class="bank-input d-none">
+                                                        <p>
+                                                            An OTP has been sent to the client's phone number: <strong
+                                                                class="text-black">0912345678</strong>. Please ask them
+                                                            to check their SMS.
+                                                            <a href="#">Click here to resend OTP</a>.
+                                                        </p>
+                                                        <div class="form-group">
+                                                            <label for="">OTP</label>
+                                                            <div class="form-floating mb-3">
+                                                                <input type="text"
+                                                                    class="form-control font-21 text-success form-control-lg bank-otp-input"
+                                                                    id="otp-input" placeholder="Enter OTP">
+                                                                <label for="otp-input">Enter OTP sent to client's
+                                                                    phone</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="button"
+                                                                class="btn btn-light me-3 btn-otp-edit">
+                                                                <i
+                                                                    class="bx bxs-edit-alt font-size-16 align-middle me-2"></i>
+                                                                Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary btn-otp-submit"
+                                                                disabled>
+                                                                Next <i
+                                                                    class="bx bx-right-arrow-alt font-size-16 align-middle"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-loader modal-content d-none">
+                        <div class="row">
+                            <div class="col-12 processing-transaction">
+                                <div
+                                    class="text-center d-flex w-100 h-100 align-center justify-items-center flex-column">
+                                    <div class="mb-4">
+                                        <div class="spinner-chase">
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                            <div class="chase-dot"></div>
+                                        </div>
+                                    </div>
+                                    <h4>Processing Transaction</h4>
+                                    <p>Be patient as the transaction is being processed. This may take a few seconds</p>
+                                </div>
+                            </div>
+
+                            <!-- show for a transaction that went through -->
+                            <div
+                                class="col-12 trans-succesfull bg-light border-top p-5 p-sm-3 border border-dashed border-success d-none flex-wrap border-radius-10">
+                                <div
+                                    class="text-center d-flex w-100 h-100 align-items-center justify-content-center flex-column">
+                                    <div class="mb-4">
+                                        <span class="mdi mdi-check-circle-outline text-success display-2"></span>
+                                    </div>
+                                    <h4 class="fw-bold">Registration & Payment Successful</h4>
+                                    <p class="text-muted mb-2">
+                                        The member has been successfully registered and their premium payment received.
+                                    </p>
+                                    <p class="text-muted">
+                                        <strong>Membership/Card Number:</strong> <span
+                                            id="card-number">CBH123456789</span>
+                                    </p>
+                                    <p class="text-muted mb-4">
+                                        You may now download the receipt or close this window.
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <button class="btn btn-outline-secondary" type="button" data-dismiss="modal"
+                                            aria-label="Close">Close</button>
+                                        <button class="btn btn-primary" type="button"
+                                            onclick="downloadReceipt()">Download Receipt</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                function downloadReceipt() {
+                                    // Replace with actual download logic
+                                    window.location.href = '/path/to/generated/receipt.pdf';
+                                }
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal end -->
+
+            <!-- filters modal -->
+            <!-- Filter Modal -->
+            <div class="modal fade" id="status-filter-modal" tabindex="-1" aria-labelledby="filterModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h5 class="modal-title " id="filterModalLabel">
+                                <i class="bx bx-filter-alt me-1"></i> Filter Members Table
+                            </h5>
+                            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                               
+
+                                <!-- Payment Range -->
+                                <div class="col-md-6">
+                                    <div class="mt-4">
+                                        <h5 class="font-size-18 mb-2">Annual Payment Amount (ETB)</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="minPayment">Minimum</label>
+                                                <input type="number" class="form-control" placeholder="Min"
+                                                    name="minPayment" id="minPayment">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="maxPayment">Maximum</label>
+                                                <input type="number" class="form-control" placeholder="Max"
+                                                    name="maxPayment" id="maxPayment">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Registration Date Range -->
+                                <div class="col-md-6">
+                                    <div class="mt-4">
+                                        <h5 class="font-size-18 mb-2">Registration Date Range</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="registrationStartDate">From</label>
+                                                <input type="date" class="form-control" name="registrationStartDate"
+                                                    id="registrationStartDate">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="registrationEndDate">To</label>
+                                                <input type="date" class="form-control" name="registrationEndDate"
+                                                    id="registrationEndDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Last Payment Date Range -->
+                                <div class="col-md-6">
+                                    <div class="mt-4">
+                                        <h5 class="font-size-18 mb-2">Last Payment Date Range</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="paymentStartDate">From</label>
+                                                <input type="date" class="form-control" name="paymentStartDate"
+                                                    id="paymentStartDate">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="paymentEndDate">To</label>
+                                                <input type="date" class="form-control" name="paymentEndDate"
+                                                    id="paymentEndDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Woreda Selection -->
+                                <div class="col-md-6">
+                                    <div class="mt-4">
+                                        <h5 class="font-size-18 mb-2">Woreda</h5>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="allWoredas" checked>
+                                            <label class="form-check-label" for="allWoredas">
+                                                All Woredas
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaGondar">
+                                            <label class="form-check-label" for="woredaGondar">
+                                                Gondar
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaBahirDar">
+                                            <label class="form-check-label" for="woredaBahirDar">
+                                                Bahir Dar
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaDessie">
+                                            <label class="form-check-label" for="woredaDessie">
+                                                Dessie
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaDebreBirhan">
+                                            <label class="form-check-label" for="woredaDebreBirhan">
+                                                Debre Birhan
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaLalibela">
+                                            <label class="form-check-label" for="woredaLalibela">
+                                                Lalibela
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaDebreTabor">
+                                            <label class="form-check-label" for="woredaDebreTabor">
+                                                Debre Tabor
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="woredaDebreMarkos">
+                                            <label class="form-check-label" for="woredaDebreMarkos">
+                                                Debre Markos
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Registered By -->
+                                <div class="col-md-6">
+                                    <div class="mt-4">
+                                        <h5 class="font-size-18 mb-2">Registered By</h5>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="allAgents" checked>
+                                            <label class="form-check-label" for="allAgents">
+                                                All Agents
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="agentAlex">
+                                            <label class="form-check-label" for="agentAlex">
+                                                Alex Wanjala
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="agentFeven">
+                                            <label class="form-check-label" for="agentFeven">
+                                                Feven Haile
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="agentSamuel">
+                                            <label class="form-check-label" for="agentSamuel">
+                                                Samuel Negash
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="agentDawit">
+                                            <label class="form-check-label" for="agentDawit">
+                                                Dawit Yimer
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                <i class="bx bx-x me-1"></i> Cancel
+                            </button>
+                            <button type="button" class="btn btn-primary" id="applyMemberFilters">
+                                <i class="bx bx-filter me-1"></i> Apply Filters
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" id="resetMemberFilters">
+                                <i class="bx bx-refresh me-1"></i> Reset Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of filters modal -->
+
+            <!-- Add Employee Modal -->
+            <div class="modal fade" id="new-employee" tabindex="-1" role="dialog"
+                aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addEmployeeModalLabel">Add New Employee</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addEmployeeForm">
+                                <!-- Personal Information Section -->
+                                <div class="form-group">
+                                    <h6 class="mb-3">Personal Information</h6>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="firstName">First Name <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="firstName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="fathersName">Father's Name <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="fathersName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="grandFathersName">Grandfather's Name <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="grandFathersName" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="gender">Gender <span class="text-danger">*</span></label>
+                                            <select class="form-control" id="gender" required>
+                                                <option value="">Select Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="bloodGroup">Blood Group</label>
+                                            <select class="form-control" id="bloodGroup">
+                                                <option value="">Select Blood Group</option>
+                                                <option value="A+">A+</option>
+                                                <option value="A-">A-</option>
+                                                <option value="B+">B+</option>
+                                                <option value="B-">B-</option>
+                                                <option value="AB+">AB+</option>
+                                                <option value="AB-">AB-</option>
+                                                <option value="O+">O+</option>
+                                                <option value="O-">O-</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Information Section -->
+                                <div class="form-group">
+                                    <h6 class="mb-3">Contact Information</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="phoneNumber">Phone Number <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="tel" class="form-control" id="phoneNumber" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Address Information Section -->
+                                <div class="form-group">
+                                    <h6 class="mb-3">Address Information</h6>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="woreda">Woreda <span class="text-danger">*</span></label>
+                                            <select class="form-control" id="woreda" required>
+                                                <option value="">Select Woreda</option>
+                                                <option value="Bahir Dar">Bahir Dar</option>
+                                                <option value="Gondar">Gondar</option>
+                                                <option value="Dessie">Dessie</option>
+                                                <option value="Lalibela">Lalibela</option>
+                                                <option value="Debre Markos">Debre Markos</option>
+                                                <option value="Woldia">Woldia</option>
+                                                <option value="Kombolcha">Kombolcha</option>
+                                                <option value="Debre Birhan">Debre Birhan</option>
+                                                <option value="Addis Zemen">Addis Zemen</option>
+                                                <option value="Shewa Robit">Shewa Robit</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12 mb-3">
+                                            <label for="address">Full Address <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="address" rows="3" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="saveEmployeeBtn">Save Employee</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Employees Modal -->
+<div class="modal fade" id="uploadEmployeesModal" tabindex="-1" role="dialog" aria-labelledby="uploadEmployeesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadEmployeesModalLabel">Upload Employee List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadEmployeesForm">
+                    <!-- Organization Selection -->
+                    <div class="form-group mb-3">
+                        <label for="employerOrganization">Select Employer/Organization <span class="text-danger">*</span></label>
+                        <select class="form-control" id="employerOrganization" required>
+                            <option value="">Select Organization</option>
+                            <option value="1">Bahir Dar Textile PLC</option>
+                            <option value="2">Gondar Pharmaceuticals</option>
+                            <option value="3">Amhara Construction</option>
+                            <option value="4">Lalibela Hospitality</option>
+                            <option value="5">Debre Markos Agro Processing</option>
+                            <option value="6">Woldia Transport Services</option>
+                            <option value="7">Kombolcha Steel Factory</option>
+                            <option value="8">Debre Birhan Education Center</option>
+                            <option value="9">Addis Zemen Health Clinic</option>
+                            <option value="10">Shewa Robit Agricultural Co-op</option>
+                        </select>
+                    </div>
+
+                    <!-- File Upload -->
+                   
+                    <div class="col-sm-12">
+                                                        
+                        <div class="mt-3">
+                            <label for="employeeListFile">Select Excel File <span class="text-danger">*</span></label>
+                            <input class="form-control"id="employeeListFile"  type="file" id="formFile" accept=".xlsx, .xls" required>
+                             <small class="form-text text-muted">
+                            Only Excel files (.xlsx, .xls) are accepted. Max file size: 5MB
+                        </small>
+                        </div>
+                    </div>
+
+                    <!-- Download Format Section -->
+                    <div class="border-top pt-3 mt-3">
+                        <h6>Download Excel Format</h6>
+                        <p>Download our template to ensure your file has the correct format:</p>
+                        <a href="#" class="btn btn-outline-primary" id="downloadTemplateBtn">
+                            <i class="bx bxs-download"></i> Download Employee Template
+                        </a>
+                    </div>
+
+                    <!-- Template Preview (Collapsed) -->
+                    <div class="mt-3">
+                        <a class="btn btn-link p-0" data-toggle="collapse" href="#templatePreview" role="button" aria-expanded="false" aria-controls="templatePreview">
+                            View Template Structure
+                        </a>
+                        <div class="collapse mt-2" id="templatePreview">
+                            <div class="">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr class="bg-light">
+                                            <th>Column</th>
+                                            <th>Description</th>
+                                            <th>Required</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>first_name</td>
+                                            <td>Employee's first name</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>fathers_name</td>
+                                            <td>Father's name</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>grandfathers_name</td>
+                                            <td>Grandfather's name</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>gender</td>
+                                            <td>Male/Female/Other</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>phone_number</td>
+                                            <td>Primary contact number</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>email</td>
+                                            <td>Email address</td>
+                                            <td>No</td>
+                                        </tr>
+                                        <tr>
+                                            <td>woreda</td>
+                                            <td>Woreda of residence</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>address</td>
+                                            <td>Full address</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>blood_group</td>
+                                            <td>Blood group (if known)</td>
+                                            <td>No</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="uploadEmployeesBtn">
+                    <i class="bx bxs-cloud-upload"></i> Upload Employees
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for the Upload Modal -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Update file input label when file is selected
+    document.getElementById('employeeListFile').addEventListener('change', function(e) {
+        const fileName = e.target.files[0] ? e.target.files[0].name : 'Choose file...';
+        document.querySelector('.custom-file-label').textContent = fileName;
+    });
+
+    // Handle template download
+    document.getElementById('downloadTemplateBtn').addEventListener('click', function() {
+        // In a real implementation, this would download an actual template file
+        alert('Employee template.xlsx would download now in a real implementation');
+        // window.location.href = '/path/to/employee_template.xlsx';
+    });
+
+    // Handle form submission
+    document.getElementById('uploadEmployeesBtn').addEventListener('click', function() {
+        const form = document.getElementById('uploadEmployeesForm');
+        
+        if (form.checkValidity()) {
+            const formData = new FormData();
+            formData.append('organization', document.getElementById('employerOrganization').value);
+            formData.append('file', document.getElementById('employeeListFile').files[0]);
+
+            // Here you would typically make an AJAX call to upload the file
+            console.log('Uploading file for organization:', document.getElementById('employerOrganization').value);
+            
+            // Simulate upload process
+            setTimeout(function() {
+                $('#uploadEmployeesModal').modal('hide');
+                alert('Employee list uploaded successfully!');
+                form.reset();
+                document.querySelector('.custom-file-label').textContent = 'Choose file...';
+            }, 1000);
+        } else {
+            form.reportValidity();
+        }
+    });
+});
+</script>
+
+
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © CBHI
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                Ministry of Health- Ethiopia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay "></div>
+
+    <script src="assets/libs/jquery/jquery.min.js "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js "
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous ">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous ">
+    </script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+    <script src="assets/libs/simplebar/simplebar.min.js "></script>
+    <script src="assets/libs/node-waves/waves.min.js "></script>
+
+
+
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js "></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js "></script>
+    <!-- Buttons examples -->
+    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js "></script>
+    <script src="assets/libs/jszip/jszip.min.js "></script>
+    <script src="assets/libs/pdfmake/build/pdfmake.min.js "></script>
+    <script src="assets/libs/pdfmake/build/vfs_fonts.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js "></script>
+    <!-- numerals number formater -->
+    <script src="assets/libs/numeral/numeral.js "></script>
+
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js "></script>
+    <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js "></script>
+
+    <!-- Bootstrap select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/dropzone/min/dropzone.min.js "></script>
+    <!-- Datatable init js -->
+    <script src="assets/js/pages/datatables.init.js "></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js "></script>
+    <script src="assets/js/custom.js "></script>
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from html.physcode.com/travel/home-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2020 16:05:20 GMT -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HMIS System Generated Invoice</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-print-color-adjust: exact !important;
+            /* Chrome, Safari */
+            color-adjust: exact !important;
+            /*Firefox*/
+        }
+        
+        .print-btn {
+            display: flex;
+            z-index: 1000000000;
+            position: fixed;
+            background: #4aaa23;
+            color: white;
+            top: 30px;
+            right: 30px;
+            border-radius: 50%;
+            padding: 1rem;
+            margin: 0px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 0px 20px 4px rgb(136 136 136 / 65%);
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        .email-doc{
+            top: 130px;
+            background: #0063c0;
+        }
+        
+        .print-btn img {
+            height: 35px;
+        }
+        
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                margin: 0px !important;
+                padding: 0px !important;
+                background-color: white;
+            }
+            @page {
+                /* size: auto; */
+                /* auto is the initial value */
+                /* this affects the margin in the printer settings */
+                /* width: 210mm;*/
+                /* height: 297mm; */
+                size: A4 portrait;
+                margin: 0px;
+                margin-bottom: 0px;
+                margin: 0px;
+            }
+        }
+        
+        @page {
+            /* size: auto; */
+            /* auto is the initial value */
+            /* this affects the margin in the printer settings */
+            /* width: 210mm;
+                height: 297mm; */
+            size: A4 portrait;
+            margin: 0px;
+            margin-bottom: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body style="padding: 0px; margin: 0px; font-family: 'Montserrat', sans-serif; background-color: #a2a2a21c;box-sizing: border-box;">
+
+    <button class="print-btn" onclick="window.print()"><img src="assets/printer.svg" alt="Printer Icon"></button>
+    <button class="print-btn email-doc" title="send On Email"><img src="assets/email-icon.png" alt="Printer Icon "></button>
+
+    <page class="page" style="width: 210mm; height:297mm; display: flex; position: relative; flex-flow: column; background-color: white;">
+        <!-- main content -->
+        <div style="padding: 8.5mm;">
+
+            <header style="display: flex; height: 47mm; align-items: center; position: relative; width: 100%; justify-content: space-between;">
+                <div>
+                    <img src="assets/homa-bay.png" style="height: 36mm; margin-right: 0mm;">
+                </div>
+                <div style="text-align: center; margin-right: 8.5mm; margin-left: 8.5mm;">
+                    <h2 style="                    
+                        margin-top: 0px;
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        color: #3f51b5;
+                        font-weight: 700;
+                        margin-bottom: 1.2mm;
+                        padding-bottom: 0px;
+                    
+                    ">
+                       Homa Bay Teaching and Referral Hospital (HBTRH) 
+                    </h2>
+
+                    <h4 style="padding: 0px;
+                    margin: 0px;
+                    font-size: 18px;
+                    font-weight: bold; text-transform: uppercase; margin-bottom: 4.5mm;">
+                        (Homa Bay county)
+                    </h4>
+
+                    <h4 style="padding: 0px;
+                    margin: 0px;
+                    font-size: 14px;
+                    font-weight: 400;">
+                       52-40300 Homa Bay, Kenya<br>
+                       Email: info@hbctrh.or.ke
+                       Phone: 0798954417/0733481568
+                    </h4>
+
+                    <h4 style="padding: 0px;
+                    margin: 0px;
+                    font-size: 13px;
+                    font-weight: 400; font-style: italic; font-family: 'Times New Roman', Times, serif; margin-top: 2mm;">
+                       <span style="font-style: italic; font-family: 'Times New Roman', Times, serif; margin-right: 3mm;">To be a well established institution offering high quality, efficient and integrated medical services.</span>  
+                    </h4>
+
+                </div>
+                <div>
+                    <img src="assets/logof.png" style="height: 36mm; margin-right: 0mm;">
+                </div>
+                
+            </header>
+            <div>
+                <img src="assets/blue-line.png" style="width: 100%;">
+            </div>
+            <div style="padding: 10px;  width: 100%; text-align: center; background-color:#3f51b5; text-transform: uppercase; margin-bottom: 15px;">
+                <h4 style="padding: 0px; margin: 0px; color: white;">Invoice</h4>
+            </div>
+
+            <!-- contact information and QR code -->
+            <div style="display: flex; justify-content: space-between; ">
+
+                <!-- contact information -->
+                <div style="font-size: 12px; padding-right: 0.2mm; width: 31%; text-transform: uppercase;">
+                    <strong style="text-transform: uppercase; font-size: 14px; padding-top: 4.3mm; padding-bottom: 2.5mm;">Bill To</strong>
+                    <p style="padding: 0px; margin: 0px; padding-top: 2.5mm; padding-bottom: 1.5mm; ">AAR insurance Limited<strong style="text-transform: uppercase; font-size: 14px;"></strong></p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;">Currency: KES</p>
+                </div>
+
+                <div style="font-size: 12px; padding-right: 0.mm; text-transform: uppercase; padding-left: 2.5mm; flex-grow: 1;">
+                    <strong style="text-transform: uppercase; font-size: 14px; padding-top: 4.3mm; padding-bottom: 2.5mm;">Patient's Info</strong>
+                    <p style="padding: 0px; margin: 0px; padding-top: 2.5mm; padding-bottom: 1.5mm; ">Patient No: HB-01200-24222<strong style="text-transform: uppercase; font-size: 14px;"></strong></p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;">Patient Name: Kelvin Njuguna</p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;">Policy No.: AK0889889</p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;">Medical: Scheme Craft Silicon Limited</p>
+                </div>
+
+                <div style="font-size: 12px; text-align: left; width: 31%; padding-left: 2.5mm; text-transform: uppercase;">
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm; display: flex; justify-content: space-between;"><strong style="text-transform: uppercase;">Invoice: </strong><span style="text-align: right;">HBR-01200-116033</span></p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;  display: flex; justify-content: space-between;"><strong style="text-transform: uppercase;">Date: </strong><span>25/02/2024 11:04 AM</span></p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;   display: flex; justify-content: space-between;"><strong style="text-transform: uppercase;">Printed On: </strong>25/02/2024 11:34 AM</p>
+                    <p style="padding: 0px; margin: 0px; padding-top: 0mm; padding-bottom: 1.5mm;  display: flex; justify-content: space-between;"><strong style="text-transform: uppercase;">Doctor: </strong> Dr James Waweru</p>
+
+                </div>
+
+                <!-- the qr code -->
+                <div style="height: 25.3mm; margin-top: 3.3mm;; width: 25.3mm; border: 2px solid #0045a1; display: flex; justify-content: center; align-items: center; display: none;">
+                    <img src="assets/code-demo.png" style="height: 25mm;">
+                </div>
+
+            </div>
+            
+
+            <!-- the table -->
+
+            <!-- the table contents -->
+            <table style="margin-top:5.3mm; border-spacing: initial; width: 100%; border: 1px solid #00000066; margin-bottom: 5.3mm; text-transform: uppercase;">
+                <thead class="" style="text-transform: uppercase;
+                font-weight: 700;
+                font-size: 12px;
+                background: #e2f2fd;
+                padding: 2.5mm;">
+                    <tr>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #00000066;">Description</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #00000066;">Qty</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #00000066; text-align: right;">Unit Price</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #00000066; text-align: right;">Disc. (%)</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #00000066; text-align: right;">Disc. (KES)</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #00000066; text-align: right;">Amount (KES)</td>
+                    </tr>
+
+                </thead>
+                <tbody style="font-size: 12px; font-weight: 500;">
+                    <tr>
+                        <th colspan="7" style="padding: 2mm; border-bottom: 1px solid #00000066; text-align: left; background-color: #0000001f;">Unit: Lab Test</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">Routine Blood Count</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">1</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">400.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">400.00</td>
+
+
+                    </tr>
+                    <tr>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">COVID-19 RT-PCR (E-gene)</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">1</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">400.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">400.00</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="7" style="padding: 2mm; border-bottom: 1px solid #00000066; text-align: left; background-color: #0000001f; ">Unit: Pharmacy</th>
+
+                    </tr>
+                    <tr>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">Monteru tablets</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">10</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">124.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">1,240.00</td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">Triple Therapy Medication Pack</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029;">1</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">6,500.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">0.00</td>
+                        <td style="padding: 2.5mm; border-bottom: 1px solid #80808029; text-align: right;">6,500.00</td>
+                    </tr>
+                </tbody>
+                <tfoot class="" style="text-transform: uppercase;
+                    
+                    font-weight: 700;
+                    font-size: 12px;
+                    padding: 2.5mm;">
+                    <tr>
+                        <td style="border-top: 1px solid #00000066; padding-top: 0px; background-color: #e2f2fd;" colspan="3" rowspan="5">
+                           <div style=" display: flex;">
+                                <div style="height: 100%; display: flex; align-content:space-between; flex-flow: column;">
+                                    <div style="display: flex; flex-flow: column; align-content: flex-start; height: auto; width: 32mm; padding: 2mm; border: 2px solid blue; margin-left: 2.8mm;">
+                                        <div style="text-align: center;">
+                                            <img src="assets/qr-code.png" style="height: 26mm; margin: 0; width: 26mm;">
+                                            <p style="margin-top: 0px; margin: 0px;"><Strong style="font-size: 10px; padding: 1mm; margin-top: 0px;">Scan to Verify, Check, or Pay</Strong></p>
+                                        </div>
+                                    </div>
+                                    <div style="opacity: 0;">
+                                    -
+                                    </div>
+                                </div>
+
+                                <!-- show this section for payments that were done by the client but not the insurance -->
+    
+                                <div style="padding: 2mm; width: 70mm; flex-grow: 1; margin-right: 2mm; background-color: blue; height: 100%; color: white;">
+                                    <div>
+                                        <h4 style="font-size: 14px; padding-top: 0px; margin-top: 0px; margin-bottom: 1.5mm; padding-bottom: 0px; text-decoration: underline;">Go Cashless!! WIth MPESA</h4>
+                                        <p style="text-transform: capitalize; font-weight: 500; padding: 0px; margin: 0px; font-size: 12px;">
+                                            Go to <b>MPESA</b>, select <b>PAY BILL</b>, enter <b>0484848</b> as the bill number, <b>HBT12345</b> as the account number, and <b>8,590</b> as the amount. Enter your <b>MPESA PIN</b> to confirm. You’ll receive an <b>SMS CONFIRMATION</b>.
+                                        </p>
+                                                                            </div>
+                                </div>
+                           </div>
+                        </td>
+                        <td colspan="3" style="padding:  2.5mm;border-bottom: 1px solid #80808029; border-left: 1px solid #00000066; border-top: 1px solid #00000066; font-size: 13px;">
+                            <div style="display: flex; justify-content:space-between;">
+                                <span>Total</span>
+                                <span style="text-align: right;">8,540.00</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="padding: 2.5mm; border-left: 1px solid #00000066; font-size: 13px; border-bottom: 1px solid #80808029;">
+                            <div style="display: flex; justify-content:space-between;">
+                                <span>Discount</span>
+                                <span style="text-align: right;">0.00</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="padding: 2.5mm; border-left: 1px solid #00000066; font-size: 13px; border-bottom: 1px solid #80808029;">
+                            <div style="display: flex; justify-content:space-between;">
+                                <span>Copay</span>
+                                <span style="text-align: right;">0.00</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="padding: 2.5mm; border-left: 1px solid #00000066; font-size: 13px; border-bottom: 1px solid #80808029;">
+                            <div style="display: flex; justify-content:space-between;">
+                                <span>Payment</span>
+                                <span style="text-align: right;">0.00</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="padding: 2.5mm; border-left: 1px solid #00000066; font-size: 13px; border-bottom: 1px solid #80808029;">
+                            <div style="display: flex; justify-content:space-between;">
+                                <span>Balance Due</span>
+                                <span style="text-align: right;">8,540.00</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div style="display: none;">
+                <img src="assets/blue-line.png" style="width: 100%; margin-bottom: 0mm;">
+            </div>
+            <div>
+                <h2 style="                    
+                margin-top: 18px;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: #0045a1;
+                font-weight: 700;
+                margin-bottom: 3.3mm;                        
+                padding-bottom: 0px;
+                text-transform: uppercase;
+                display: none;
+            
+                ">
+                    Review Notes
+                </h2>
+                <p style="font-size: 13px; font-weight: bold; text-transform: uppercase; padding-top: 4mm;">Patient Signature: _______________________________  Date: _________________________</p>
+                <p style="font-size: 13px; font-weight: bold; text-transform: uppercase; padding-top: 0mm;">Served By Dr John Doe Mugweru ~~~~~ Date: 25 May 2024 14:21 PM</p>
+
+            </div>
+            <div style="display: none;">
+                <img src="assets/blue-line.png" style="width: 100%; margin-bottom: 0mm;">
+            </div>
+
+            <!-- billing details and summary -->
+
+           
+        </div>
+
+        <!-- the footer starts here -->
+        <div style="padding: 8.5mm;width: 100%;background-color: #e2f2fd;flex-grow: 1;margin-top: 0mm;display: flex;flex-flow: column;justify-content: space-between;">
+            <div style="display: flex;width: 100%;">
+               
+
+              
+
+                <div style="padding-top:3.3mm;padding-left: 17.3mm; display: flex; display: none;">
+                   
+
+                    <div style="position: relative; display: flex; display: none;">
+                        <img src="assets/code-demo.png" style="height: 16.6mm; margin: 1.25mm;">
+                        <img src="assets/camera-frame.svg" style="
+                        position: absolute;
+                        left: 0;
+                        height: 18.6mm;
+                       
+                    ">
+
+                        <img src="assets/curved-arrow.svg" style="
+                        height: 13mm;
+                        margin-left: 4mm;
+                        display: none;
+                    ">
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+            <footer style="position: relative; width: 100%;">
+                <div style="position: absolute; bottom: 0mm;">
+
+                    <div style="display: flex; flex-flow: column;">
+                        <span style="font-family: 'Yellowtail', cursive;  color: #0045a1; line-height: 0.9; font-size: 20px; text-align: right;">Thanks For Reference</span>
+                        <img src="assets/blue-line.png" style="width: 100%;">
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 2mm;">
+                        <p style="padding-bottom: 10px;margin-bottom:0px;font-size: 12px;margin-top: 0mm;">HBR-01200-116033</p>
+                        <p style="padding-bottom:10px; margin-bottom:0px;font-size: 12px;margin-top: 0mm;"><strong>*** End of Report ***</strong></p>
+                        <div style="display:none; position: absolute; display: non; align-items: center; justify-content: center; font-size: 12px; margin-left: 8.5mm;">
+                            <p>Powered By</p>
+                            <img src="assets/unpaid.svg" style="height: 10mm; padding-left: 2.5mm;">
+                        </div>
+
+                        <div style="display: flex; bottom: 18mm; right: 0px; position: absolute; display: non; align-items: center; justify-content: center; font-size: 12px; margin-left: 8.5mm;">
+                            <img src="assets/unpaid.svg" style="height: 18mm; padding-left: 2.5mm; display: none;">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+
+        </div>
+    </page>
+</body>
+
+<!-- Mirrored from html.physcode.com/travel/home-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2020 16:05:27 GMT -->
+
+</html>

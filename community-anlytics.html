@@ -1,0 +1,2545 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>HOSPITAL MANAGEMENT INFORMATION SYSTEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="HMIS By Craft Silicon Payments" name="description" />
+    <meta content="Kelvin Njuguna" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+    <!-- droping file -->
+    <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    
+     <!-- owl.carousel css -->
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.carousel.min.css">
+
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                    <img src="assets/images/the-logo.png" alt="" height="50">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-text-white.png" alt="" height="55">
+                                </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt="" class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="bx bx-fullscreen"></i>
+                            </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-bell bx-tada"></i>
+                                <span class="badge bg-danger rounded-pill">3</span>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="bx bx-cart"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="bx bx-badge-check"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+       <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title" key="t-pages">Hospital Management Information system </li>
+
+                         <li class="side-bar-button" >
+                            <a href="outpatient-checkin.html" class="waves-effect btn btn-light btn-rounded text-left write-msg-btn">
+                                <i class=""><img src="assets/images/plus-icon.svg" alt=""></i>
+                                <span class="text-capitalize">Patient Chekin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home-circle"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                       <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-hand-heart"></i>
+                                <span>Community Health</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="community-anlytics.html">Analytics</a></li>      
+                                <li><a href="community-members.html">Member Register</a></li>
+                                <li><a href="community-deposits.html">Member Deposits</a></li>
+                                <li><a href="community-visit.html">Visit Coverage Log</a></li>
+                                <li><a href="community-setUp.html">Set Up</a></li> 
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bxs-user-detail"></i>
+                                <span>Master Patient Index</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="patient-new.html">Patient Registration</a></li>      
+                                <li><a href="patients.html">MPI Register</a></li> 
+                            </ul>
+                        </li>
+
+                      <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" data-toggle="tooltip" title="Insurance Processing">
+                                <i class="mdi mdi-shield-cross-outline"></i> <!-- Insurance-related icon -->
+                                <span>Insurance Processing</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="insurance-quick-stats.html" data-toggle="tooltip" title="View quick statistics on cases">Quick Stats</a></li>
+                                <li><a href="insurance-cases-all.html" data-toggle="tooltip" title="View quick statistics on cases">All cases</a></li>
+                                <li><a href="insurance-pending-approval.html" data-toggle="tooltip" title="View cases pending approval">Pending Approval</a></li>      
+                                <li><a href="insurance-rejected-approvals.html" data-toggle="tooltip" title="View cases rejected from approval">Rejected Approvals</a></li> 
+                                <li><a href="insurance-approved-processing.html" data-toggle="tooltip" title="View cases approved for processing">Approved for Processing</a></li> 
+                                <li><a href="insurance-reverted-approvals.html" data-toggle="tooltip" title="View cases reverted after approval">Reverted Approvals</a></li>
+                                <li><a href="insurance-awaiting-closure.html" data-toggle="tooltip" title="View cases awaiting closure">Awaiting Closure</a></li>   
+                                <li><a href="insurance-closed-cases.html" data-toggle="tooltip" title="View fully closed cases">Closed Cases</a></li>    
+                                <li><a href="insurance-archived-cases.html" data-toggle="tooltip" title="View fully closed cases">Archived Cases</a></li>      
+                                <li><a href="insurance-user-logs.html" data-toggle="tooltip" title="View fully closed cases">User Logs</a></li>     
+                                <li><a href="insurance-preferences.html" data-toggle="tooltip" title="View fully closed cases">Preferences</a></li>    
+
+                            </ul>
+                            
+                        </li>
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Clinical Activities">
+                                <i class="mdi mdi-hospital-building"></i> <!-- Hospital Building Icon -->
+                                <span>Clinical Management</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="clinical-quick-stats.html" title="View Quick Stats">Quick Stats</a></li>
+                                <li><a href="clinical-new-encounter.html" title="Log New Encounters">New Encounters</a></li>
+                                <li><a href="clinical-pending-consultation.html" title="View Pending Consultations">Pending Consults</a></li>
+                                <li><a href="clinical-active-consultation.html" title="View Active Consultations">Active Consults</a></li>
+                                <li><a href="clinical-lab-list.html" title="List of patients sent to the Lab for examination">To Lab</a></li>
+                                <li><a href="clinical-awaiting-interpretation.html" title="Patients results Awaiting Lab Interpretation">Pending Lab Review</a></li>
+                                <li><a href="clinical-discharged.html" title="Completed Visits Summary">Completed Visits</a></li>
+                            </ul>
+                        </li>
+                        
+
+                        <li>
+                            <a href="encounter-all.html" class="waves-effect">
+                                <i class="bx bx bx-list-ul"></i><span>Encounter List</span>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-human-queue mdi"></i>
+                                <span>Patient's Queue</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="out-Patient-visits.html">Out Patient Visits Queue</a></li> 
+                                <li><a href="queue-triage.html">Triage</a></li>      
+                                <li><a href="queue-OPD.html">Consaltation </a></li> 
+                                <li><a href="queue-cashier.html">Cashier </a></li> 
+                                <li><a href="queue-lab-schedule.html">Scheduled lab Tests</a></li> 
+                                <li><a href="queue-ongoing-schedule.html">Ongoing lab Tests</a></li> 
+                                <li><a href="queue-test-interpratation-schedule.html">Lab Test Interpratation</a></li> 
+                                <li><a href="queue-scan-exam-schedule.html">Scheduled Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-ongoing.html">Ongoing Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-interpratation.html">Scan exam Interpratation</a></li> 
+                                <li><a href="queue-pharmacey.html">Pharmacy</a></li> 
+                               
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="fas fa-flask"></i>
+                                <span>Medical Lab</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="lab-stats.html" title="Get a quick overview of lab activities and statistics">Lab Quick Stats</a></li>
+                                <li><a href="lab-orders-pending-payment.html" title="View tests awaiting payment or waiver before scheduling">Tests Pending Payment</a></li>
+                                <li><a href="lab-orders.html" title="Check all scheduled lab tests awaiting processing">Scheduled Lab Tests</a></li>
+                                <li><a href="lab-orders-acknowledged.html" title="See lab tests acknowledged and ready for processing">Acknowledged Lab Tests</a></li>
+                                <li><a href="lab-orders-collected-sample.html" title="View samples collected and ready for testing">Collected Samples</a></li>
+                                <li><a href="lab-orders-pending-results.html" title="Track lab tests with results pending">Pending Lab Results</a></li>
+                                <li><a href="lab-orders-released-tests.html" title="Access lab test results that have been finalized and released">Results Released</a></li>
+                                <li><a href="lab-setup.html" title="Manage and configure lab tests and settings">Lab Test Setup</a></li>
+                                <li><a href="patients.html" title="View patient lab reports and detailed results">Lab Reports</a></li>
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-calendar-month mdi"></i>
+                                <span>Appointments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="appointments-pending.html">Pending Appointments</a></li>      
+                                <li><a href="appointments-fullfiled.html">Fullfiled AAppointments</a></li> 
+                                <li><a href="appointments-due.html">Due Appointments</a></li> 
+                            </ul>
+                        </li>
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-clipboard-edit mdi"></i>
+                                <span>Stock Management</span>
+                            </a>
+                            <ul class="sub-menu text-capitalize" aria-expanded="false">
+                                <li><a href="stock-ordering.html">Stock Enquiry</a></li>     
+                                <li><a href="stock-taking.html">Stock Taking</a></li>                       
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-cog-outline mdi"></i>
+                                <span>Setups</span>
+                            </a>
+                           <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="set-up-departments.html">Departments</a></li>
+                                <li><a href="set-up-pricing.html">Pricing & Charges</a></li>
+                                <li><a href="set-up-equipments.html">Equipments</a></li>
+                                <li><a href="set-up-wards.html">Ward Set Up</a></li>
+                                <li><a href="set-up-bed.html">Beds Setup</a></li>
+                                <li><a href="set-Pharmacy.html">Pharmacy inventory</a></li>
+                                <li><a href="lab-setup-new.html">New Lab test Setup</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class="menu-title" key="t-pages">Reports</li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-outline"></i>
+                                <span>NHIF Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="nhif-reports.html">NHIF Payments</a></li>   
+                                <li><a href="nhif-cleared.html">Cleared Payemtnts</a></li>      
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="reports-outpatient.html" class="waves-effect">
+                                <i class="bx bx-clinic"></i><span>Outpatient Reports</span>
+                            </a>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-clipboard-text-outline"></i>
+                                <span>Stock Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="stock-daily-rep.html">Daily Reports</a></li>   
+                                <li><a href="stock-manual-exits.html">Manual Exits</a></li>      
+                                <li><a href="stock-order-enquarry.html">Order Enquarries</a></li>      
+                                                             
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reports-inpatient.html" class="waves-effect">
+                                <i class="mdi mdi-bed-outline"></i><span>Inpatient Reports</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reports-revenue-streams.html" class="waves-effect">
+                                <i class="mdi mdi-bank-transfer"></i><span>Revenue Perfomance</span>
+                            </a>
+                        </li>
+
+                      <li>
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-doctor"></i><span>Physician Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="d-none">
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-office-building"></i><span>Departmental Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bx-receipt"></i>
+                                <span>Bills</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                               
+                                <li><a href="bills-receipted.html">Receipted Bills</a></li>      
+                                <li><a href="bills-unpaid.html">Unpaid Bills</a></li>                               
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Covered Services">
+                                <i class="mdi mdi-clipboard-check-outline"></i>
+                                <span>Covered Services</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="covered-lab-tests.html" title="Manage Covered Lab Tests"><i class="mdi mdi-flask-outline"></i> Lab Tests</a></li>
+                                <li><a href="covered-radiology.html" title="Manage Covered Radiology Tests"><i class="mdi mdi-radiology-box"></i>Radiology Tests</a></li>
+                                <li><a href="covered-drugs.html" title="Manage Covered Drugs"><i class="mdi mdi-pill"></i> Drugs</a></li>
+                                <li><a href="covered-procedures.html" title="Manage Covered Procedures"><i class="mdi mdi-stethoscope"></i> Procedures</a></li>
+                                <li><a href="coverage-policies.html" title="Manage Coverage Policies and Rules"><i class="mdi mdi-file-document-outline"></i> Coverage Policies</a></li>
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html" title="Manage Designations">Designations</a></li>
+                                <li><a href="org-departments.html" title="Manage Departments">Departments</a></li>
+                                <li><a href="org-employment-types.html" title="Manage Employment Types">Employment Types</a></li>
+                                <li><a href="org-affiliated-institution.html" title="Manage Affiliated Institutions">Affiliated Institution</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html" title="Add New User">Add User</a></li>
+                                <li><a href="user-userlist.html" title="Add New User">Manage Users</a></li>
+                                <li><a href="users-deactivated.html" title="View Deactivated Users">Deactivated Users</a></li>
+                                <li><a href="use-logs.html" title="View System Logs">System Logs</a></li>
+                                <li><a href="users-roles.html" title="Manage User Roles">System Roles</a></li>
+                            </ul>
+                        </li>
+
+
+                        
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Community Based health Insurance Analytics</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="index.html">Dashboards</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Community health</a></li>
+                                        <li class="breadcrumb-item active">Quick Stats</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        
+                        
+                        <div class="col-sm-12 col-md-4">
+                           <div class="row">
+                            <div class="col-12">
+                                <div class="card mini-stats-wid bg-primary">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div class="flex-grow-1">
+                                                <p class="fw-medium mb-0 pb-0 text-white">Active Members</p>
+                                                <span class="text-white opacity-75 ">12 Jan 2024</span>
+                                                <h4 class="mb-0 mt-3 text-white">434,590 of <span class="opacity-75">500,000</span></h4>
+                                            </div>
+                            
+                                            <div class="flex-shrink-0 align-self-center">
+                                                <div class="mini-stat-icon avatar-sm rounded-circle bg-white">
+                                                    <span class="avatar-title text-white">
+                                                        <i class="mdi mdi mdi-account-group font-size-24"></i> <!-- Updated icon and color -->
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                <div class="col-12">
+                                    <div class="card ">
+                                        <div class="card-header bg-white border-bottom">
+                                           
+        
+                                            <div class="clearfix">
+                                                <div class="float-end mb-3">
+                                                    <div class="input-group input-group-sm">
+                                                        <select class="form-select form-select-sm" style="width: 150px;">
+                                                            <option value="" disabled>Select Premium</option>
+                                                            <option value="all-regions" selected>All Premiums</option>
+                                                            <option value="benishangul-gumuz">Benishangul-Gumuz</option>
+                                                            <option value="addis-ababa">Addis Ababa</option>
+                                                            <option value="harari">Harari</option>
+                                                            <option value="sidama">Sidama</option>
+                                                            <option value="gambela">Gambela</option>
+                                                            <option value="oromia">Oromia</option>
+                                                            <option value="somali">Somali</option>
+                                                            <option value="dire-dawa">Dire Dawa</option>
+                                                            <option value="tigray">Tigray</option>
+                                                            <option value="afar">Afar</option>
+                                                            <option value="amhara">Amhara</option>
+                                                        </select>
+                                                        <label class="input-group-text">Premiums</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <h4 class="card-title text-uppercase text-black">Membership Distribution by Region</h4>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="">
+                                               
+        
+                                                <div id="ethiopeanMap"></div>
+        
+                                                <div class="d-none">
+                                                    <div class="alert  bg-success-subtle mb-0 border  border-2 pt-4 border-success" role="alert">
+                                                        <div class="d-flex">
+                                                            <div>
+                                                                <div class="avatar-xs me-3">
+                                                                    <span class="avatar-title rounded-circle bg-success bg-soft text-success font-size-18">
+                                                                        <i class="mdi mdi-check-circle"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div>
+                                                                    <h5 class="font-size-14">Well Done!</h5>
+                                                                    <p class="text-muted pb-0">
+                                                                        Average approval time is just <strong class="text-success">3 minutes</strong> – great work! Let’s keep it in the green.
+                                                                    </p>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-8">
+                           <div class="row">
+                            <div class="col-lg-3 col-sm-12">
+                                <div class="card mini-stats-wid">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap">
+                                            <div class="me-3">
+                                                <p class="text-muted mb-2 fw-bold">New Registrations<br> This month</p>
+                                                <h4 class="mb-0 mt-3">85</h4>
+                                            </div>
+                                            <div class="avatar-sm ms-auto">
+                                                <div class="avatar-title bg-light rounded-circle font-size-20">
+                                                    <i class="bx bx-group" style="color: #007bff;"></i> <!-- Blue icon for New Registrations -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-sm-12">
+                                <div class="card mini-stats-wid">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap">
+                                            <div class="me-3">
+                                                <p class="text-muted mb-2 fw-bold">Pending Insurance <br> Claims</p>
+                                                <h4 class="mb-0 mt-3">320</h4>
+                                            </div>
+                                            <div class="avatar-sm ms-auto">
+                                                <div class="avatar-title bg-light rounded-circle font-size-20">
+                                                    <i class="bx bx-time" style="color: #ffc107;"></i> <!-- Yellow icon for Pending Claims -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-sm-12">
+                                <div class="card mini-stats-wid">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap">
+                                            <div class="me-3">
+                                                <p class="text-muted mb-2 fw-bold">Registered Health <br> Facilities</p>
+                                                <h4 class="mb-0 mt-3">47</h4>
+                                            </div>
+                                            <div class="avatar-sm ms-auto">
+                                                <div class="avatar-title bg-light rounded-circle font-size-20">
+                                                    <i class="mdi mdi-hospital" style="color: #28a745;"></i>
+                                                    <!-- Green icon for Registered Health Facilities -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-sm-12">
+                                <div class="card mini-stats-wid">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap">
+                                            <div class="me-3">
+                                                <p class="text-muted mb-2 fw-bold">Awaiting <br> Closure</p>
+                                                <h4 class="mb-0 mt-3">130</h4>
+                                            </div>
+                                            <div class="avatar-sm ms-auto">
+                                                <div class="avatar-title bg-light rounded-circle font-size-20">
+                                                    <i class="bx bx-hourglass" style="color: #17a2b8;"></i> <!-- Blue icon for Awaiting Closure -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                                <div class="col-12">
+                                    <div class="card bg-soft bg-">
+                                        <div class="card-header bg-transparent border-bottom border-succes">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <h4 class="card-title mb-1 text-black text-uppercase mb-1 pb-0">Monthly Insurance Premiums and Claims</h4>
+                                                    <p class="pb-0 mb-2">Showing Premiums Collected, Claims Processed, and Targets</p>
+                                                </div>
+                                               <div class="d-flex align-items-center">
+                                                <div class="input-group  mx-3 text-uppercase">
+                                                    <select class="form-select form-select-sm" style="width: 200px;">
+                                                        <option value="" disabled="">Select Region</option>
+                                                        <option value="All regions" selected>All Regions</option>
+                                                        <option value="Addis Ababa">Addis Ababa</option>
+                                                        <option value="Amhara">Amhara</option>
+                                                        <option value="Oromia">Oromia</option>
+                                                        <option value="Tigray">Tigray</option>
+                                                        <option value="Sidama">Sidama</option>
+                                                        <option value="Somali">Somali</option>
+                                                        <option value="Southern Nations, Nationalities, and Peoples' Region">Southern Nations, Nationalities, and Peoples' Region</option>
+                                                        <option value="Benishangul-Gumuz">Benishangul-Gumuz</option>
+                                                        <option value="Gambela">Gambela</option>
+                                                        <option value="Harari">Harari</option>
+                                                        <option value="Dire Dawa">Dire Dawa</option>
+                                                        <option value="Afder">Afder</option>
+                                                    </select>
+                                                    
+                                                    
+                                                    <label class="input-group-text ">Regions</label>
+                                                </div>
+
+                                                <div class="input-group mx-3 text-uppercase d-none">
+                                                    <select class="form-select form-select-sm" style="width: 100px;">
+                                                        <option value="" disabled="">Select Year</option>
+                                                        <option value="2025" selected>2025</option>
+                                                        <option value="2024">2024</option>
+                                                        <option value="2023">2023</option>
+                                                        <option value="2022">2022</option>
+                                                        <option value="2021">2021</option>
+                                                        <option value="2020">2020</option>
+                                                        <option value="2019">2019</option>
+                                                        <option value="2018">2018</option>
+                                                        <option value="2017">2017</option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2015">2015</option>
+                                                    </select>
+                                                    
+                                                    <label class="input-group-text">Years</label>
+                                                </div>
+                                                
+                                               </div>
+                                            </div>
+        
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                
+                                                <div class="col-12">
+                                                    <div id="containerInsuranceMonthly"></div>
+                                                </div>
+        
+                                            </div>                                   
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-12 col-md-4">
+                                            <div id="claims-approval-time-gauge"></div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div id="population-distribution"></div>
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-4">
+                                            <div id="claims-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-5 col-lg-4 d-none">
+                            <div class="card">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title text-black text-uppercase">Top Performers</h4>
+                                       
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="">
+                                        <table class="table align-middle mb-0 table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">John Doe</h5>
+                                                        <p class="text-muted mb-0">Lab Technician</p>
+                                                    </td>
+                                
+                                                    <td>
+                                                        <div id="radialchart-1" data-colors='["--bs-primary"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Insurance Cases</p>
+                                                        <h5 class="mb-0">120</h5> <!-- Total cases attended by John Doe -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">Jane Smith</h5>
+                                                        <p class="text-muted mb-0">Pathologist</p>
+                                                    </td>
+                                
+                                                    <td>
+                                                        <div id="radialchart-2" data-colors='["--bs-success"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Insurance Cases</p>
+                                                        <h5 class="mb-0">150</h5> <!-- Total cases attended by Jane Smith -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">David Lee</h5>
+                                                        <p class="text-muted mb-0">Radiologist</p>
+                                                    </td>
+                                
+                                                    <td>
+                                                        <div id="radialchart-3" data-colors='["--bs-danger"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Insurance Cases</p>
+                                                        <h5 class="mb-0">110</h5> <!-- Total cases attended by David Lee -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">Emily Clark</h5>
+                                                        <p class="text-muted mb-0">Microbiologist</p>
+                                                    </td>
+                                
+                                                    <td>
+                                                        <div id="radialchart-4" data-colors='["--bs-warning"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Insurance Cases</p>
+                                                        <h5 class="mb-0">130</h5> <!-- Total cases attended by Emily Clark -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 class="font-size-14 mb-1">Michael Johnson</h5>
+                                                        <p class="text-muted mb-0">Biomedical Engineer</p>
+                                                    </td>
+                                
+                                                    <td>
+                                                        <div id="radialchart-5" data-colors='["--bs-info"]' class="apex-charts"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-muted mb-1">Insurance Cases</p>
+                                                        <h5 class="mb-0">140</h5> <!-- Total cases attended by Michael Johnson -->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="card-footer bg-transparent border-top">
+                                    <div class="text-center">
+                                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light"> View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-7 col-lg-8 d-none">
+                            <div class="card">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title text-black text-uppercase">Average Turnaround Time</h4>
+                                        <div class="ms-auto">
+                                            <ul class="nav nav-pills text-uppercase">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="javascript:void(0);">Week</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Month</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Year</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="revenue-collection-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+
+                       
+                       
+                    </div>
+
+                    <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <!-- receipting modal -->
+            <div class="modal fade receipting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Food Handler Certificate Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <address>
+                                        <strong class="text-capitalize">Patient Details</strong><br>
+                                        Mrs Jane Doe<br>
+                                        <a href="mailto:email@mail.com">email@mail.com</a>, <a href="tel:+254704549859">0704 549 859</a><br>                                   
+                                        
+                                        <br>
+                                        Valid From 1 Mar 2022, 10:20 AM
+                                        <br>
+                                        <span class="pr-2">Valid Till 2 Mar 2023, 10:20 AM </span>
+                                        <span class="badge rounded-pill bg-success text-uppercase me-3">Active</span>
+                                        
+                                    </address>
+                                </div>
+
+                                <div class="col-6 text-right">
+                                    <address>
+                                        <strong class="text-capitalize">Location Details</strong><br>
+                                        Street/Road: Mombasa Road<br>
+                                        Plot No.: 122202/1250<br>                                   
+                                        Building: The Tower. Floor: 12. Door/Stall No.: 123<br/>
+                                        Subcounty: CBD. Ward: Mututu
+                                        
+                                        
+                                    </address>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="hori-timeline mt-4">
+                                        <div class="owl-carousel owl-theme  navs-carousel events timeline-carousel" id="timeline-carousel">
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">12 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Application</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted text-capitalize">Self Service Portal</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">13 Sep 2023 10:09 AM</div>
+                                                        <h5 class="mb-4">Lab Test</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3 text-capitalize">
+                                                        <p class="text-muted">Dr Mary Jane at Taifa Clinic</p>
+                                                        <a href="PrintDocs/health-result-slip-master/health-result-slip-master/slip33.html" target="_blank" type="button" class="btn btn-link waves-effect"><i class="mdi mdi-eye-outline"></i> View Result Slip</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">14 Sep 2023 12:57 PM</div>
+                                                        <h5 class="mb-4">Approved</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">Mary Max</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="item event-list">
+                                                <div>
+                                                    <div class="event-date">
+                                                        <div class="text-primary mb-1">15 Sep 2023 12:54 PM</div>
+                                                        <h5 class="mb-4">Certification</h5>
+                                                    </div>
+                                                    <div class="event-down-icon">
+                                                        <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                                    </div>
+            
+                                                    <div class="mt-3 px-3">
+                                                        <p class="text-muted">Certifcate Issued By Kiprop Tanui</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 text-sm-end d-none">
+                                    <address class="mt-2 mt-sm-0">
+                                        <strong>Payment Method</strong><br>
+                                        <span class="fw-medium">MPESA</span><br>
+                                        Phone No. 0704 549 859<br> <br>
+                                        On 1 Mar 2022, 10:20 AM
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">ND12368</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap vertical-align-middle">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th>More Details</th>
+                                                <th class="text-end"></th>
+                                                
+                                            </tr>
+                                        </thead>
+                                       
+                                        <tbody>
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Serial Number</p>
+                                                </td>
+                                                <td class="">12WER345</td>
+                                                
+                                            </tr>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Business Owner(s)</p>
+                                                </td>
+                                                <td class="">John Doe Kamau, James Kuria Kimotho</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Profession/Occupation</p>
+
+                                                </td>
+                                                <td class="">Food Processing</td>
+                                                
+                                            </tr>
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Application Date</p>
+
+                                                </td>
+                                                <td class="">5 Jan 2022 10:09 AM</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Date Approved</p>
+
+                                                </td>
+                                                <td class="">11 Jan 2022 09:54 AM</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Days To Expiry</p>
+
+                                                </td>
+                                                <td class="">134 Days</td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Amount Paid</p>
+
+                                                </td>
+                                                <td class="text-uppercase">KES 1,000</td>
+                                                
+                                            </tr>
+
+
+
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           
+                            <a href="PrintDocs/Food-handler/health-permit.html" target="_blank" type="button" class="btn btn-primary waves-effect waves-light">
+                                <i class="mdi mdi-printer font-size-16 align-middle me-2"></i> Print Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of receipting modal -->
+
+            <!-- invoice details -->
+            <div class="modal fade invoice-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Invoice Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <address>
+                                    <strong>Billed To:</strong><br>
+                                    Kelvin Njuguna<br>
+                                    email@mail.com, 0704 549 859<br>                                   
+                                    Hse No. 410, 90 Degrees By Tsavo
+                                    <br><br>
+                                    1 Mar 2022, 10:20 AM
+                                </address>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">Invoice Details ( <span class="text-primary fw-medium">No. 1237</span> )</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 70px;">No.</th>
+                                                <th>Item</th>
+                                                <th class="text-end">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Rent Deposit</td>
+                                                <td class="text-end">KES 24,500</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Monthly Rent</td>
+                                                <td class="text-end">KES 12,000</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>03</td>
+                                                <td>TAX (18%)</td>
+                                                <td class="text-end">KES 250</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-end">Total</td>
+                                                <td class="text-end fw-bold">KES 36,750</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-end">Paid</td>
+                                                <td class="text-end  fw-bold">KES 0.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="2" class="border-0 text-end">
+                                                    <strong>Balance</strong></td>
+                                                <td class="border-0 text-end">
+                                                    <h5 class="m-0 text-uppercase fw-bold">KES 36,750</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-12 d-none">
+                                <div class="table-resposive p-4 px-2 pt-2 overflow-visible">
+                                    <table class="w-100">
+                                        <tbody>
+                                            <tr data-id="1">
+                                                <td>
+                                                    <label for="" class="">Payment Method</label>
+                                                    <select class="form-control selectpicker w-100 payment-method" data-style="btn-secondary w-100" data-live-search="true" title="Select payment Method">
+                                                        <option value="Mpesa">MPESA</option>
+                                                        <option value="Cash">CASH</option>   
+                                                     </select>
+                                                </td>
+                                                <td class="px-3 ">
+                                                    <div class="phone-num d-none">
+                                                        <label for="">Phone No.</label>
+                                                        <input type="text " class="form-control w-100 d-flex " placeholder="Phone No." spellcheck="false" data-ms-editor="true">
+                                                    </div>
+
+                                                </td>
+                                                <td class="px-3">
+                                                    <label for="">Amount To Be Paid</label>
+                                                    <input type="text " class="form-control w-100 d-flex" placeholder="KES" spellcheck="false" data-ms-editor="true">
+
+                                                </td>
+                                                <td class="text-right float-right">
+                                                    <div class="d-flex flex-column">
+                                                        <label class="opacity-0">Something</label>
+                                                        <a href="#" class="btn btn-primary w-md waves-effect waves-light">Submit</a>
+                                                    </div>
+                                                </td>
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="float-end">
+                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="mdi mdi-printer font-16px"></i></a>
+                                <a href="javascript: void(0);" class="btn btn-primary w-md waves-effect waves-light">Receive Payment</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- invoice details -->
+
+            <!-- patients details modal -->
+            <div class="modal fade patient-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Add A bed to the ward</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="Bed Number">Bed Number</label>
+                                        <input type="text" class="form-control mb-3" placeholder="Enter Bed Number">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="Bed Number">Bed Type</label>
+                                        <select class="form-control selectpicker w-100 payment-method" data-live-search="true" title="Select Bed Type">
+                                            <option value="fowler">Fowler bed</option>
+                                            <option value="electric">Electric bed</option>
+                                            <option value="stretcher">Stretcher</option>
+                                            <option value="low">Low bed</option>
+                                            <option value="low_air_loss">Low air loss bed</option>
+                                            <option value="Other">Other ...</option>
+                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button class="btn btn-primary w-100">Save Changes</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of patieonts details modal -->
+
+            <!-- kin details modal -->
+            <div class="modal fade kin-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Jane's Kin Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap vertical-align-middle">
+                                       
+                                       
+                                        <tbody>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Relationship with patient</p>
+                                                </td>
+                                                <td class="">Brother</td>
+                                                
+                                            </tr>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Full Names</p>
+                                                </td>
+                                                <td class="">Alex Kinoti Livondo</td>
+                                                
+                                            </tr>
+
+                                            <tr title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Phone Number</p>
+                                                </td>
+                                                <td class="">
+                                                    <a href="tel:+254712345678">0712 345 678</a>
+                                                </td>
+                                                
+                                            </tr>
+
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Email Address</p>
+
+                                                </td>
+                                                <td class=""><a href="mailto:Alex@kinoti.com">Alex@kinoti.com</a></td>
+                                                
+                                            </tr>
+                                            <tr >
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Physical Address</p>
+
+                                                </td>
+                                                <td class="">Near Mount Kilimanjaro Joint</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-none">
+                           
+                            <a href="PrintDocs/Food-handler/health-permit.html" target="_blank" type="button" class="btn btn-primary waves-effect waves-light">
+                                <i class="mdi mdi-printer font-size-16 align-middle me-2"></i> Print Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of kin details modal -->
+
+             <!-- Patient registration -->
+        <div class="modal fade " id="registerCustomer" data-backdrop="static" data-keyboard="false" tabindex="-1 " role="dialog " aria-labelledby="staticBackdropLabel " aria-hidden="true ">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content ">
+                    
+
+                    <div class="modal-header">
+                        <h5 class="modal-title text-capitalize" id="exampleModalLongTitle">New Ward Registration</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body steps-container">
+                        <div class="mb-4 the-step patient-info active">
+                            <div class="avatar-md mx-auto mb-4 d-none">
+                                <div class="avatar-title bg-light rounded-circle text-primary h1 ">
+                                    <i class="mdi mdi-account-multiple-plus "></i>
+                                </div>
+                            </div>
+
+                            <div class="row  text-left">
+                                <div class="col-12">
+                                    <form>
+                                        <div class="row ">
+                                            <div class="col-12 mb-3">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label for="">Ward Name</label>
+                                                        <input type="text " class="form-control two-step " placeholder="Enter the Ward's Name">
+                                                    </div>
+
+                                                    <div class="col-6 mb-3">
+                                                        <div class="">
+                                                            <label for="digit1-input " class="">Ward Type</label>
+                                                            <select class="form-control selectpicker bg-white select-revenue" title="Select Ward">
+                                                                <option value="General ward">General ward</option>                                                                   
+                                                                <option value=" Intensive care unit (ICU)"> Intensive care unit (ICU)</option>    
+                                                                <option value=" Maternity ward"> Maternity ward</option>                                                                   
+                                                                <option value=" Pediatric ward"> Pediatric ward</option>   
+                                                                <option value="Psychiatric ward">Psychiatric ward</option>                                                                   
+                                                                                                                        
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6 mb-3">
+                                                        <div class="">
+                                                            <label for="digit1-input " class="">Ward's Location</label>
+                                                           <input type="text" class="form-control" placeholder="ie floor number, room number, wing etc">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6 mb-3">
+                                                        <div class="">
+                                                            <label for="digit1-input " class="">Number of Rooms</label>
+                                                           <input type="text" class="form-control" placeholder="Number of Rooms/Cubicals">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                       
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 the-step next-of-kin-modal d-none">
+                            <h4 class="text-primary text-capitalize">Next Of Kin Details</h4>
+                            <div class="row">
+                                
+                                <div class="col-12 mb-4">
+                                    <label for="" class="text-capitalize">Relationship with Patient Being registerd</label>
+                                    <select class="form-control selectpicker bg-white select-revenue" title="Select Next Of Kin's Relationship with the patient being registered" data-live-search="true">
+                                        <option value="">Mother</option>
+                                        <option value="">Father</option>
+                                        <option value="">Daughter</option>
+
+                                        <option value="">Son</option>
+                                        <option value="">Sister</option>
+                                        <option value="">Brother</option>
+
+                                        <option value="">Friend</option>
+                                        <option value="">Uncle</option>
+                                        <option value="">Aunt</option>
+                                     </select>
+                                </div>
+
+                                <div class="col-12 ">
+                                    <div class="">
+                                        <label for="digit1-input " class="">Next Of Kin Full Names</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <input type="text " class="form-control two-step " placeholder="First Name">
+                                        </div>
+
+                                        <div class="col-4">
+                                            <input type="text " class="form-control two-step " placeholder="Middle Name">
+                                        </div>
+
+                                        <div class="col-4">
+                                            <input type="text " class="form-control two-step " placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 ">
+                                    <div class="">
+                                        <label for="digit1-input " class="">Next Of Kin Contact information</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="text" class="form-control two-step " placeholder="Phone Number">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <input type="email" class="form-control two-step " placeholder="Email address">
+                                        </div>
+
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="">
+                                        <label for="digit1-input " class="">Physical Address</label>
+                                       <textarea name="" id=""  class="form-control" placeholder="Enter Address"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer d-flex">
+                        <div class="d-none">
+                            <button data-toggle="modal" data-target="#subscribeModal" data-dismiss="modal" type="button" class="btn btn-link waves-effect">Back To Patient Search</button>
+                        </div>
+                        <div class="d-flex modal-next-prev-container">
+                            <button type="button" class="btn btn-outline-secondary btn-prev waves-effect waves-effect waves-light me-3">
+                                <i class="bx bx-left-arrow-alt font-size-16 align-middle me-2"></i> Previouse
+                            </button>
+    
+                            <button type="button" class="btn btn-primary waves-effect waves-effect waves-light btn-next">
+                                Next <i class="bx bx-right-arrow-alt font-size-16 align-middle me-2"></i>
+                            </button>
+    
+                            <button type="button" class="btn btn-submit btn-success d-none ml-3 ms-3 waves-effect waves-effect waves-light btn-next">
+                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Submit Application 
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Patient registration -->
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Hospital Management Information System
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay "></div>
+
+   <!-- JAVASCRIPT -->
+   <script src="assets/libs/jquery/jquery.min.js "></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+   </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+   </script>
+
+   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+   <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+   <script src="assets/libs/simplebar/simplebar.min.js "></script>
+   <script src="assets/libs/node-waves/waves.min.js "></script>
+
+ 
+
+   <!-- Bootstrap select -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+
+   <!-- numerals number formater -->
+   <script src="assets/libs/numeral/numeral.js "></script>
+
+   <!-- apexcharts -->
+   <script src="assets/libs/apexcharts/apexcharts.min.js "></script>
+
+
+   <!-- dashboard init -->
+   <script src="assets/js/pages/dashboard.init.js "></script>
+   <!-- Saas dashboard init -->
+   <script src="assets/js/pages/earlyBirdDashboard.js "></script>
+   <script src="assets/js/pages/saas-dashboard.init.js"></script>
+
+   <!-- highchart map modules -->
+   <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+   <script src="https://code.highcharts.com/highcharts-more.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+   <script src="https://code.highcharts.com/modules/pictorial.js"></script>
+
+   <!-- highchart js files -->
+   <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+   <script src="https://code.highcharts.com/modules/export-data.js"></script>
+   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+   <script src="assets/js/pages/revenue-by-time.js "></script>
+   <script src="assets/js/pages/annial-perfomance.js"></script>
+   <script src="assets/js/pages/county-revenue.js"></script>
+
+
+    <!-- owl.carousel js -->
+   <script src="assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+
+
+   <script src="assets/js/map.js"></script>
+   <script src="assets/js/collected-rev.js"></script>
+
+   <script src="assets/libs/slick/slick.min.js"></script>
+
+
+
+
+   <!-- App js -->
+   <script src="assets/js/app.js "></script>
+   <script src="assets/js/custom.js "></script>
+
+   <script>
+    Highcharts.chart('claims-approval-time-gauge', {
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            height: '60%' // Adjust gauge height as needed
+        },
+
+        title: {
+            text: 'Average Claims Approval Time' // Main title
+        },
+
+        subtitle: {
+            text: 'Tracking the efficiency of claim processing times' // Subtitle
+        },
+
+        pane: {
+            startAngle: -90,
+            endAngle: 90, // Adjusted to ensure the gauge spans 180 degrees
+            background: null,
+            center: ['50%', '75%'],
+            size: '110%' // Adjust gauge size
+        },
+
+        // Disable exporting options
+        exporting: {
+            enabled: false
+        },
+
+        // The value axis
+        yAxis: {
+            min: 0,
+            max: 14, // Set max to 14 days for claims approval time
+            tickPixelInterval: 72,
+            tickPosition: 'inside',
+            tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+            tickLength: 20,
+            tickWidth: 2,
+            minorTickInterval: null,
+            labels: {
+                distance: 20,
+                style: {
+                    fontSize: '14px'
+                },
+                format: '{value} days', // Show days on labels
+                formatter: function () {
+                    return this.value === 7 ? '7 days (Ideal)' : this.value + ' days';
+                }
+            },
+            lineWidth: 0,
+            plotBands: [{
+                from: 0,
+                to: 7,
+                color: '#55BF3B', // Green: Ideal approval time (Good)
+                thickness: 20
+            }, {
+                from: 7,
+                to: 10,
+                color: '#DDDF0D', // Yellow: Moderate approval time
+                thickness: 20
+            }, {
+                from: 10,
+                to: 14,
+                color: '#DF5353', // Red: High approval time (Critical)
+                thickness: 20
+            }]
+        },
+
+        series: [{
+            name: 'Approval Time',
+            data: [5], // Example: average approval time in days
+            tooltip: {
+                valueSuffix: ' days'
+            },
+            dataLabels: {
+                format: '{y} days', // Show days
+                borderWidth: 0,
+                color: (
+                    Highcharts.defaultOptions.title &&
+                    Highcharts.defaultOptions.title.style &&
+                    Highcharts.defaultOptions.title.style.color
+                ) || '#333333',
+                style: {
+                    fontSize: '16px'
+                },
+                formatter: function() {
+                    const totalClaims = 1000; // Replace with the actual total number of claims
+                    const delayedClaims = (this.y > 7) ? Math.round((this.y / 14) * totalClaims) : 0; // Number of delayed claims
+                    return `${this.y} days, ${delayedClaims} claims over ideal time of 7 days`;
+                }
+            },
+            dial: {
+                radius: '80%',
+                backgroundColor: 'gray',
+                baseWidth: 12,
+                baseLength: '0%',
+                rearLength: '0%'
+            },
+            pivot: {
+                backgroundColor: 'gray',
+                radius: 6
+            }
+        }]
+    });
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+Highcharts.chart('claims-chart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Claims Paid vs Pending Over Time'
+    },
+    subtitle: {
+        text: 'Comparison of claims paid and pending per month with individual counts and amounts'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'], // Monthly data, you can modify this with actual date periods
+        title: {
+            text: 'Months'
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total Claims Amount (ETB)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' ETB',
+        shared: true,
+        headerFormat: '<b>{point.key}</b><br/>',
+        pointFormat: '{series.name}: {point.y} ETB ({point.count} claims)'
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Paid Claims',
+        data: [
+            { y: 500000, count: 100 }, // January paid claims
+            { y: 700000, count: 120 }, // February paid claims
+            { y: 600000, count: 110 }, // March paid claims
+            { y: 550000, count: 105 }, // April paid claims
+            { y: 800000, count: 150 }, // May paid claims
+            { y: 900000, count: 160 }, // June paid claims
+            { y: 750000, count: 145 }  // July paid claims
+        ],
+        color: '#28a745'
+    }, {
+        name: 'Pending Claims',
+        data: [
+            { y: 200000, count: 30 },  // January pending claims
+            { y: 150000, count: 25 },  // February pending claims
+            { y: 100000, count: 18 },  // March pending claims
+            { y: 180000, count: 28 },  // April pending claims
+            { y: 120000, count: 20 },  // May pending claims
+            { y: 130000, count: 22 },  // June pending claims
+            { y: 110000, count: 19 }   // July pending claims
+        ],
+        color: '#dc3545'
+    }]
+});
+</script>
+
+
+
+
+
+
+<script>
+    Highcharts.chart('revenue-collection-chart', {
+        chart: {
+            type: 'bar' // Horizontal stacked bar chart
+        },
+        title: {
+            text: null
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            title: {
+                text: 'Months'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total Revenue Collections (KES)'
+            },
+            labels: {
+                formatter: function () {
+                    // Formatting for thousands (K) and millions (M)
+                    return this.value >= 1000000 ? Highcharts.numberFormat(this.value / 1000000, 1) + 'M' : 
+                           this.value >= 1000 ? Highcharts.numberFormat(this.value / 1000, 0) + 'K' : 
+                           this.value;
+                }
+            },
+            stackLabels: {
+                enabled: true,
+                formatter: function () {
+                    return this.total >= 1000000 ? 'KES ' + Highcharts.numberFormat(this.total / 1000000, 1) + 'M' : 
+                           this.total >= 1000 ? 'KES ' + Highcharts.numberFormat(this.total / 1000, 0) + 'K' : 
+                           'KES ' + Highcharts.numberFormat(this.total, 0);
+                },
+                style: {
+                    fontWeight: 'bold',
+                    color: 'gray'
+                }
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>KES {point.y:,.0f}</b><br/>Total: <b>KES {point.stackTotal:,.0f}</b>' // Comma separator in tooltip
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    format: 'KES {y:,.0f}', // Comma separator for data labels
+                    style: {
+                        fontSize: '10px'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'SHIF Scheme',
+            data: [150000, 160000, 170000, 180000, 175000, 200000, 190000, 185000, 195000, 180000, 170000, 200000],
+            color: '#7cb5ec'
+        }, {
+            name: 'NHIF',
+            data: [90000, 95000, 100000, 110000, 105000, 115000, 120000, 110000, 100000, 95000, 90000, 100000],
+            color: '#434348'
+        }, {
+            name: 'AAR Insurance',
+            data: [80000, 85000, 90000, 95000, 94000, 99000, 97000, 93000, 91000, 90000, 87000, 95000],
+            color: '#90ed7d'
+        }, {
+            name: 'Britam',
+            data: [70000, 75000, 80000, 85000, 83000, 88000, 86000, 82000, 81000, 80000, 78000, 85000],
+            color: '#f7a35c'
+        }]
+    });
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script>
+Highcharts.chart('population-distribution', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Population Distribution by Premium Type'
+    },
+    subtitle: {
+        text: 'Click on a premium type to view distribution by region'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}: {point.y} people'
+            }
+        }
+    },
+    series: [{
+        name: 'Premium Type',
+        colorByPoint: true,
+        data: [{
+            name: 'Standard Premium',
+            y: 5000,
+            drilldown: 'standard-premium'
+        }, {
+            name: 'Silver Premium',
+            y: 3500,
+            drilldown: 'silver-premium'
+        }, {
+            name: 'Gold Premium',
+            y: 1500,
+            drilldown: 'gold-premium'
+        }, {
+            name: 'Platinum Premium',
+            y: 1000,
+            drilldown: 'platinum-premium'
+        }]
+    }],
+    drilldown: {
+        series: [{
+            id: 'standard-premium',
+            name: 'Standard Premium Distribution by Region',
+            data: [
+                ['Addis Ababa', 1000],
+                ['Oromia', 1500],
+                ['Amhara', 800],
+                ['SNNPR', 700]
+            ]
+        }, {
+            id: 'silver-premium',
+            name: 'Silver Premium Distribution by Region',
+            data: [
+                ['Addis Ababa', 800],
+                ['Oromia', 900],
+                ['Amhara', 600],
+                ['SNNPR', 500]
+            ]
+        }, {
+            id: 'gold-premium',
+            name: 'Gold Premium Distribution by Region',
+            data: [
+                ['Addis Ababa', 400],
+                ['Oromia', 500],
+                ['Amhara', 300],
+                ['SNNPR', 300]
+            ]
+        }, {
+            id: 'platinum-premium',
+            name: 'Platinum Premium Distribution by Region',
+            data: [
+                ['Addis Ababa', 200],
+                ['Oromia', 300],
+                ['Amhara', 250],
+                ['SNNPR', 250]
+            ]
+        }]
+    }
+});
+</script>
+
+
+
+
+
+<script>
+    // Data series for Total Applications, Approved, and Rejected
+    const totalApplications = [3, 2, 1, 0, 0, 1, 3, 5, 10, 12, 15, 13, 20, 22, 18, 15, 17, 19, 16, 12, 10, 8, 5, 3];
+    const approved = [2, 2, 1, 0, 0, 1, 2, 4, 8, 10, 13, 11, 17, 19, 16, 13, 15, 17, 14, 10, 8, 6, 4, 2];
+    const rejected = [1, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1];
+
+    // Calculate the current "Awaiting Approval" count
+    const totalAwaitingApproval = 480
+
+    Highcharts.chart('containerInsuranceHourly', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: 'Awaiting Approval: ' + totalAwaitingApproval, // Display "Awaiting Approval" as subtitle
+            align: 'left',
+            style: {
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: '#FF6347'  // Use a distinct color (e.g., Tomato) to make it stand out
+            }
+        },
+        xAxis: {
+            categories: [
+                '00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', 
+                '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', 
+                '20:00', '21:00', '22:00', '23:00'
+            ],
+            crosshair: true,
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '11px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Number of Applications'
+            }
+        }, {
+            title: {
+                text: 'Approved / Rejected'
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true,
+            valueDecimals: 0
+        },
+        legend: {
+            enabled: true,
+            labelFormatter: function() {
+                if (this.name === 'Total Applications') return this.name + ' (00:00 - 23:59)';
+                return this.name;
+            }
+        },
+        plotOptions: {
+            column: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y}',
+                    style: {
+                        fontSize: '10px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Total Applications',
+            type: 'column',
+            color: '#87CEEB',
+            data: totalApplications
+        }, {
+            name: 'Approved',
+            type: 'spline',
+            color: '#32CD32',
+            data: approved,
+            yAxis: 1,
+            marker: {
+                enabled: true,
+                symbol: 'circle',
+                radius: 3
+            }
+        }, {
+            name: 'Rejected',
+            type: 'spline',
+            color: '#FF4500',
+            data: rejected,
+            yAxis: 1,
+            marker: {
+                enabled: true,
+                symbol: 'circle',
+                radius: 3
+            }
+        }]
+    });
+</script>
+
+<script>
+    // Data series for premiums collected, claims processed, and collection target
+    const premiumsCollected = [500000, 600000, 550000, 650000, 700000, 750000, 800000, 850000, 900000, 950000, 1000000, 1100000];
+    const claimsProcessed = [400000, 420000, 450000, 460000, 470000, 500000, 550000, 580000, 600000, 630000, 650000, 700000];
+    const premiumsTarget = [600000, 650000, 700000, 750000, 800000, 850000, 900000, 950000, 1000000, 1050000, 1100000, 1200000];
+
+    // Data series for the number of people who paid premiums and claims payment
+    const peoplePaidPremiums = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950];
+    const claimsPaid = [350, 370, 400, 420, 440, 470, 500, 530, 550, 580, 600, 650];
+
+    Highcharts.chart('containerInsuranceMonthly', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: null
+        },
+        xAxis: {
+            categories: [
+                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ],
+            crosshair: true
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Amount (ETB)'
+            },
+            labels: {
+                formatter: function() {
+                    return this.value + ' ETB';
+                }
+            }
+        }, {
+            title: {
+                text: 'People Count'
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true,
+            valueDecimals: 0
+        },
+        plotOptions: {
+            column: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y}',
+                    style: {
+                        fontSize: '10px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Premiums Collected',
+            type: 'column',
+            color: '#4CAF50',  // Medical green
+            data: premiumsCollected
+        }, {
+            name: 'Claims Processed',
+            type: 'column',
+            color: '#D32F2F',  // Medical red
+            data: claimsProcessed
+        }, {
+            name: 'Premium Collection Target',
+            type: 'column',
+            color: '#1976D2',  // Trustworthy blue
+            data: premiumsTarget
+        }, {
+            name: 'People Who Paid Premiums',
+            type: 'spline',
+            color: '#FF9800',  // Light medical orange for contrast
+            data: peoplePaidPremiums,
+            yAxis: 1,
+            marker: {
+                enabled: true,
+                symbol: 'circle',
+                radius: 3
+            }
+        }, {
+            name: 'Claims Payment',
+            type: 'spline',
+            color: '#9C27B0',  // Purple for contrasting line
+            data: claimsPaid,
+            yAxis: 1,
+            marker: {
+                enabled: true,
+                symbol: 'circle',
+                radius: 3
+            }
+        }]
+    });
+</script>
+
+<script>
+    const regions = [
+    { name: 'Addis Ababa', premiumsCollected: 500000, claimsProcessed: 400000, premiumsTarget: 600000, peoplePaidPremiums: 400, claimsPaid: 350 },
+    { name: 'Amhara', premiumsCollected: 350000, claimsProcessed: 300000, premiumsTarget: 450000, peoplePaidPremiums: 300, claimsPaid: 250 },
+    { name: 'Oromia', premiumsCollected: 450000, claimsProcessed: 400000, premiumsTarget: 500000, peoplePaidPremiums: 350, claimsPaid: 300 },
+    { name: 'Tigray', premiumsCollected: 300000, claimsProcessed: 250000, premiumsTarget: 400000, peoplePaidPremiums: 250, claimsPaid: 200 },
+    { name: 'Sidama', premiumsCollected: 400000, claimsProcessed: 350000, premiumsTarget: 450000, peoplePaidPremiums: 350, claimsPaid: 300 },
+    { name: 'Somali', premiumsCollected: 320000, claimsProcessed: 270000, premiumsTarget: 400000, peoplePaidPremiums: 270, claimsPaid: 220 },
+    { name: 'Southern Nations, Nationalities, and Peoples\' Region', premiumsCollected: 450000, claimsProcessed: 400000, premiumsTarget: 550000, peoplePaidPremiums: 400, claimsPaid: 350 },
+    { name: 'Benishangul-Gumuz', premiumsCollected: 250000, claimsProcessed: 220000, premiumsTarget: 300000, peoplePaidPremiums: 220, claimsPaid: 180 },
+    { name: 'Gambela', premiumsCollected: 200000, claimsProcessed: 180000, premiumsTarget: 250000, peoplePaidPremiums: 180, claimsPaid: 150 },
+    { name: 'Harari', premiumsCollected: 220000, claimsProcessed: 200000, premiumsTarget: 270000, peoplePaidPremiums: 200, claimsPaid: 170 },
+    { name: 'Dire Dawa', premiumsCollected: 270000, claimsProcessed: 230000, premiumsTarget: 320000, peoplePaidPremiums: 230, claimsPaid: 200 },
+    { name: 'Afder', premiumsCollected: 180000, claimsProcessed: 150000, premiumsTarget: 220000, peoplePaidPremiums: 150, claimsPaid: 130 }
+];
+
+const regionsData = regions.map(region => ({
+    name: region.name,
+    color: Highcharts.getOptions().colors[Math.floor(Math.random() * Highcharts.getOptions().colors.length)],  // Random color for each region
+    value: region.premiumsCollected,  // You can choose the value to display here (e.g., premiums collected)
+    tooltip: {
+        pointFormat: `
+            <b>Premiums Collected:</b> {point.premiumsCollected} ETB<br/>
+            <b>Claims Processed:</b> {point.claimsProcessed} ETB<br/>
+            <b>Premium Collection Target:</b> {point.premiumsTarget} ETB<br/>
+            <b>People Paid Premiums:</b> {point.peoplePaidPremiums}<br/>
+            <b>Claims Paid:</b> {point.claimsPaid}`
+    }
+}));
+
+Highcharts.mapChart('containerInsuranceRegions', {
+    chart: {
+        map: 'countries/et/et-all' // Use the map for Ethiopia
+    },
+    title: {
+        text: 'Membership Distribution by Regions'
+    },
+    subtitle: {
+        text: 'Hover over a region to see premium distribution details'
+    },
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+    colorAxis: {
+        min: 0,
+        max: 1200000,  // Adjust the maximum to your highest value (e.g., premiums collected max)
+        stops: [
+            [0, '#FFDDC1'],  // Light red
+            [0.5, '#FF6347'],  // Tomato color
+            [1, '#D32F2F']   // Dark red
+        ]
+    },
+    tooltip: {
+        headerFormat: '<b>{point.key}</b><br/>',
+        pointFormat: 'Premiums Collected: {point.premiumsCollected} ETB<br>Claims Processed: {point.claimsProcessed} ETB<br>Premium Target: {point.premiumsTarget} ETB'
+    },
+    series: [{
+        data: regionsData,
+        name: 'Premiums Collected',
+        states: {
+            hover: {
+                color: '#FF9800'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+
+</script>
+
+<script>
+    (async () => {
+
+const topology = await fetch(
+    'https://code.highcharts.com/mapdata/countries/et/et-all.topo.json'
+).then(response => response.json());
+
+// Prepare demo data. The data is joined to map using value of 'hc-key'
+// property by default. See API docs for 'joinBy' for more info on linking
+// data and map.
+const data = [
+    ['et-be', 10], ['et-2837', 11], ['et-ha', 12], ['et-sn', 13],
+    ['et-ga', 14], ['et-aa', 15], ['et-so', 16], ['et-dd', 17],
+    ['et-ti', 18], ['et-af', 19], ['et-am', 20]
+];
+
+// Create the chart
+Highcharts.mapChart('ethiopeanMap', {
+    chart: {
+        map: topology
+    },
+
+    title: {
+        text: 'Highcharts Maps basic demo'
+    },
+
+    subtitle: {
+        text: 'Source map: <a href="https://code.highcharts.com/mapdata/countries/et/et-all.topo.json">Ethiopia</a>'
+    },
+
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    colorAxis: {
+        min: 0
+    },
+
+    series: [{
+        data: data,
+        name: 'Random data',
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+
+})();
+
+</script>
+
+<script>
+    (async () => {
+
+const topology = await fetch(
+    'https://code.highcharts.com/mapdata/countries/et/et-all.topo.json'
+).then(response => response.json());
+
+// Prepare the data for membership distribution by region
+// Using estimated membership distribution data (values are approximate)
+const data = [
+    ['et-be', 5800000],   // Benishangul-Gumuz
+    ['et-2837', 22000000], // Addis Ababa (Capital city)
+    ['et-ha', 8500000],   // Harari
+    ['et-sn', 5000000],   // Sidama
+    ['et-ga', 6000000],   // Gambela
+    ['et-aa', 47000000],  // Oromia
+    ['et-so', 6000000],   // Somali
+    ['et-dd', 5000000],   // Dire Dawa
+    ['et-ti', 5000000],   // Tigray
+    ['et-af', 12000000],  // Afar
+    ['et-am', 20000000]   // Amhara
+];
+
+// Create the chart
+Highcharts.mapChart('ethiopeanMap', {
+    chart: {
+        map: topology
+    },
+
+    title: {
+        text: null
+    },
+
+    subtitle: {
+        text: null
+    },
+
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    colorAxis: {
+        min: 0,
+        stops: [
+            [0, '#BBDEFB'],  // Light blue
+            [0.5, '#2196F3'],  // Medium blue
+            [1, '#1976D2']   // Dark blue
+        ]
+    },
+
+    tooltip: {
+        headerFormat: '<b>{point.key}</b><br/>',
+        pointFormat: 'Membership Distribution: {point.value} members'
+    },
+
+    series: [{
+        data: data,
+        name: 'Membership Distribution',
+        states: {
+            hover: {
+                color: '#64B5F6'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+
+})();
+</script>
+
+
+
+
+
+
+
+
+ <script>
+    Highcharts.chart('user-accounts', {
+chart: {
+    type: 'bar',
+    height: 150, // Set the height of the chart to 200px
+    with:'100%'
+},
+title: {
+    text: null // Remove the title
+},
+xAxis: {
+    categories: ['Test Requests'],
+    lineWidth: 0, // Remove the X-axis line
+    labels: {
+        enabled: false // Disable X-axis labels
+    }
+},
+yAxis: {
+    min: 0,
+    title: {
+        text: null // Remove the Y-axis title
+    },
+    gridLineWidth: 0, // Remove grid lines
+    labels: {
+        enabled: false // Disable Y-axis labels
+    }
+},
+legend: {
+    layout: 'horizontal', // Align legend items horizontally
+    align: 'left', // Align the legend to the left
+    verticalAlign: 'bottom', // Align the legend to the bottom
+    x: -10, // Offset from the left edge
+    y: 0, // Offset from the top edge
+    reversed: true
+},
+plotOptions: {
+    series: {
+        stacking: 'normal',
+        pointWidth: 30, // Set the width of the column
+        dataLabels: {
+            enabled: true
+        },
+        borderWidth: 2 // Increase the border width around each bar
+    }
+},
+tooltip: {
+        pointFormat: '<span style="color:black">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>', // Show value and percentage
+        shared: false // Show tooltip for individual series
+    },
+series: [{
+        name: 'Invoice',
+        data: [50], // Number of requests that stopped at Invoicing
+        color: '#00796B' // Teal for Invoicing
+    }, {
+        name: 'Ackn',
+        data: [30], // Number of requests that stopped at Acknowledged
+        color: '#E57373' // Light Red for Acknowledged
+    }, {
+        name: 'Sample',
+        data: [20], // Number of requests that stopped at Sample Taking
+        color: '#FFD54F' // Light Yellow for Sample Taking
+    }, {
+        name: 'Released',
+        data: [10], // Number of requests that stopped at Results Released
+        color: '#4FC3F7' // Light Blue for Results Released
+    }, {
+        name: 'Interp',
+        data: [5], // Number of requests that stopped at Results Interpretation
+        color: '#673AB7' // Purple for Results Interpretation
+    }],
+exporting: {
+    enabled: false // Disable the export options button
+}
+});
+
+   </script>
+
+    
+    
+
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>

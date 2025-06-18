@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>HOSPITAL MANAGEMENT INFORMATION SYSTEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="HMIS By Craft Silicon Payments" name="description" />
+    <meta content="Kelvin Njuguna" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+    <!-- droping file -->
+    <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+     <!-- owl.carousel css -->
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.carousel.min.css">
+
+     <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                    <img src="assets/images/the-logo.png" alt="" height="50">
+                                </span>
+                            <span class="logo-lg">
+                                    <img src="assets/images/logo-text-white.png" alt="" height="55">
+                                </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt="" class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="bx bx-fullscreen"></i>
+                            </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-bell bx-tada"></i>
+                                <span class="badge bg-danger rounded-pill">3</span>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="bx bx-cart"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="bx bx-badge-check"></i>
+                                                </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+       <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title" key="t-pages">Hospital Management Information system </li>
+
+                         <li class="side-bar-button" >
+                            <a href="outpatient-checkin.html" class="waves-effect btn btn-light btn-rounded text-left write-msg-btn">
+                                <i class=""><img src="assets/images/plus-icon.svg" alt=""></i>
+                                <span class="text-capitalize">Patient Chekin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home-circle"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                       <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-hand-heart"></i>
+                                <span>Community Health</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="community-anlytics.html">Analytics</a></li>      
+                                <li><a href="community-members.html">Member Register</a></li>
+                                <li><a href="community-deposits.html">Member Deposits</a></li>
+                                <li><a href="community-visit.html">Visit Coverage Log</a></li>
+                                <li><a href="community-setUp.html">Set Up</a></li> 
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bxs-user-detail"></i>
+                                <span>Master Patient Index</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="patient-new.html">Patient Registration</a></li>      
+                                <li><a href="patients.html">MPI Register</a></li> 
+                            </ul>
+                        </li>
+
+                      <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" data-toggle="tooltip" title="Insurance Processing">
+                                <i class="mdi mdi-shield-cross-outline"></i> <!-- Insurance-related icon -->
+                                <span>Insurance Processing</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="insurance-quick-stats.html" data-toggle="tooltip" title="View quick statistics on cases">Quick Stats</a></li>
+                                <li><a href="insurance-cases-all.html" data-toggle="tooltip" title="View quick statistics on cases">All cases</a></li>
+                                <li><a href="insurance-pending-approval.html" data-toggle="tooltip" title="View cases pending approval">Pending Approval</a></li>      
+                                <li><a href="insurance-rejected-approvals.html" data-toggle="tooltip" title="View cases rejected from approval">Rejected Approvals</a></li> 
+                                <li><a href="insurance-approved-processing.html" data-toggle="tooltip" title="View cases approved for processing">Approved for Processing</a></li> 
+                                <li><a href="insurance-reverted-approvals.html" data-toggle="tooltip" title="View cases reverted after approval">Reverted Approvals</a></li>
+                                <li><a href="insurance-awaiting-closure.html" data-toggle="tooltip" title="View cases awaiting closure">Awaiting Closure</a></li>   
+                                <li><a href="insurance-closed-cases.html" data-toggle="tooltip" title="View fully closed cases">Closed Cases</a></li>    
+                                <li><a href="insurance-archived-cases.html" data-toggle="tooltip" title="View fully closed cases">Archived Cases</a></li>      
+                                <li><a href="insurance-user-logs.html" data-toggle="tooltip" title="View fully closed cases">User Logs</a></li>     
+                                <li><a href="insurance-preferences.html" data-toggle="tooltip" title="View fully closed cases">Preferences</a></li>    
+
+                            </ul>
+                            
+                        </li>
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Clinical Activities">
+                                <i class="mdi mdi-hospital-building"></i> <!-- Hospital Building Icon -->
+                                <span>Clinical Management</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="clinical-quick-stats.html" title="View Quick Stats">Quick Stats</a></li>
+                                <li><a href="clinical-new-encounter.html" title="Log New Encounters">New Encounters</a></li>
+                                <li><a href="clinical-pending-consultation.html" title="View Pending Consultations">Pending Consults</a></li>
+                                <li><a href="clinical-active-consultation.html" title="View Active Consultations">Active Consults</a></li>
+                                <li><a href="clinical-lab-list.html" title="List of patients sent to the Lab for examination">To Lab</a></li>
+                                <li><a href="clinical-awaiting-interpretation.html" title="Patients results Awaiting Lab Interpretation">Pending Lab Review</a></li>
+                                <li><a href="clinical-discharged.html" title="Completed Visits Summary">Completed Visits</a></li>
+                            </ul>
+                        </li>
+                        
+
+                        <li>
+                            <a href="encounter-all.html" class="waves-effect">
+                                <i class="bx bx bx-list-ul"></i><span>Encounter List</span>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                       
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-human-queue mdi"></i>
+                                <span>Patient's Queue</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="out-Patient-visits.html">Out Patient Visits Queue</a></li> 
+                                <li><a href="queue-triage.html">Triage</a></li>      
+                                <li><a href="queue-OPD.html">Consaltation </a></li> 
+                                <li><a href="queue-cashier.html">Cashier </a></li> 
+                                <li><a href="queue-lab-schedule.html">Scheduled lab Tests</a></li> 
+                                <li><a href="queue-ongoing-schedule.html">Ongoing lab Tests</a></li> 
+                                <li><a href="queue-test-interpratation-schedule.html">Lab Test Interpratation</a></li> 
+                                <li><a href="queue-scan-exam-schedule.html">Scheduled Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-ongoing.html">Ongoing Scan Exams</a></li> 
+                                <li><a href="queue-scan-exam-interpratation.html">Scan exam Interpratation</a></li> 
+                                <li><a href="queue-pharmacey.html">Pharmacy</a></li> 
+                               
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="fas fa-flask"></i>
+                                <span>Medical Lab</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="lab-stats.html" title="Get a quick overview of lab activities and statistics">Lab Quick Stats</a></li>
+                                <li><a href="lab-orders-pending-payment.html" title="View tests awaiting payment or waiver before scheduling">Tests Pending Payment</a></li>
+                                <li><a href="lab-orders.html" title="Check all scheduled lab tests awaiting processing">Scheduled Lab Tests</a></li>
+                                <li><a href="lab-orders-acknowledged.html" title="See lab tests acknowledged and ready for processing">Acknowledged Lab Tests</a></li>
+                                <li><a href="lab-orders-collected-sample.html" title="View samples collected and ready for testing">Collected Samples</a></li>
+                                <li><a href="lab-orders-pending-results.html" title="Track lab tests with results pending">Pending Lab Results</a></li>
+                                <li><a href="lab-orders-released-tests.html" title="Access lab test results that have been finalized and released">Results Released</a></li>
+                                <li><a href="lab-setup.html" title="Manage and configure lab tests and settings">Lab Test Setup</a></li>
+                                <li><a href="patients.html" title="View patient lab reports and detailed results">Lab Reports</a></li>
+                            </ul>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-calendar-month mdi"></i>
+                                <span>Appointments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="appointments-pending.html">Pending Appointments</a></li>      
+                                <li><a href="appointments-fullfiled.html">Fullfiled AAppointments</a></li> 
+                                <li><a href="appointments-due.html">Due Appointments</a></li> 
+                            </ul>
+                        </li>
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-clipboard-edit mdi"></i>
+                                <span>Stock Management</span>
+                            </a>
+                            <ul class="sub-menu text-capitalize" aria-expanded="false">
+                                <li><a href="stock-ordering.html">Stock Enquiry</a></li>     
+                                <li><a href="stock-taking.html">Stock Taking</a></li>                       
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi-cog-outline mdi"></i>
+                                <span>Setups</span>
+                            </a>
+                           <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="set-up-departments.html">Departments</a></li>
+                                <li><a href="set-up-pricing.html">Pricing & Charges</a></li>
+                                <li><a href="set-up-equipments.html">Equipments</a></li>
+                                <li><a href="set-up-wards.html">Ward Set Up</a></li>
+                                <li><a href="set-up-bed.html">Beds Setup</a></li>
+                                <li><a href="set-Pharmacy.html">Pharmacy inventory</a></li>
+                                <li><a href="lab-setup-new.html">New Lab test Setup</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class="menu-title" key="t-pages">Reports</li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-outline"></i>
+                                <span>NHIF Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="nhif-reports.html">NHIF Payments</a></li>   
+                                <li><a href="nhif-cleared.html">Cleared Payemtnts</a></li>      
+                             
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="reports-outpatient.html" class="waves-effect">
+                                <i class="bx bx-clinic"></i><span>Outpatient Reports</span>
+                            </a>
+                        </li>
+
+                         <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-clipboard-text-outline"></i>
+                                <span>Stock Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="stock-daily-rep.html">Daily Reports</a></li>   
+                                <li><a href="stock-manual-exits.html">Manual Exits</a></li>      
+                                <li><a href="stock-order-enquarry.html">Order Enquarries</a></li>      
+                                                             
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reports-inpatient.html" class="waves-effect">
+                                <i class="mdi mdi-bed-outline"></i><span>Inpatient Reports</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reports-revenue-streams.html" class="waves-effect">
+                                <i class="mdi mdi-bank-transfer"></i><span>Revenue Perfomance</span>
+                            </a>
+                        </li>
+
+                      <li>
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-doctor"></i><span>Physician Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="d-none">
+                            <a href="reports-physician.html" class="waves-effect">
+                                <i class="mdi mdi-office-building"></i><span>Departmental Reports</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="bx bx-receipt"></i>
+                                <span>Bills</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                               
+                                <li><a href="bills-receipted.html">Receipted Bills</a></li>      
+                                <li><a href="bills-unpaid.html">Unpaid Bills</a></li>                               
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Covered Services">
+                                <i class="mdi mdi-clipboard-check-outline"></i>
+                                <span>Covered Services</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="covered-lab-tests.html" title="Manage Covered Lab Tests"><i class="mdi mdi-flask-outline"></i> Lab Tests</a></li>
+                                <li><a href="covered-radiology.html" title="Manage Covered Radiology Tests"><i class="mdi mdi-radiology-box"></i>Radiology Tests</a></li>
+                                <li><a href="covered-drugs.html" title="Manage Covered Drugs"><i class="mdi mdi-pill"></i> Drugs</a></li>
+                                <li><a href="covered-procedures.html" title="Manage Covered Procedures"><i class="mdi mdi-stethoscope"></i> Procedures</a></li>
+                                <li><a href="coverage-policies.html" title="Manage Coverage Policies and Rules"><i class="mdi mdi-file-document-outline"></i> Coverage Policies</a></li>
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html" title="Manage Designations">Designations</a></li>
+                                <li><a href="org-departments.html" title="Manage Departments">Departments</a></li>
+                                <li><a href="org-employment-types.html" title="Manage Employment Types">Employment Types</a></li>
+                                <li><a href="org-affiliated-institution.html" title="Manage Affiliated Institutions">Affiliated Institution</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html" title="Add New User">Add User</a></li>
+                                <li><a href="user-userlist.html" title="Add New User">Manage Users</a></li>
+                                <li><a href="users-deactivated.html" title="View Deactivated Users">Deactivated Users</a></li>
+                                <li><a href="use-logs.html" title="View System Logs">System Logs</a></li>
+                                <li><a href="users-roles.html" title="Manage User Roles">System Roles</a></li>
+                            </ul>
+                        </li>
+
+
+                        
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Department Details</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="index.html">Dashboards</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Organization Structure</a></li>
+                                        <li class="breadcrumb-item"><a href="org-departments.html">Department</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Oncology Clinic</a></li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header  bg-whit pt-0 pr-0 p-0 d-flex justify-content-between align-items-center w-100 border-bottom">
+
+                                    <div class="btn-toolbar p-3 d-flex justify-content-between align-items-center w-100" role="toolbar">
+                                        <h4 class="card-title text-uppercase mb-0 ">
+                                            <span class="me-4">Oncology Clinic</span>  <span class="mb-2 text-truncate text-grey"><i class="mdi mdi-circle text-success me-1"></i> <span class="opacity-75">Active</span></span>
+                                        </h4>
+
+                                        <div class="d-flex">
+                                            <button data-bs-toggle="modal" data-bs-target=".edit-department" class="btn btn-success text-uppercase mx-3" title="Edit Designation">
+                                                <i class="bx bxs-pencil font-size-16 align-middle me-2"></i> Edit
+                                            </button>
+                                            
+                                            <button data-bs-toggle="modal" data-bs-target=".deactivate-department" class="btn btn-danger text-uppercase d-flex align-items-center modal-details-btn" title="Deactivate Designation">
+                                                <i class="bx bx-block font-size-16 align-middle me-2"></i> <div>Mark As Inactive</div>
+                                            </button>
+                                            
+                                        </div>
+
+
+                                    </div>
+                                   
+                                </div>
+                                <div class="card-body bg-white text-uppercase">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link " href="org-department-details.html" role="tab" >
+                                                <span class="d-block d-sm-none"><i class="fas fa-info-circle"></i></span>
+                                                <span class="d-none d-sm-block">Details</span>    
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation" role="tab">
+                                            <a class="nav-link active" href="org-department-users.html" >
+                                                <span class="d-block d-sm-none"><i class="fas fa-users"></i></span>
+                                                <span class="d-none d-sm-block">Assigned Users (1)</span>    
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation"  role="tab">
+                                            <a class="nav-link" href="org-department-logs.html" >
+                                                <span class="d-block d-sm-none"><i class="fas fa-history"></i></span>
+                                                <span class="d-none d-sm-block">Activity Log</span>    
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="col-12 according-body-kev">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card-header bg-white border-bottom py-3 px-0">
+                                                    <div class="btn-toolbar  d-flex justify-content-between align-items-center w-100" role="toolbar">
+                                                        <div class="flex-grow-1">
+                                                          <div class="search-box mb-0 me-3">
+                                                              <div class="position-relative">
+                                                                  <input type="text" class="form-control bg-light border-light rounded" placeholder="Search..." fdprocessedid="husj3l" spellcheck="false" data-ms-editor="true">
+                                                                  <i class="bx bx-search-alt search-icon"></i>
+                                                              </div>
+                                                          </div>
+                                                        </div>
+                          
+                                                          <div class="d-flex">
+                                                              <div class="d-flex align-items-center">
+                                                                  <div class="d-flex justify-content-between">
+                                                                      <div class="float-end d-flex ">
+                                                                          <div class="input-group fw-semibold text-uppercase me-3">
+                                                                              <label class="input-group-text text-uppercase">Status</label>
+                                                                              <select class="form-select ">
+                                                                                  <option value="" disabled="">Select Status</option>
+                                                                                  <option value="All Patients" selected="">All Statuses</option>
+                                                                                  <option value="Inpatient">Active</option>
+                                                                                  <option value="Outpatient">Inactive</option>                                                        
+                                                                              </select>
+                                                                          </div>
+                          
+                                                                          <div class="input-group fw-semibold text-uppercase" title="Select the starting date to filter records based on the last edit date.">
+                                                                            <label class="input-group-text text-uppercase">From:</label>
+                                                                            <input class="form-control form-control-sm" type="date" value="2019-08-19" id="last-edit-from">
+                                                                        </div>
+                                                                        
+                                                                        <div class="input-group fw-semibold text-uppercase me-3 " title="Select the ending date to filter records based on the last edit date.">
+                                                                            <label class="input-group-text text-uppercase">To:</label>
+                                                                            <input class="form-control form-control-sm" type="date" value="2019-08-19" id="last-edit-to">
+                                                                        </div>
+
+                                                                        <button data-bs-toggle="modal" data-bs-target=".download-modal" type="button" class="btn btn-primary dropdown-toggle option-selector text-capitalize">
+                                                                            <i class="bx bxs-download  font-size-16"></i> <span class="pl-1 d-md-inline">Download Report</span>
+                                                                        </button>
+                                                                        
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              
+                          
+                                                          </div>
+                          
+                          
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="table-responsive ">
+                                                    <table class="table align-middle table-hover contacts-table text-uppercase border" id="datatable-button">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th scope="col">SN</th>
+                                                                <th scope="col">Name</th>
+                                                                <th scope="col">System Role</th>
+                                                                <th scope="col">Designation</th>
+                                                                <th scope="col">Department/Clinic</th>
+                                                                <th class="">Status</th>                                                    
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="border">
+                                                            <tr>
+                                                                <td>1.</td>
+                                                                <td>Dr. Alice Mwangi</td>
+                                                                <td>Oncologist</td>
+                                                                <td>Consultant</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2.</td>
+                                                                <td>Mr. John Doe</td>
+                                                                <td>Nurse</td>
+                                                                <td>Head Nurse</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3.</td>
+                                                                <td>Miss Sarah Wambui</td>
+                                                                <td>Pharmacist</td>
+                                                                <td>Clinical Pharmacist</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>4.</td>
+                                                                <td>Dr. Mark Otieno</td>
+                                                                <td>Oncologist</td>
+                                                                <td>Resident Doctor</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>5.</td>
+                                                                <td>Mr. Peter Njoroge</td>
+                                                                <td>Support Staff</td>
+                                                                <td>Administrative Assistant</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>6.</td>
+                                                                <td>Miss Linda Achieng</td>
+                                                                <td>Nutritionist</td>
+                                                                <td>Clinical Nutritionist</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>7.</td>
+                                                                <td>Dr. Kevin Karanja</td>
+                                                                <td>Oncologist</td>
+                                                                <td>Senior Consultant</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>8.</td>
+                                                                <td>Mr. Samuel Mutua</td>
+                                                                <td>Radiologist</td>
+                                                                <td>Senior Radiologist</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9.</td>
+                                                                <td>Miss Jane Muturi</td>
+                                                                <td>Social Worker</td>
+                                                                <td>Oncology Social Worker</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>10.</td>
+                                                                <td>Dr. Faith Okoth</td>
+                                                                <td>Oncologist</td>
+                                                                <td>Junior Consultant</td>
+                                                                <td>Oncology Clinic</td>
+                                                                <td class="fw-bold text-black"><p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> Active</p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+             <!-- Creating new department -->
+             <div class="modal fade new-department" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content modal-md">
+                        <div class="modal-header border-bottom-0">
+                            <h4 class="modal-title text-uppercase">Create New Department</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="department-name" class="form-label">Department Name<strong class="text-danger fw-bold">*</strong></label>
+                                        <input type="text" class="form-control" id="department-name" placeholder="Enter Department Name" spellcheck="false" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="abbreviation" class="form-label">Abbreviation<strong class="text-danger fw-bold">*</strong></label>
+                                        <input type="text" class="form-control" id="abbreviation" placeholder="Enter Abbreviation" spellcheck="false" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="assigned-manager" class="form-label">Assigned Manager</label>
+                                        <input type="text" class="form-control" id="assigned-manager" placeholder="Enter Manager Name" spellcheck="false" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="formrow-inputState" class="form-label">Status<strong class="text-danger fw-bold">*</strong></label>
+                                        <select id="formrow-inputState" class="form-select" required>
+                                            <option disabled selected>Select Status</option>
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Is this a Clinic?<strong class="text-danger fw-bold">*</strong></label>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="clinic-option" id="clinic-yes" value="yes" required>
+                                                <label class="form-check-label" for="clinic-yes">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="clinic-option" id="clinic-no" value="no" checked>
+                                                <label class="form-check-label" for="clinic-no">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="mb-3">
+                                        <label for="role-description" class="form-label">Department Description</label>
+                                        <textarea id="role-description" placeholder="Enter Description" class="form-control" rows="3" spellcheck="false" required></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex flex-wrap gap-2 text-uppercase">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    Save
+                                </button>
+                                <button type="reset" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of new department -->
+
+
+            <!-- editing existing designation -->
+            <!-- Edit Department Modal -->
+            <div class="modal fade edit-department" tabindex="-1" role="dialog" aria-hidden="true" id="edit-department-modal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content modal-md">
+                        <div class="modal-header border-bottom-0">
+                            <h4 class="modal-title text-uppercase">Edit Department</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="department-name" class="form-label">Department Name<strong class="text-danger fw-bold">*</strong></label>
+                                        <input type="text" class="form-control" id="department-name" value="Pediatrics">
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="abbreviation" class="form-label">Abbreviation<strong class="text-danger fw-bold">*</strong></label>
+                                        <input type="text" class="form-control" id="abbreviation" value="PED">
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="assigned-manager" class="form-label">Assigned Manager</label>
+                                        <input type="text" class="form-control" id="assigned-manager" value="Dr. Smith">
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label for="formrow-inputState" class="form-label">Status<strong class="text-danger fw-bold">*</strong></label>
+                                        <select id="formrow-inputState" class="form-select">
+                                            <option value="Active" selected>Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Is this a Clinic?<strong class="text-danger fw-bold">*</strong></label>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="clinic-option" id="clinic-yes" value="yes" checked >
+                                                <label class="form-check-label" for="clinic-yes">Yes</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="clinic-option" id="clinic-no" value="no" >
+                                                <label class="form-check-label" for="clinic-no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <div class="mb-3">
+                                        <label for="role-description" class="form-label">Department Description</label>
+                                        <textarea id="role-description" class="form-control" rows="3" >Pediatric department focusing on children's health and wellness.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex flex-wrap gap-2 text-uppercase">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of edit department -->
+
+            
+            <!-- end of editing -->
+
+            <!-- modal for deactivating designation -->
+            <div class="modal fade deactivate-department" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content modal-md">
+                        <div class="modal-header border-bottom-0">
+                            <h4 class="modal-title text-uppercase">Deactivate Department</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to deactivate the department <strong class="text-primary">Medical Department</strong>?</p>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <label for="deactivation-reason" class="form-label">Reason for Deactivation (Optional)</label>
+                                    <textarea id="deactivation-reason" placeholder="Provide reason for deactivation" class="form-control" rows="3" spellcheck="false"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex flex-wrap gap-2 text-uppercase">
+                                <button type="submit" class="btn btn-danger waves-effect waves-light">
+                                    Confirm Deactivation
+                                </button>
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            
+             <!-- end of deactivation -->
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Hospital Management Information System
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay "></div>
+
+    <script src="assets/libs/jquery/jquery.min.js "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+    <script src="assets/libs/simplebar/simplebar.min.js "></script>
+    <script src="assets/libs/node-waves/waves.min.js "></script>
+
+
+
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js "></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js "></script>
+    <!-- Buttons examples -->
+    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js "></script>
+    <script src="assets/libs/jszip/jszip.min.js "></script>
+    <script src="assets/libs/pdfmake/build/pdfmake.min.js "></script>
+    <script src="assets/libs/pdfmake/build/vfs_fonts.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js "></script>
+    <!-- numerals number formater -->
+    <script src="assets/libs/numeral/numeral.js "></script>
+
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js "></script>
+    <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js "></script>
+
+    <!-- Bootstrap select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/dropzone/min/dropzone.min.js "></script>
+    <!-- Datatable init js -->
+    <script src="assets/js/pages/datatables.init.js "></script>
+
+     <!-- owl.carousel js -->
+     <script src="assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+     <!-- timeline init js -->
+     <script src="assets/js/pages/timeline.init.js"></script>
+
+      <!-- Table Editable plugin -->
+    <script src="assets/libs/table-edits/build/table-edits.min.js"></script>
+    <script src="assets/js/pages/table-editable.int.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js "></script>
+    <script src="assets/js/custom.js "></script>
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>
