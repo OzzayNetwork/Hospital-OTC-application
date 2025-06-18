@@ -7,7 +7,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>CBHI | Community-Based Health Insurance</title>
+    <title>Hospital Management Information System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Keep your finances and membership up to date" name="description" />
     <meta content="Kelvin Njuguna Ndungu" name="author" />
@@ -71,7 +71,7 @@
                                 <img src="assets/images/the-logo.png" alt="" height="50">
                             </span>
                             <span class="logo-lg">
-                                <img src="assets/images/logo-text-white.png" alt="" height="50">
+                                <img src="assets/images/logo-text-white.png" alt="" height="45">
                             </span>
                         </a>
                     </div>
@@ -229,29 +229,6 @@
                         </div>
                     </div>
 
-                    <div class="dropdown d-inline-block">
-                        <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <img id="header-lang-img" src="assets/images/flags/us.jpg" alt="Header Language"
-                                height="16">
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="us">
-                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span
-                                    class="align-middle">English</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
-                                <img src="assets/images/flags/Ethiopia.png" alt="user-image" class="me-1" height="12">
-                                <span class="align-middle">Amharic</span>
-                            </a>
-                        </div>
-                    </div>
-
-
-
 
 
                     <div class="dropdown d-inline-block">
@@ -292,155 +269,95 @@
                 <div id="sidebar-menu">
                     <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
-                        <li class="menu-title d-none" key="t-pages">Community-Based Health Insurance</li>
-
-
-
                         <li>
                             <a href="index.html" class="waves-effect">
                                 <i class="bx bx-home-circle"></i><span>Dashboard</span>
                             </a>
                         </li>
 
-                        <li>
-                            <a href="hospitals-add.html" class="waves-effect">
-                                <i class="mdi mdi-medical-bag"></i><span>Add Hospital</span>
+                         <li>
+                            <a href="index-hospital.html" class="waves-effect">
+                                <i class="bx bx-pulse"></i><span>Hospital Dashboard</span>
                             </a>
                         </li>
-
-
-
-
-
+                        <li class="menu-title" key="t-pages">Patient Billing & Payments</li>
                         <li>
-                            <a href="hospitals.html" class="waves-effect" title="View or manage registered hospitals">
-                                <i class="mdi mdi-hospital-building"></i><span>Hospitals</span>
+                            <a href="patient-billing-new-invoice.html" class="waves-effect">
+                                <i class="mdi mdi-file-document-outline"></i>
+                                <span>New Invoice</span>
                             </a>
                         </li>
-
-
-                        <hr>
-
-                        <li class="menu-title" key="t-pages">Member Management</li>
-
-                        <li>
-                            <a href="members-add.html" class="waves-effect" title="Register a new member">
-                                <i class="bx bx-user-plus"></i><span>Add Member</span>
+                          <li>
+                            <a href="patients-billing-patient-list.html" class="waves-effect">
+                                <i class="mdi mdi-account-multiple-outline"></i>
+                                <span>Patients</span>
                             </a>
                         </li>
-
                         <li>
-                            <a href="members-all.html" class="waves-effect" title="View all registered members">
-                                <i class="bx bx-group"></i><span>All Members</span>
+                            <a href="patients-billing-patient-new.html" class="waves-effect" title="Add New Patient">
+                                <i class="mdi mdi-account-plus-outline"></i>
+                                <span>Add Patient</span>
                             </a>
                         </li>
-
                         <li>
-                            <a href="javascript:void(0);" class="waves-effect has-arrow"
-                                title="Manage insurance premium payments">
+                            <a href="patients-billing-patient-invoices.html" class="waves-effect" title="View and manage all patient invoices">
+                                <i class="mdi mdi-file-document-outline"></i>
+                                <span>Patient Invoices</span>
+                            </a>
+                        </li>
+                       <li>
+                            <a href="patients-billing-patient-transactions.html" class="waves-effect" title="View and track incoming payments from patients">
                                 <i class="mdi mdi-cash-multiple"></i>
-                                <span>Premium Management</span>
+                                <span>Transactions</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">Employer Credits</li>
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-domain"></i>
+                                <span>Legible Employers</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="premium-receive.html" title="Record or confirm a premium payment">
-                                        <i class="mdi mdi-cash-plus me-1"></i> Receive Premiums
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="premium-records.html" title="Track all recorded premium entries">
-                                        <i class="mdi mdi-file-document-outline me-1"></i> Premium Records
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="premium-reconciliation.html" title="Match payments against invoices">
-                                        <i class="mdi mdi-scale-balance me-1"></i> Reconciliation
-                                    </a>
-                                </li>
-
-                                <li class="">
-                                    <a href="premium-collections-report.html"
-                                        title="View and track Daily premium collections">
-                                        <i class="mdi mdi-chart-bar me-1"></i>
-                                        Daily Collections
-                                    </a>
-
-                                </li>
-
-                                <li>
-                                    <a href="premium-schedules.html" title="View and manage scheduled premium payments">
-                                        <i class="mdi mdi-calendar-clock me-1"></i> Premium Schedules
-                                    </a>
-                                </li>
+                                <li><a href="employer-all.html">View Employers</a></li>
+                                <li><a href="employer-add.html">Add Employer</a></li>
                             </ul>
                         </li>
+
                         <li>
-                            <a href="members-flagged.html" class="waves-effect"
-                                title="Deposits with no matching records for reconciliation">
-                                <i class="bx bx-error-circle"></i><span>Flagged Deposits</span>
-                                <span class="badge rounded-pill bg-danger float-end">10</span>
-                            </a>
-                        </li>
-                        <hr>
-                        <li class="menu-title" key="t-pages">Extension workers MNGT</li>
-                        <li>
-                            <a href="extension-log-service.html" class="waves-effect"
-                                title="Record health services delivered">
-                                <i class="bx bx-notepad"></i><span>Log Service</span>
+                            <a href="employees-all.html" class="waves-effect">
+                                <i class="mdi mdi-account-group-outline"></i>
+                                <span>Employees</span>
                             </a>
                         </li>
 
-                        <li>
-                            <a href="extension-register.html" class="waves-effect"
-                                title="Manage extension workers (CHWs)">
-                                <i class="bx bx-user-plus"></i><span>Extension Workers</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Track CHW activities">
-                                <i class="mdi mdi-account-clock"></i><span>Health Worker Tracking</span>
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-file-document-multiple-outline"></i>
+                                <span>Employer Invoices</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="extension-member-registrations.html"
-                                        title="View registered members">CBHI Registrations</a>
-                                </li>
-                                <li>
-                                    <a href="extension-premium-collections.html"
-                                        title="Track collected premiums">Premiums Collections</a>
-                                </li>
-                                <li>
-                                    <a href="extension-services-delivered.html"
-                                        title="View services delivered">Services Delivered</a>
-                                </li>
+                                <li><a href="employer-invoices.html">All Invoices</a></li>
+                                <li><a href="employer-invoices-outstanding.html">Outstanding Invoices</a></li>
+                                <li><a href="employer-invoices-archived.html">Archived Invoices</a></li>
                             </ul>
                         </li>
+
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-credit-card-check-outline"></i>
+                                <span>Payments</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="employer-payments-reconciled.html">Reconciled Payments</a></li>
+                                <li><a href="employer-payments-unreconciled.html">Unreconciled Payments</a></li>
+                            </ul>
+                        </li>
+
+
                        
 
-
-
-                        <hr>
                         <li class="menu-title" key="t-pages">System Administration</li>
-                        <li>
-                            <a href="javascript: void(0);" class="waves-effect has-arrow"
-                                title="Manage Covered Services">
-                                <i class="mdi mdi-clipboard-check-outline"></i>
-                                <span>Covered Services</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="covered-lab-tests.html" title="Manage Covered Lab Tests"><i
-                                            class="mdi mdi-flask-outline"></i> Lab Tests</a></li>
-                                <li><a href="covered-radiology.html" title="Manage Covered Radiology Tests"><i
-                                            class="mdi mdi-radiology-box"></i>Radiology Tests</a></li>
-                                <li><a href="covered-drugs.html" title="Manage Covered Drugs"><i
-                                            class="mdi mdi-pill"></i> Drugs</a></li>
-                                <li><a href="covered-procedures.html" title="Manage Covered Procedures"><i
-                                            class="mdi mdi-stethoscope"></i> Procedures</a></li>
-                                <li><a href="coverage-policies.html" title="Manage Coverage Policies and Rules"><i
-                                            class="mdi mdi-file-document-outline"></i> Coverage Policies</a></li>
-                            </ul>
-                        </li>
                         <li>
                             <a href="javascript: void(0);" class="waves-effect has-arrow"
                                 title="Manage Organizational Structure">
@@ -509,608 +426,200 @@
 
                     <!-- quick stats -->
                     <div class="row">
-                        <div class="col-xl-12 px-sm-30px">
-                            <div class="card dash-snapshort bg-primary-alt card-hover">
-                                <div class="card-header p-4 bg-transparent">
-                                    <h5 class="text-white mb-0"><i class="bx bx-stats me-2"></i> CBHI Membership
-                                        Snapshot
-                                    </h5>
-                                </div>
-                                <div class="card-body bg-transparent p-4">
-                                    <div class="row text-capitalize">
+                        <div class="col-xl-4 px-sm-30px">
+                            <div class="card  member-wedges-card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="d-flex flex-wrap align-items-start">
+                                            <h5 class="mb-3 me-2 text-black">Today's Overview</h5>
+                                        </div>
+                                        <div class="ms-auto align-self-end position-absolute d-none">
+                                            <i class="mdi mdi-block-helper display-4  opacity-50"></i>
+                                        </div>
+                                    </div>
 
-                                        <div class="col-12 col-sm-12 col-md-3">
-                                            <div class="d-flex align-center bg-white p-3 bg-opacity-10">
-                                                <div>
-                                                    <div class="avatar-xs me-3">
-                                                        <span
-                                                            class="avatar-title rounded-circle bg-white bg-opacity-10 bg-soft text-warning font-size-18">
-                                                            <i class="bx bx-group"></i>
-                                                        </span>
-                                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-8 col-lg-6 align-self-center">
+
+
+                                            <div class="mt-0 pt-2 text-capitalize">
+                                                <p class="mb-2"><i
+                                                        class="mdi mdi-circle align-middle font-size-10 me-2 text-black text-capitalize"></i>Collected
+                                                    Revenue</p>
+                                                <h5 class="text-blac">KES 632,230 <small
+                                                        class="text-muted font-size-14">+2,876</small></h5>
+                                            </div>
+
+                                            <div class="mt-4 pt-2">
+                                                <p class="mb-2"><i
+                                                        class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i>Pending
+                                                    Bills</p>
+                                                <h3 class="text-black mb-0">KES 22,562 <small
+                                                        class="text-muted font-size-14">+1,000</small></h3>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-4 col-lg-6">
+                                            <div class="mt-4 mt-sm-0">
+                                                <div id="radialBar-chart" data-colors='["--bs-primary"]'
+                                                    class="apex-charts"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-footer bg-primary p-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p class="text-light mb-0 opacity-75">Inpatient</p>
+                                            <h5 class="text-white mb-0">21<small
+                                                    class="text-light opacity-75 pl-2">+3</small></h5>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <p class="text-light mb-0 opacity-75">Outpatient</p>
+                                            <h5 class="text-white mb-0">15<small
+                                                    class="text-light opacity-75 pl-2">+1</small></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 px-sm-30px">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex mb-3 flex-column">
+                                                <div class="avatar-xs-2 me-3 mb-3">
+                                                    <span
+                                                        class="avatar-title rounded-circle bg-dark bg-soft text-success  font-size-18">
+                                                        <i
+                                                            class="mdi mdi-calendar-text-outline h2 mb-0 pb-0 text-black"></i>
+                                                    </span>
                                                 </div>
-                                                <div>
+                                                <div class="d-flex flex-column">
+                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">Weekly
+                                                        Transactions</h5>
+                                                    <p class="text-grey">From Mar 13th 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted mt-4">
+                                                <div class="d-flex flex-column">
+                                                    <p class="mb-0">Collected Revenue</p>
+                                                    <h4 class="text-black fw-semibold">KES 34,790</h4>
                                                     <div>
-                                                        <h3 class="fw-bold text-white fs-2 text">48,782</h3>
-                                                    </div>
-
-                                                    <p class="text-light mb-0 opacity-75">Total Registered CBHI Members
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 col-sm-12 col-md-3">
-                                            <div class="d-flex align-center bg-white p-3 bg-opacity-10">
-                                                <div>
-                                                    <div class="avatar-xs me-3">
-                                                        <span
-                                                            class="avatar-title rounded-circle bg-white bg-opacity-10 bg-soft text-warning font-size-18">
-                                                            <i class="bx bx-calendar"></i>
-                                                        </span>
+                                                        <p class="text-muted mb-0 comparison-txt"><span
+                                                                class="text-success me-2 fw-semibold"><i
+                                                                    class="mdi mdi-arrow-up"></i> + 1,329 </span> Since
+                                                            Last Week</p>
                                                     </div>
                                                 </div>
-                                                <div>
-                                                    <h3 class="fw-bold text-white fs-3 text">Jan 2025- Dec 2025</h3>
-                                                    <p class="text-warning mb-0">Active Period</p>
-                                                </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-12 col-sm-12 col-md-3">
-                                            <div class="d-flex align-center bg-white p-3 bg-opacity-10">
-                                                <div>
-                                                    <div class="avatar-xs me-3">
-                                                        <span
-                                                            class="avatar-title rounded-circle bg-white bg-opacity-10 bg-soft text-warning font-size-18">
-                                                            <i class="bx bx-timer"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fw-bold text-white fs-2 text">217</h3>
-                                                    <p class="text-light mb-0 opacity-75">Days Until Expiry</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 col-sm-12 col-md-3">
-                                            <div class="d-flex align-center bg-white p-3 bg-opacity-10">
-                                                <div>
-                                                    <div class="avatar-xs me-3">
-                                                        <span
-                                                            class="avatar-title rounded-circle bg-white bg-opacity-10 bg-soft text-warning font-size-18">
-                                                            <i class="bx bx-user-plus"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h3 class="fw-bold text-white fs-2 text">156</h3>
-                                                    <p class="text-light mb-0 opacity-75">New Members this month</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 px-sm-30px">
-                            <div class="card member-wedges-card">
-                                <div class="card-header bg-white">
-                                    <h5 class="mb-0 me-2 text-black">Premium Collection Summary in ETB</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="flex-fill p-3 rounded-1 border h-100 border-dashed border-gray-5 border-2 border-dark">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-success font-size-16">
-                                                        <i class="mdi mdi-cash-multiple text-white"></i>
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-15 fw-semibold text-success text fs-4 mb-1">120,000,000
-                                                </h6>
-                                                <p class="fs-12 text-muted mb-0">Total Collected (2025)</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="flex-fill p-3 rounded-1 border h-100 border-dashed border-gray-5 border-2 border-dark">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-info font-size-16">
-                                                        <i class="mdi mdi-calendar-month text-white"></i>
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-15 fw-semibold text-info text fs-4 mb-1">18,000,000</h6>
-                                                <p class="fs-12 text-muted mb-0">This Month</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <h5 class="mb-3 me-2 text-black">Top 5 Woredas</h5>
+                                        <div class="card-footer bg-black p-4">
+                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
                                             <div>
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Addis Ketema</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold"><span class="text-black">ETB
-                                                                    32,000,000</span> <span>26.7%</span></span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-black" role="progressbar"
-                                                            style="width: 26.7%;" aria-valuenow="26.7" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Arada</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold"><span class="text-black">ETB
-                                                                    28,000,000</span> <span>23.3%</span></span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-black" role="progressbar"
-                                                            style="width: 23.3%;" aria-valuenow="23.3" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Kirkos</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold"><span class="text-black">ETB
-                                                                    24,000,000</span> <span>20.0%</span></span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-black" role="progressbar"
-                                                            style="width: 20.0%;" aria-valuenow="20.0" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Yeka</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold"><span class="text-black">ETB
-                                                                    20,000,000</span> <span>16.7%</span></span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-black" role="progressbar"
-                                                            style="width: 16.7%;" aria-valuenow="16.7" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Lideta</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold"><span class="text-black">ETB
-                                                                    16,000,000</span> <span>13.3%</span></span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-black" role="progressbar"
-                                                            style="width: 13.3%;" aria-valuenow="13.3" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                                <h5 class="text-white mb-0">345<small
+                                                        class="text-light opacity-75 pl-2">+5</small></h5>
                                             </div>
 
-                                            <div>
-
-                                                <div class="alert alert-warning fade show border-1 border-warning mb-0"
-                                                    role="alert">
-                                                    <span class="text fs-5 mb-3 fw-semibold"><i
-                                                            class="mdi mdi-alert-outline me-2"></i>7 Flagged
-                                                        Deposits</span>
-                                                    <br>
-                                                    Unmatched or incorect deposits require review
-
-                                                </div>
-                                            </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 px-sm-30px">
-                            <div class="card  member-wedges-card">
-                                <div class="card-header bg-white">
-                                    <h5 class="mb-0 me-2 text-black">Hospital Visit Activity</h5>
-                                </div>
-                                <div class="card-body">
 
-
-                                    <div class="row">
-                                        <!-- Today's Visits -->
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-light">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-dark">
-                                                        <i class="bx bx-pulse text-white fs-5"></i>
+                                <div class="col-sm-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex mb-3 flex-column">
+                                                <div class="avatar-xs-2 me-3 mb-3">
+                                                    <span
+                                                        class="avatar-title rounded-circle bg-success bg-soft text-success  font-size-18">
+                                                        <i
+                                                            class="mdi mdi-calendar-month-outline h2 mb-0 pb-0 text-success"></i>
                                                     </span>
                                                 </div>
-                                                <h6 class="fs-4 fw-bold text-dark mb-1">127</h6>
-                                                <p class="fs-6 text-muted mb-0">Visits Today</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- This Month's Visits -->
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-light">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-dark">
-                                                        <i class="mdi-chart-bar mdi text-white fs-5"></i>
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-4 fw-bold text-dark mb-1">3,892</h6>
-                                                <p class="fs-6 text-muted mb-0">Visits This Month</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <h5 class="mb-3 me-2 text-black">Payment Method Distribution</h5>
-                                            <div class="d-none">
-                                                <div id="MethodContainer"></div>
-                                            </div>
-                                            <div>
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Cash</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold">
-                                                                <span class="text-black">ETB 38,000,000</span>
-                                                                <span>31.7%</span>
-                                                            </span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: 31.7%;" aria-valuenow="31.7" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Telebirr</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold">
-                                                                <span class="text-black">ETB 28,000,000</span>
-                                                                <span>23.3%</span>
-                                                            </span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: 23.3%;" aria-valuenow="23.3" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Mpesa</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold">
-                                                                <span class="text-black">ETB 22,000,000</span>
-                                                                <span>18.3%</span>
-                                                            </span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: 18.3%;" aria-valuenow="18.3" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>CBHI</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold">
-                                                                <span class="text-black">ETB 12,000,000</span>
-                                                                <span>10.0%</span>
-                                                            </span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: 10.0%;" aria-valuenow="10.0" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Employer Credit</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold">
-                                                                <span class="text-black">ETB 10,000,000</span>
-                                                                <span>8.3%</span>
-                                                            </span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: 8.3%;" aria-valuenow="8.3" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between">
-                                                        <h6>Traffic Police</h6>
-                                                        <h6 class="text-right">
-                                                            <span class="fw-bold">
-                                                                <span class="text-black">ETB 8,000,000</span>
-                                                                <span>6.7%</span>
-                                                            </span>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="progress progress-l">
-                                                        <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: 6.7%;" aria-valuenow="6.7" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
+                                                <div class="d-flex flex-column">
+                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">Monthly
+                                                        Transactions</h5>
+                                                    <p class="text-grey">March 2023</p>
                                                 </div>
                                             </div>
-
-
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 px-sm-30px">
-                            <div class="card  member-wedges-card">
-                                <div class="card-header bg-white">
-                                    <h5 class="mb-0 me-2 text-black">Woreda Settlements & Reconciliation</h5>
-                                </div>
-                                <div class="card-body">
-
-
-                                    <div class="row">
-                                        <!-- Today's Visits -->
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-success bg-soft ">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-success">
-                                                        <i class="bx bx-check-circle text-white fs-5"></i>
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-4 fw-bold text-dark mb-1">8,900,000</h6>
-                                                <p class="fs-6 text-muted mb-0">Settled Transactions</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- This Month's Visits -->
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-warning bg-soft">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-warning">
-                                                        <i class="bx bx-time-five text-white fs-5"></i>
-
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-4 fw-bold text-dark mb-1">1,200,000</h6>
-                                                <p class="fs-6 text-muted mb-0">Unsettled Transactions</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <h5 class="mb-3 me-2 text-black">Settlements & Reconciliation</h5>
-                                            <div class="row settle-stats">
-                                                <!-- Outstanding to Woredas -->
-                                                <div class="col-12">
-                                                    <div
-                                                        class="d-flex w-100 justify-content-between align-items-center p-3 bg-info bg-soft mb-3 border-primary border-primary">
-                                                        <p class="fw-bold mb-0 pb-0 d-flex align-items-center">
-                                                            <i class="bx bx-money text fs-3 text-primary me-2"></i>
-                                                            <span class="text-black">Outstanding to Woredas</span>
-                                                        </p>
-                                                        <h5 class="fw-bold text-primary text-right mb-0 pb-0">ETB
-                                                            450,000</h5>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Flagged Hospital Transactions -->
-                                                <div class="col-12">
-                                                    <div
-                                                        class="d-flex w-100 justify-content-between align-items-center p-3 bg-danger bg-soft mb-3 border-primary border-danger">
-                                                        <p class="fw-bold mb-0 pb-0 d-flex align-items-center">
-                                                            <i class="bx bx-error text fs-3 text-danger me-2"></i>
-                                                            <span class="text-black">Flagged Hospital
-                                                                Transactions</span>
-                                                        </p>
-                                                        <h5 class="fw-bold text-danger text-right mb-0 pb-0">12
-                                                        </h5>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Reconciliation Pending > 5 Days -->
-                                                <div class="col-12">
-                                                    <div
-                                                        class="d-flex w-100 justify-content-between align-items-center p-3 bg-warning bg-soft mb-3 border-primary border-warning">
-                                                        <p class="fw-bold mb-0 pb-0 d-flex align-items-center">
-                                                            <i class="bx bx-time text fs-3 text-danger me-2"></i>
-                                                            <span class="text-black">Reconciliation Pending > 5
-                                                                Days</span>
-                                                        </p>
-                                                        <h5 class="fw-bold text-warning text-right mb-0 pb-0">7</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 px-sm-30px">
-                            <div class="card  member-wedges-card">
-                                <div class="card-header bg-white">
-                                    <h5 class="mb-0 me-2 text-black">Claims Summary</h5>
-                                </div>
-                                <div class="card-body">
-
-
-                                    <div class="row">
-                                        <!-- Today's Visits -->
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-info bg-soft ">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-primary">
-                                                        <i class="bx bx-check-circle text-white fs-5"></i>
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-4 fw-bold text-primary mb-1">1,847</h6>
-                                                <p class="fs-6 text-muted mb-0">Total Claims</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- This Month's Visits -->
-                                        <div class="col-6 text-center mb-4">
-                                            <div
-                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-info bg-soft">
-                                                <div class="avatar-xs mx-auto mb-3">
-                                                    <span class="avatar-title rounded-circle bg-primary">
-                                                        <i class="bx bx-time-five text-white fs-5"></i>
-
-                                                    </span>
-                                                </div>
-                                                <h6 class="fs-4 fw-bold text-primary mb-1">245</h6>
-                                                <p class="fs-6 text-muted mb-0">This Month</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="row settle-stats">
-
-                                                <!-- Approved Claims -->
-                                                <div class="col-12">
-                                                    <div
-                                                        class="d-flex w-100 justify-content-between align-items-center p-3 bg-success bg-soft mb-3 border border-success rounded">
-                                                        <p class="mb-0 pb-0 d-flex align-items-center">
-                                                            <i class="bx bx-check-circle fs-3 text-success me-2"></i>
-                                                            <span class="fs-5 text-black">Approved</span>
-                                                        </p>
-                                                        <h5 class="fw-bold text-success text-end mb-0 pb-0">
-                                                            <span
-                                                                class="badge rounded-pill bg-success text-white fs-5">1,420</span>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Pending Claims -->
-                                                <div class="col-12">
-                                                    <div
-                                                        class="d-flex w-100 justify-content-between align-items-center p-3 bg-warning bg-soft mb-3 border border-warning rounded">
-                                                        <p class="mb-0 pb-0 d-flex align-items-center">
-                                                            <i class="bx bx-time-five fs-3 text-warning me-2"></i>
-                                                            <span class="fs-5 text-black">Pending</span>
-                                                        </p>
-                                                        <h5 class="fw-bold text-warning text-end mb-0 pb-0">
-                                                            <span
-                                                                class="badge rounded-pill bg-warning text-black fs-5">285</span>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Rejected Claims -->
-                                                <div class="col-12">
-                                                    <div
-                                                        class="d-flex w-100 justify-content-between align-items-center p-3 bg-danger bg-soft mb-3 border border-danger rounded">
-                                                        <p class="mb-0 pb-0 d-flex align-items-center">
-                                                            <i class="bx bx-x-circle fs-3 text-danger me-2"></i>
-                                                            <span class="fs-5 text-black">Rejected</span>
-                                                        </p>
-                                                        <h5 class="fw-bold text-danger text-end mb-0 pb-0">
-                                                            <span
-                                                                class="badge rounded-pill bg-danger text-white fs-5">142</span>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="mt-4">
-                                            <div class="alert alert-warning alert-custom fade show border border-warning mb-0"
-                                                role="alert">
-                                                <div class="d-flex align-items-start">
-                                                    <i class="mdi mdi-alert-circle fs-4 text-warning me-3 mt-1"></i>
+                                            <div class="text-muted mt-4">
+                                                <div class="d-flex flex-column">
+                                                    <p class="mb-0">Collected Revenue</p>
+                                                    <h4 class="text-black fw-semibold">KES 456,789</h4>
                                                     <div>
-                                                        <span class="fs-5 mb-2 fw-semibold d-block">18 Pending claims >
-                                                            7 Days</span>
-                                                        <span class="text-muted">Unmatched or incorrect deposits require
-                                                            review</span>
+                                                        <p class="text-muted mb-0 comparison-txt"><span
+                                                                class="text-success me-2 fw-semibold"><i
+                                                                    class="mdi mdi-arrow-up"></i> +56 41,678 </span>
+                                                            Since Last Month</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-footer bg-primary p-4">
+                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
+                                            <div>
+                                                <h5 class="text-white mb-0">923<small
+                                                        class="text-light opacity-75 pl-2">+56</small></h5>
+                                            </div>
 
-
+                                        </div>
                                     </div>
-
-
                                 </div>
+
+                                <div class="col-sm-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex mb-3 flex-column">
+                                                <div class="avatar-xs-2 me-3 mb-3">
+                                                    <span
+                                                        class="avatar-title rounded-circle bg-dark bg-soft text-success  font-size-18">
+                                                        <i
+                                                            class="mdi  mdi-calendar-check-outline h2 mb-0 pb-0 text-black"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">This Year
+                                                    </h5>
+                                                    <p class="text-grey">2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted mt-4">
+                                                <div class="d-flex flex-column">
+                                                    <p class="mb-0">Collected Revenue</p>
+                                                    <h4 class="text-black fw-semibold">KES 1,934,230</h4>
+                                                    <div>
+                                                        <p class="text-muted mb-0 comparison-txt"><span
+                                                                class="text-danger me-2 fw-semibold"><i
+                                                                    class="mdi mdi-arrow-down"></i> - 234,890 </span>
+                                                            Since Last Year</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-black p-4">
+                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
+                                            <div>
+                                                <h5 class="text-white mb-0">1,657<small
+                                                        class="text-light opacity-75 pl-2">-56</small></h5>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
+                            <!-- end row -->
                         </div>
-                        <div class="col-xl-8 col-lg-4 px-sm-30px">
-                            <div class="card  member-wedges-card">
-                                <div class="card-header bg-white">
-                                    <h5 class="mb-0 me-2 text-black">Monthly Claims vs Premiums(ETB)</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div id="annual-sales" class="high-chart-cont" dir="ltr"></div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
                     </div>
                     <!-- end of quick stats -->
 
                     <!-- quick stats -->
 
-                    <div class="row d-none">
+                    <div class="row">
                         <div class="col-xl-4 px-sm-30px">
                             <div class="card  text-white member-wedges-card index-live-stats">
                                 <div class="card-body">
@@ -1256,7 +765,7 @@
                     </div>
 
                     <!-- more charts -->
-                    <div class="row d-none">
+                    <div class="row d-non">
                         <div class="col-xl-6 col-lg-7 col-sm-12 px-sm-30px">
                             <div class="card calc-23">
                                 <div class="card-body">
@@ -2239,11 +1748,11 @@
                         <div class="col-sm-6 ">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © CBHI
+                            </script> © Best Birdy
                         </div>
                         <div class="col-sm-6 ">
                             <div class="text-sm-end d-sm-block ">
-                                Ministry of Health- Ethiopia
+                                Best Birdy Billing system.
                             </div>
                         </div>
                     </div>
@@ -2311,124 +1820,6 @@
     <!-- App js -->
     <script src="assets/js/app.js "></script>
     <script src="assets/js/custom.js "></script>
-
-    <!-- payment methods -->
-
-
-    <script>
-        // Example data
-        const paymentData = [{
-                method: 'Cash',
-                visits: 120,
-                amount: 75000
-            },
-            {
-                method: 'Mpesa',
-                visits: 90,
-                amount: 67000
-            },
-            {
-                method: 'CBHI Insurance',
-                visits: 80,
-                amount: 40000
-            },
-
-            {
-                method: 'Private Insurance',
-                visits: 50,
-                amount: 29000
-            },
-            {
-                method: 'Employer Credit',
-                visits: 45,
-                amount: 25000
-            },
-            {
-                method: 'Traffic Police',
-                visits: 30,
-                amount: 10000
-            },
-            {
-                method: 'Bank Transfer',
-                visits: 25,
-                amount: 15000
-            }
-        ];
-
-        // Sort in descending order by visits
-        paymentData.sort((a, b) => b.visits - a.visits);
-
-        // Total for percentage
-        const totalAmount = paymentData.reduce((sum, item) => sum + item.amount, 0);
-
-        // Prepare chart data
-        const categories = paymentData.map(item => item.method);
-        const data = paymentData.map(item => ({
-            y: item.visits,
-            amount: item.amount,
-            percentage: (item.amount / totalAmount) * 100
-        }));
-
-        Highcharts.chart('MethodContainer', {
-            chart: {
-                type: 'column',
-                inverted: true,
-                polar: true
-            },
-            title: null, // No title
-            subtitle: null, // No subtitle
-            exporting: {
-                enabled: false
-            }, // Disable export options
-            tooltip: {
-                useHTML: true,
-                formatter: function () {
-                    return `<b>${this.point.category}</b><br>
-                    Visits: <b>${this.point.y}</b><br>
-                    Amount: <b>${this.point.amount.toLocaleString()} ETB</b><br>
-                    Share: <b>${this.point.percentage.toFixed(1)}%</b>`;
-                }
-            },
-            pane: {
-                size: '85%',
-                innerSize: '20%',
-                endAngle: 270
-            },
-            xAxis: {
-                categories: categories,
-                labels: {
-                    align: 'right',
-                    allowOverlap: true,
-                    step: 1,
-                    y: 3,
-                    style: {
-                        fontSize: '13px'
-                    }
-                },
-                lineWidth: 0,
-                gridLineWidth: 0
-            },
-            yAxis: {
-                lineWidth: 0,
-                tickInterval: 20,
-                endOnTick: true,
-                showLastLabel: true,
-                gridLineWidth: 0
-            },
-            plotOptions: {
-                column: {
-                    colorByPoint: true,
-                    borderRadius: 0, // Flatten column ends
-                    pointPadding: 0,
-                    groupPadding: 0.15
-                }
-            },
-            series: [{
-                name: 'Visits',
-                data: data
-            }]
-        });
-    </script>
 </body>
 
 
