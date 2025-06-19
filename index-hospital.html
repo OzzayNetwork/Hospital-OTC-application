@@ -275,7 +275,7 @@
                             </a>
                         </li>
 
-                         <li>
+                        <li>
                             <a href="index-hospital.html" class="waves-effect">
                                 <i class="bx bx-pulse"></i><span>Hospital Dashboard</span>
                             </a>
@@ -287,7 +287,7 @@
                                 <span>New Invoice</span>
                             </a>
                         </li>
-                          <li>
+                        <li>
                             <a href="patients-billing-patient-list.html" class="waves-effect">
                                 <i class="mdi mdi-account-multiple-outline"></i>
                                 <span>Patients</span>
@@ -300,13 +300,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="patients-billing-patient-invoices.html" class="waves-effect" title="View and manage all patient invoices">
+                            <a href="patients-billing-patient-invoices.html" class="waves-effect"
+                                title="View and manage all patient invoices">
                                 <i class="mdi mdi-file-document-outline"></i>
                                 <span>Patient Invoices</span>
                             </a>
                         </li>
-                       <li>
-                            <a href="patients-billing-patient-transactions.html" class="waves-effect" title="View and track incoming payments from patients">
+                        <li>
+                            <a href="patients-billing-patient-transactions.html" class="waves-effect"
+                                title="View and track incoming payments from patients">
                                 <i class="mdi mdi-cash-multiple"></i>
                                 <span>Transactions</span>
                             </a>
@@ -355,12 +357,12 @@
                         </li>
 
 
-                       
+
 
                         <li class="menu-title" key="t-pages">System Administration</li>
-                         <li>
+                        <li>
                             <a href="set-up-pricing.html" class="waves-effect">
-                               <i class="mdi mdi-currency-usd"></i>
+                                <i class="mdi mdi-currency-usd"></i>
                                 <span>Pricing Chart</span>
                             </a>
                         </li>
@@ -432,74 +434,59 @@
 
                     <!-- quick stats -->
                     <div class="row">
-                        <div class="col-xl-4 px-sm-30px">
-                            <div class="card  member-wedges-card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div class="d-flex flex-wrap align-items-start">
-                                            <h5 class="mb-3 me-2 text-black">Today's Overview</h5>
-                                        </div>
-                                        <div class="ms-auto align-self-end position-absolute d-none">
-                                            <i class="mdi mdi-block-helper display-4  opacity-50"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-8 col-lg-6 align-self-center">
-
-
-                                            <div class="mt-0 pt-2 text-capitalize">
-                                                <p class="mb-2"><i
-                                                        class="mdi mdi-circle align-middle font-size-10 me-2 text-black text-capitalize"></i>Collected
-                                                    Revenue</p>
-                                                <h5 class="text-blac">KES 632,230 <small
-                                                        class="text-muted font-size-14">+2,876</small></h5>
-                                            </div>
-
-                                            <div class="mt-4 pt-2">
-                                                <p class="mb-2"><i
-                                                        class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i>Pending
-                                                    Bills</p>
-                                                <h3 class="text-black mb-0">KES 22,562 <small
-                                                        class="text-muted font-size-14">+1,000</small></h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-4 col-lg-6">
-                                            <div class="mt-4 mt-sm-0">
-                                                <div id="radialBar-chart" data-colors='["--bs-primary"]'
-                                                    class="apex-charts"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="card-footer bg-primary p-4">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <p class="text-light mb-0 opacity-75">Inpatient</p>
-                                            <h5 class="text-white mb-0">21<small
-                                                    class="text-light opacity-75 pl-2">+3</small></h5>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <p class="text-light mb-0 opacity-75">Outpatient</p>
-                                            <h5 class="text-white mb-0">15<small
-                                                    class="text-light opacity-75 pl-2">+1</small></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 px-sm-30px">
+                        <div class="col-xl-12 px-sm-30px">
                             <div class="row">
-                                <div class="col-sm-4">
+                                <!-- Daily Transactions Card -->
+                                <div class="col-sm-3 metric-card">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex mb-3 flex-column">
                                                 <div class="avatar-xs-2 me-3 mb-3">
                                                     <span
-                                                        class="avatar-title rounded-circle bg-dark bg-soft text-success  font-size-18">
+                                                        class="avatar-title rounded-circle bg-info bg-soft text-info font-size-18">
+                                                        <i
+                                                            class="mdi mdi-calendar-today-outline h2 mb-0 pb-0 text-info"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">Daily
+                                                        Transactions</h5>
+                                                    <p class="text-grey">Today</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted mt-4">
+                                                <div class="d-flex flex-column">
+                                                    <p class="mb-0">Collected Revenue</p>
+                                                    <h4 class="text-black fw-semibold">ETB 12,450</h4>
+                                                    <div>
+                                                        <p class="text-muted mb-0 comparison-txt">
+                                                            <span class="text-success me-2 fw-semibold">
+                                                                <i class="mdi mdi-arrow-up"></i> +2,340
+                                                            </span>
+                                                            Since Yesterday
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-info p-4">
+                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
+                                            <div>
+                                                <h5 class="text-white mb-0">47<small
+                                                        class="text-light opacity-75 ps-2">+12</small></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Weekly Transactions Card -->
+                                <div class="col-sm-3 metric-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex mb-3 flex-column">
+                                                <div class="avatar-xs-2 me-3 mb-3">
+                                                    <span
+                                                        class="avatar-title rounded-circle bg-dark bg-soft text-success font-size-18">
                                                         <i
                                                             class="mdi mdi-calendar-text-outline h2 mb-0 pb-0 text-black"></i>
                                                     </span>
@@ -513,34 +500,36 @@
                                             <div class="text-muted mt-4">
                                                 <div class="d-flex flex-column">
                                                     <p class="mb-0">Collected Revenue</p>
-                                                    <h4 class="text-black fw-semibold">KES 34,790</h4>
+                                                    <h4 class="text-black fw-semibold">ETB 34,790</h4>
                                                     <div>
-                                                        <p class="text-muted mb-0 comparison-txt"><span
-                                                                class="text-success me-2 fw-semibold"><i
-                                                                    class="mdi mdi-arrow-up"></i> + 1,329 </span> Since
-                                                            Last Week</p>
+                                                        <p class="text-muted mb-0 comparison-txt">
+                                                            <span class="text-success me-2 fw-semibold">
+                                                                <i class="mdi mdi-arrow-up"></i> +1,329
+                                                            </span>
+                                                            Since Last Week
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer bg-black p-4">
+                                        <div class="card-footer bg-dark p-4">
                                             <p class="text-light mb-0 opacity-75">Served Patients</p>
                                             <div>
                                                 <h5 class="text-white mb-0">345<small
-                                                        class="text-light opacity-75 pl-2">+5</small></h5>
+                                                        class="text-light opacity-75 ps-2">+5</small></h5>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-4">
+                                <!-- Monthly Transactions Card -->
+                                <div class="col-sm-3 metric-card">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex mb-3 flex-column">
                                                 <div class="avatar-xs-2 me-3 mb-3">
                                                     <span
-                                                        class="avatar-title rounded-circle bg-success bg-soft text-success  font-size-18">
+                                                        class="avatar-title rounded-circle bg-success bg-soft text-success font-size-18">
                                                         <i
                                                             class="mdi mdi-calendar-month-outline h2 mb-0 pb-0 text-success"></i>
                                                     </span>
@@ -554,12 +543,14 @@
                                             <div class="text-muted mt-4">
                                                 <div class="d-flex flex-column">
                                                     <p class="mb-0">Collected Revenue</p>
-                                                    <h4 class="text-black fw-semibold">KES 456,789</h4>
+                                                    <h4 class="text-black fw-semibold">ETB 456,789</h4>
                                                     <div>
-                                                        <p class="text-muted mb-0 comparison-txt"><span
-                                                                class="text-success me-2 fw-semibold"><i
-                                                                    class="mdi mdi-arrow-up"></i> +56 41,678 </span>
-                                                            Since Last Month</p>
+                                                        <p class="text-muted mb-0 comparison-txt">
+                                                            <span class="text-success me-2 fw-semibold">
+                                                                <i class="mdi mdi-arrow-up"></i> +41,678
+                                                            </span>
+                                                            Since Last Month
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -568,22 +559,22 @@
                                             <p class="text-light mb-0 opacity-75">Served Patients</p>
                                             <div>
                                                 <h5 class="text-white mb-0">923<small
-                                                        class="text-light opacity-75 pl-2">+56</small></h5>
+                                                        class="text-light opacity-75 ps-2">+56</small></h5>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-4">
+                                <!-- Yearly Performance Card -->
+                                <div class="col-sm-3 metric-card">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex mb-3 flex-column">
                                                 <div class="avatar-xs-2 me-3 mb-3">
                                                     <span
-                                                        class="avatar-title rounded-circle bg-dark bg-soft text-success  font-size-18">
+                                                        class="avatar-title rounded-circle bg-warning bg-soft text-warning font-size-18">
                                                         <i
-                                                            class="mdi  mdi-calendar-check-outline h2 mb-0 pb-0 text-black"></i>
+                                                            class="mdi mdi-calendar-check-outline h2 mb-0 pb-0 text-warning"></i>
                                                     </span>
                                                 </div>
                                                 <div class="d-flex flex-column">
@@ -595,28 +586,27 @@
                                             <div class="text-muted mt-4">
                                                 <div class="d-flex flex-column">
                                                     <p class="mb-0">Collected Revenue</p>
-                                                    <h4 class="text-black fw-semibold">KES 1,934,230</h4>
+                                                    <h4 class="text-black fw-semibold">ETB 1,934,230</h4>
                                                     <div>
-                                                        <p class="text-muted mb-0 comparison-txt"><span
-                                                                class="text-danger me-2 fw-semibold"><i
-                                                                    class="mdi mdi-arrow-down"></i> - 234,890 </span>
-                                                            Since Last Year</p>
+                                                        <p class="text-muted mb-0 comparison-txt">
+                                                            <span class="text-danger me-2 fw-semibold">
+                                                                <i class="mdi mdi-arrow-down"></i> -234,890
+                                                            </span>
+                                                            Since Last Year
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer bg-black p-4">
-                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
+                                        <div class="card-footer bg-warning p-4">
+                                            <p class="text-dark mb-0 opacity-75">Served Patients</p>
                                             <div>
-                                                <h5 class="text-white mb-0">1,657<small
-                                                        class="text-light opacity-75 pl-2">-56</small></h5>
+                                                <h5 class="text-dark mb-0">1,657<small
+                                                        class="text-dark opacity-75 ps-2">-56</small></h5>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                             <!-- end row -->
                         </div>
@@ -626,6 +616,646 @@
                     <!-- quick stats -->
 
                     <div class="row">
+                        <div class="col-12 px-sm-30px">
+                             <div class="card">
+                                    <div class="card-header bg-white d-flex justify-content-between align-items-center w-100 border-bottom-1 border-bottom-1 border-bottom p-3">
+                                           
+
+                                            <div class="btn-toolbar d-flex justify-content-between align-items-center w-100" role="toolbar">
+                                                <div class="flex-grow-1">
+                                                    <h5 class="mb-0 me-2 text-black text-capitalize">Filter section By Date</h5>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="bi bi-download"></i>
+                                                            <span class="pl-1 d-md-inline">Download Report</span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#" id="export-excel">
+                                                                    <i class="bi bi-file-earmark-excel me-2"></i>Export
+                                                                    to Excel
+                                                                </a></li>
+                                                            <li><a class="dropdown-item" href="#" id="export-pdf">
+                                                                    <i class="bi bi-file-earmark-pdf me-2"></i>Export to
+                                                                    PDF
+                                                                </a></li>
+                                                            <li><a class="dropdown-item" href="#" id="export-csv">
+                                                                    <i class="bi bi-file-earmark-text me-2"></i>Export
+                                                                    to CSV
+                                                                </a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 px-sm-30px">
+                            <div class="card member-wedges-card">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 me-2 text-black">Daily Payment Collections</h5>
+                                    <small class="text-muted">
+                                        Payments received between <strong>1st June 2025</strong> and <strong>19th June
+                                            2025</strong> vs. pending payments within the same period
+                                    </small>
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Payments Received Today Section -->
+                                        <div class="col-6 text-center mb-4">
+                                            <div
+                                                class="flex-fill p-3 rounded-1 border h-100 border-dashed border-gray-5 border-2 border-success">
+                                                <div class="avatar-xs mx-auto mb-3">
+                                                    <span class="avatar-title rounded-circle bg-success font-size-16">
+                                                        <i class="mdi mdi-cash-multiple text-white"></i>
+                                                    </span>
+                                                </div>
+                                                <h6 class="fs-15 fw-semibold text-success fs-4 mb-1">ETB 67,890</h6>
+                                                <p class="fs-12 text-muted mb-0">Payments Received Today</p>
+                                                <small class="text-success">156 payments processed</small>
+                                            </div>
+                                        </div>
+
+                                        <!-- Pending Payments Created Today -->
+                                        <div class="col-6 text-center mb-4">
+                                            <div
+                                                class="flex-fill p-3 rounded-1 border h-100 border-dashed border-gray-5 border-2 border-danger">
+                                                <div class="avatar-xs mx-auto mb-3">
+                                                    <span class="avatar-title rounded-circle bg-danger font-size-16">
+                                                        <i class="mdi mdi-credit-card-clock text-white"></i>
+                                                    </span>
+                                                </div>
+                                                <h6 class="fs-15 fw-semibold text-danger fs-4 mb-1">ETB 12,340</h6>
+                                                <p class="fs-12 text-muted mb-0">Pending Payments Created</p>
+                                                <small class="text-danger">20 pending transactions</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <h5 class="mb-3 me-2 text-black">Payments Received Today by Patient Type
+                                            </h5>
+                                            <div>
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>CBHI Patients <span class="badge bg-success ms-2">52
+                                                                payments</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold"><span class="text-success">ETB
+                                                                    24,560</span> <span>36.2%</span></span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-success" role="progressbar"
+                                                            style="width: 36.2%;" aria-valuenow="36.2" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                    <small class="text-muted">Includes previous dates paid today</small>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Cash Patients <span class="badge bg-primary ms-2">43
+                                                                payments</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold"><span class="text-primary">ETB
+                                                                    19,780</span> <span>29.1%</span></span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 29.1%;" aria-valuenow="29.1" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                    <small class="text-muted">Cash & bank transfer payments</small>
+                                                </div>
+
+
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Mobile Wallet Patients <span class="badge bg-info ms-2">35
+                                                                payments</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold"><span class="text-info">ETB
+                                                                    15,220</span> <span>22.4%</span></span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 22.4%;" aria-valuenow="22.4" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                    <small class="text-muted">Mobile money payments</small>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Employee Patients <span class="badge bg-warning ms-2">26
+                                                                payments</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold"><span class="text-warning">ETB
+                                                                    8,330</span> <span>12.3%</span></span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-warning" role="progressbar"
+                                                            style="width: 12.3%;" aria-valuenow="12.3" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                    <small class="text-muted">Employer payments received</small>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Pending Payments Created Today -->
+                                            <h5 class="mb-3 me-2 text-black">Pending Payments (Created Today)</h5>
+                                            <div class="mb-4">
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Employee Credit <span class="badge bg-warning ms-2">15
+                                                                transactions</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold"><span class="text-warning">ETB
+                                                                    8,900</span> <span>72.1%</span></span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-warning" role="progressbar"
+                                                            style="width: 72.1%;" aria-valuenow="72.1" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                    <small class="text-muted">Awaiting employer payment - Created
+                                                        today</small>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Traffic Emergency <span class="badge bg-danger ms-2">5
+                                                                transactions</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold"><span class="text-danger">ETB
+                                                                    3,440</span> <span>27.9%</span></span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-danger" role="progressbar"
+                                                            style="width: 27.9%;" aria-valuenow="27.9" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                    <small class="text-muted">Emergency cases - Payment pending -
+                                                        Created today</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="row text-center pt-4">
+                                                <!-- Same Day Processing Card (Improved) -->
+                                                <div class="col-md-6 mb-4">
+                                                    <div
+                                                        class="h-100 p-4 rounded-3 border border-2 border-success border-dashed bg-white">
+                                                        <div class="avatar-xs mx-auto mb-3">
+                                                            <span class="avatar-title rounded-circle bg-success">
+                                                                <i class="mdi-lightning-bolt mdi text-white fs-5"></i>
+                                                            </span>
+                                                        </div>
+                                                        <h6 class="card-title text-success">ETB 40,734</h6>
+                                                        <div class="card-value text-success text-uppercase fw-bold">Same Day Processing</div>
+                                                        <p class="card-desc">Payments created and paid on same day</p>
+                                                        <small class="card-count text-success">
+                                                            <i class="bi bi-check-circle-fill me-1"></i>94 payments
+                                                            processed today
+                                                        </small>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Previous Invoices Card (Improved) -->
+                                                <div class="col-md-6 mb-4">
+                                                    <div
+                                                        class="h-100 p-4 rounded-3 border border-2 border-primary border-dashed bg-white">
+                                                        <div class="avatar-xs mx-auto mb-3">
+                                                            <span class="avatar-title rounded-circle bg-info">
+                                                                <i class="mdi mdi-progress-clock text-white fs-5"></i>
+                                                            </span>
+                                                        </div>
+                                                        <h6 class="card-title text-primary">ETB  27,156</h6>
+                                                        
+                                                        <div class="card-value text-primary text-uppercase fw-bold">PREVIOUS INVOICES</div>
+                                                        <p class="card-desc">Invoices created previously</p>
+                                                        <small class="card-count text-primary">
+                                                            <i class="bi bi-file-earmark-text me-1"></i>62 Invoices paid
+                                                            on this date
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-none">
+                                                <div class="alert alert-info fade show border-1 border-info mb-3"
+                                                    role="alert">
+                                                    <span class="text fs-6 mb-2 fw-semibold"><i
+                                                            class="mdi mdi-information-outline me-2"></i>Payment
+                                                        Summary</span>
+                                                    <br>
+                                                    <small>• 156 payments received today (including previous
+                                                        dates)</small><br>
+                                                    <small>• 20 new pending payments created today</small><br>
+                                                    <small>• Total processed: ETB 80,230</small>
+                                                </div>
+
+                                                <div class="alert alert-warning fade show border-1 border-warning mb-0"
+                                                    role="alert">
+                                                    <span class="text fs-5 mb-3 fw-semibold"><i
+                                                            class="mdi mdi-alert-outline me-2"></i>Follow-up
+                                                        Required</span>
+                                                    <br>
+                                                    ETB 12,340 in pending payments created today need processing
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 px-sm-30px">
+                            <div class="card member-wedges-card">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 me-2 text-black">Top Performing Services</h5>
+                                    <small class="text-muted">
+                                        Ranked by revenue collected between <strong>[Start Date]</strong> and
+                                        <strong>[End Date]</strong>
+                                    </small>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Today's Services -->
+                                        <div class="col-6 text-center mb-4">
+                                            <div
+                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-light">
+                                                <div class="avatar-xs mx-auto mb-3">
+                                                    <span class="avatar-title rounded-circle bg-dark">
+                                                        <i class="mdi mdi-medical-bag text-white fs-5"></i>
+                                                    </span>
+                                                </div>
+                                                <h6 class="fs-4 fw-bold text-dark mb-1">127</h6>
+                                                <p class="fs-6 text-muted mb-0">Services Today</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- This Month's Services -->
+                                        <div class="col-6 text-center mb-4">
+                                            <div
+                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-light">
+                                                <div class="avatar-xs mx-auto mb-3">
+                                                    <span class="avatar-title rounded-circle bg-dark">
+                                                        <i class="mdi mdi-chart-line text-white fs-5"></i>
+                                                    </span>
+                                                </div>
+                                                <h6 class="fs-4 fw-bold text-dark mb-1">3,892</h6>
+                                                <p class="fs-6 text-muted mb-0">Services This Month</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <h5 class="mb-3 me-2 text-black">Top 7 Services by Revenue</h5>
+                                            <div class="d-none">
+                                                <div id="ServicesContainer"></div>
+                                            </div>
+                                            <div>
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>General Consultation <span class="badge bg-primary ms-2">845
+                                                                visits</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 42,250</span>
+                                                                <span>28.9%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 28.9%;" aria-valuenow="28.9" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Laboratory Tests <span class="badge bg-success ms-2">623
+                                                                tests</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 31,150</span>
+                                                                <span>21.3%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-success" role="progressbar"
+                                                            style="width: 21.3%;" aria-valuenow="21.3" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Pharmacy <span class="badge bg-info ms-2">534
+                                                                prescriptions</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 26,700</span>
+                                                                <span>18.2%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 18.2%;" aria-valuenow="18.2" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Radiology/Imaging <span class="badge bg-warning ms-2">187
+                                                                scans</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 18,700</span>
+                                                                <span>12.8%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-warning" role="progressbar"
+                                                            style="width: 12.8%;" aria-valuenow="12.8" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Emergency Services <span class="badge bg-danger ms-2">98
+                                                                cases</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 9,800</span>
+                                                                <span>6.7%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-danger" role="progressbar"
+                                                            style="width: 6.7%;" aria-valuenow="6.7" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Specialist Consultation <span
+                                                                class="badge bg-secondary ms-2">76 visits</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 7,600</span>
+                                                                <span>5.2%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-secondary" role="progressbar"
+                                                            style="width: 5.2%;" aria-valuenow="5.2" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Minor Procedures <span class="badge bg-dark ms-2">54
+                                                                procedures</span></h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 5,400</span>
+                                                                <span>3.7%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-dark" role="progressbar"
+                                                            style="width: 3.7%;" aria-valuenow="3.7" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Performance Insights -->
+                                            <div class="mt-4">
+                                                <div class="alert alert-success fade show border-1 border-success mb-0"
+                                                    role="alert">
+                                                    <span class="text fs-6 mb-2 fw-semibold">
+                                                        <i class="mdi mdi-trending-up me-2"></i>Performance Insights
+                                                    </span>
+                                                    <br>
+                                                    <small>• General Consultation leads with 28.9% of
+                                                        revenue</small><br>
+                                                    <small>• Laboratory services show strong demand (623
+                                                        tests)</small><br>
+                                                    <small>• Total revenue from top 7 services: ETB 146,600</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 px-sm-30px">
+                            <div class="card member-wedges-card">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 me-2 text-black">Visitation by Kebeles</h5>
+                                    <small class="text-muted">
+                                        Based on patient visits recorded between <strong>1st June 2025</strong> and
+                                        <strong>19th June 2025</strong>
+                                    </small>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Today's Visits -->
+                                        <div class="col-6 text-center mb-4">
+                                            <div
+                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-light">
+                                                <div class="avatar-xs mx-auto mb-3">
+                                                    <span class="avatar-title rounded-circle bg-dark">
+                                                        <i class="mdi mdi-map-marker-multiple text-white fs-5"></i>
+                                                    </span>
+                                                </div>
+                                                <h6 class="fs-4 fw-bold text-dark mb-1">127</h6>
+                                                <p class="fs-6 text-muted mb-0">Visits Today</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- This Month's Visits -->
+                                        <div class="col-6 text-center mb-4">
+                                            <div
+                                                class="stat-card flex-fill p-3 rounded-3 w-100 border border-dashed border-2 bg-light">
+                                                <div class="avatar-xs mx-auto mb-3">
+                                                    <span class="avatar-title rounded-circle bg-dark">
+                                                        <i class="mdi mdi-chart-bar text-white fs-5"></i>
+                                                    </span>
+                                                </div>
+                                                <h6 class="fs-4 fw-bold text-dark mb-1">3,892</h6>
+                                                <p class="fs-6 text-muted mb-0">Visits This Month</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <h5 class="mb-3 me-2 text-black">Top Kebeles by Patient Volume</h5>
+                                            <div class="d-none">
+                                                <div id="KebelesContainer"></div>
+                                            </div>
+                                            <div>
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Kebele 01/02 - Merkato</h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 15,680</span>
+                                                                <span>22.4%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 22.4%;" aria-valuenow="22.4" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Kebele 03/05 - Piassa</h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 13,450</span>
+                                                                <span>19.2%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 19.2%;" aria-valuenow="19.2" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Kebele 07/08 - Arat Kilo</h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 12,200</span>
+                                                                <span>17.4%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 17.4%;" aria-valuenow="17.4" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Kebele 12/13 - Kazanchis</h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 9,720</span>
+                                                                <span>13.9%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 13.9%;" aria-valuenow="13.9" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Kebele 09/10 - Mexico</h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 7,740</span>
+                                                                <span>11.1%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 11.1%;" aria-valuenow="11.1" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h6>Kebele 15/16 - CMC</h6>
+                                                        <h6 class="text-right">
+                                                            <span class="fw-bold">
+                                                                <span class="text-black">ETB 6,840</span>
+                                                                <span>9.8%</span>
+                                                            </span>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="progress progress-l">
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            style="width: 9.8%;" aria-valuenow="9.8" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <h5 class="mb-3 me-2 text-black mt-4">Patients payment Exemptions Trends and Analysis</h5>
+
+                                               <div class="row settle-stats">
+                                                    <!-- Exemption Beneficiaries -->
+                                                    <div class="col-12">
+                                                        <div class="d-flex w-100 justify-content-between align-items-center p-3 bg-info bg-soft mb-3 border-primary">
+                                                            <p class="fw-bold mb-0 pb-0 d-flex align-items-center">
+                                                                <i class="bx bx-group fs-3 text-primary me-2"></i>  <!-- Updated icon -->
+                                                                <span class="text-black">Exemptions Beneficiaries</span>
+                                                            </p>
+                                                            <h5 class="fw-bold text-primary text-right mb-0 pb-0">22 Patients</h5>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Exemption Value -->
+                                                    <div class="col-12">
+                                                        <div class="d-flex w-100 justify-content-between align-items-center p-3 bg-danger bg-soft mb-3 border-danger">
+                                                            <p class="fw-bold mb-0 pb-0 d-flex align-items-center">
+                                                                <i class="bx bx-coin fs-3 text-danger me-2"></i>  <!-- Updated icon -->
+                                                                <span class="text-black">Exemptions Value</span>
+                                                            </p>
+                                                            <h5 class="fw-bold text-danger text-right mb-0 pb-0">ETB 4,900</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none">
+                                                    <div id="KebelesContainer"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                      
+
+
+
                         <div class="col-xl-4 px-sm-30px">
                             <div class="card  text-white member-wedges-card index-live-stats">
                                 <div class="card-body">
