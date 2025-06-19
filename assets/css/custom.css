@@ -1309,6 +1309,8 @@ padding: 0px;
         padding: 1rem;
         display: flex;
         color: white;
+        padding-bottom: 0.7rem;
+        padding: top 0.7rem;
     }
     .live-data-card img{
         height: 45px;
@@ -1680,8 +1682,10 @@ padding: 0px;
             flex-flow:column;
 
         }
-        .payment-options-container .tab-content .tab-pane .card-header:last-child{
-            /* flex-grow:1 */
+       .bg-opacity-30 {
+            --bs-bg-opacity: 0.3;
         }
-
-        
+        .border-red-left{
+            border-left: 7px solid red;
+        }
+                
